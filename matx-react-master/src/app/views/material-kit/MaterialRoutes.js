@@ -141,7 +141,7 @@ const materialRoutes = [
   {
     path:'/material/loans/ApplyLoan',
     element: <ApplyLoan/>,
-  },
+  },  
   {
     path:'/material/loans/ViewPayLoan',
     element: <ViewPayLoans/>,
