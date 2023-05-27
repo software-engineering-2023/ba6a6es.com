@@ -1,9 +1,9 @@
 import {
   Avatar,
   Box,
+  Button,
   Card,
   Icon,
-  Button,
   IconButton,
   MenuItem,
   Select,
@@ -16,6 +16,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { Paragraph, Span } from 'app/components/Typography';
+import StyledButton from 'app/components/Common/Buttons/StyledButton';
 
 const CardHeader = styled(Box)(() => ({
   display: 'flex',
@@ -65,16 +66,14 @@ const TopSellingTable = () => {
   return (
     <Card elevation={3} sx={{ pt: '20px', mb: 3 }}>
       <CardHeader>
-        <Title>Recent Transactions</Title>
-        {
-          /* <Select size="small" defaultValue="this_month">
+        <Title>top selling products</Title>
+        {/* <Select size="small" defaultValue="this_month">
           <MenuItem value="this_month">This Month</MenuItem>
           <MenuItem value="last_month">Last Month</MenuItem>
-        </Select> */
-          <Button color="primary" variant="contained" type="submit">
-            <Span sx={{ pl: 1, textTransform: 'capitalize' }}>View All Transactions</Span>
-          </Button>
-        }
+        </Select> */}
+        <StyledButton variant="outlined" color="inherit">
+          help
+        </StyledButton>
       </CardHeader>
 
       <Box overflow="auto">

@@ -36,8 +36,10 @@ const ReportCreditCard = Loadable(lazy(() => import('./creditCard/ReportCreditCa
 const ViewPayCreditCard = Loadable(lazy(() => import('./creditCard/ViewPayCreditCard')));
 const ApplyLoan = Loadable(lazy(() => import('./loans/ApplyLoan')));
 const ViewPayLoans = Loadable(lazy(() => import('./loans/ViewPayLoans')));
-const ViewRedeemPoints = Loadable(lazy(() => import('./points/ViewRedeemPoints')));
+const ViewRedeemPoints = Loadable(lazy(() => import('../points/ViewRedeemPoints')));
 const ViewAllTransactions = Loadable(lazy(() => import('../ViewAllTrans/ViewAllTransactions')));
+const SettingsPage = Loadable(lazy(() => import('../Settings/SettingsPage')));
+const PasswordPage = Loadable(lazy(() => import('../Settings/PasswordPage')));
 
 const materialRoutes = [
   {
@@ -150,6 +152,8 @@ const materialRoutes = [
   },
   {
     path: '/material/loans/ViewPayLoan',
+    element: <ViewPayLoans />,
+    path: '/material/loans/ViewPayLoans',
     element: <ViewPayLoans />,
   },
   {

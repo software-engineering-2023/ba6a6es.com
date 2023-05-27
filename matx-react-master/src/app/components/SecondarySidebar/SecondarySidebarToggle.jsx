@@ -1,5 +1,6 @@
 import { Fab, Icon, IconButton } from '@mui/material';
 import { styled, useTheme } from '@mui/system';
+import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
 import useSettings from 'app/hooks/useSettings';
 import clsx from 'clsx';
 
@@ -35,8 +36,8 @@ const SecondarySidebarToggle = () => {
       )}
 
       {!settings.secondarySidebar.open && (
-        <Fab color="primary" aria-label="expand" onClick={toggle}>
-          <Icon sx={{ color: textColor }}>settings</Icon>
+        <Fab color="error.main" aria-label="expand" onClick={toggle}>
+          <ErrorOutlineOutlinedIcon  size="medium"  sx={{ color: palette.error.main }}/>
         </Fab>
       )}
     </Toggle>
