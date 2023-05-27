@@ -22,7 +22,7 @@ const StyledTable = styled(Table)(({ theme }) => ({
 
 const subscribarList = [
   {
-    name: "john doe",
+    name: "Hana",
     date: "18 january, 2019",
     amount: 1000,
     status: "open",
