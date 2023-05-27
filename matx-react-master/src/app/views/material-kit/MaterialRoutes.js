@@ -150,6 +150,8 @@ const materialRoutes = [
   {
     path: '/material/loans/ViewPayLoan',
     element: <ViewPayLoans />,
+    path: '/material/loans/ViewPayLoans',
+    element: <ViewPayLoans />,
   },
   {
     path: '/material/points/ViewRedeemPoints',
