@@ -1,5 +1,4 @@
-import { KeyboardArrowDown } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import { KeyboardArrowDown } from "@mui/icons-material";
 import {
   Box,
   Button,
@@ -10,8 +9,8 @@ import {
   Stack,
   Switch,
   TextField,
-} from '@mui/material';
-import { H5, Paragraph } from 'app/components/Typography';
+} from "@mui/material";
+import { H5, Paragraph } from "app/components/Typography";
 
 const Preferences = () => {
   return (
@@ -28,54 +27,20 @@ const Preferences = () => {
               label="Language"
               variant="outlined"
               placeholder="Language"
-              // value="english"
+              value="english"
               SelectProps={{ native: true, IconComponent: KeyboardArrowDown }}
             >
               <option value="english">English</option>
-              <option value="Arabic">Arabic</option>
-              <option value="German">German</option>
+              <option value="bangla">Bangla</option>
+              <option value="hindi">Hindi</option>
             </TextField>
           </Grid>
-          <Grid item sm={6} xs={12}></Grid>
 
-          <Grid item sm={6} xs={12}>
-            <TextField
-              select
-              fullWidth
-              label="Currency"
-              variant="outlined"
-              placeholder="Currency"
-              // value="USD"
-              SelectProps={{ native: true, IconComponent: KeyboardArrowDown }}
-            >
-              <option value="USD">USD</option>
-              <option value="EGP">EGP</option>
-              <option value="EUR">EUR</option>
-            </TextField>
-          </Grid>
-          <Grid item sm={6} xs={12}></Grid>
-
-          <Grid item sm={6} xs={12}>
-            <TextField
-              select
-              fullWidth
-              label="Default Account"
-              variant="outlined"
-              placeholder="Default Account"
-              // value="Checkings"
-              SelectProps={{ native: true, IconComponent: KeyboardArrowDown }}
-            >
-              <option value="Checkings">Checkings</option>
-              <option value="Savings">Savings</option>
-              <option value="Credit">Credit</option>
-            </TextField>
-          </Grid>
-          {/* <Grid item sm={6} xs={12}></Grid>
           <Grid item sm={6} xs={12}>
             <TextField variant="outlined" label="Time Zone" fullWidth value="12:00 AM" />
-          </Grid> */}
+          </Grid>
 
-          {/* <Grid item sm={6} xs={12}>
+          <Grid item sm={6} xs={12}>
             <Stack direction="row" justifyContent="space-between">
               <Box>
                 <H5 mb={0.5}>Early release</H5>
@@ -93,11 +58,11 @@ const Preferences = () => {
 
               <Switch defaultChecked />
             </Stack>
-          </Grid>*/}
+          </Grid>
         </Grid>
       </Box>
 
-      {/* <H5 padding={3}>Email Preferences</H5>
+      <H5 padding={3}>Email Preferences</H5>
       <Divider />
 
       <Stack spacing={2} padding={3}>
@@ -134,12 +99,6 @@ const Preferences = () => {
             </Paragraph>
           </Box>
         </Stack>
-      </Stack> */}
-
-      <Stack direction="row" spacing={3} padding={3}>
-        <Button variant="outlined" component={Link} to="/material/settings/PasswordPage">
-          Change Password
-        </Button>
       </Stack>
 
       <Stack direction="row" spacing={3} padding={3}>

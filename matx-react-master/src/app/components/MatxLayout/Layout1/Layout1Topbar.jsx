@@ -152,8 +152,10 @@ const Layout1Topbar = () => {
             </StyledItem>
 
             <StyledItem>
-              <Icon> settings </Icon>
-              <Span> Settings </Span>
+              <Link to="/material/settings/SettingsPage">
+                <Icon> settings </Icon>
+                <Span> Settings </Span>
+              </Link>
             </StyledItem>
 
             <StyledItem onClick={logout}>
