@@ -71,28 +71,22 @@ const SimpleTable = ({ subscribarList }) => {
       <StyledTable>
         <TableHead>
           <TableRow>
-            <TableCell align="left">Name</TableCell>
-            <TableCell align="center">Company</TableCell>
-            <TableCell align="center">Start Date</TableCell>
-            <TableCell align="center">Status</TableCell>
-            <TableCell align="center">Amount</TableCell>
-            <TableCell align="right">Action</TableCell>
+            <TableCell align="left">Type</TableCell>
+            <TableCell align="center">DueDate</TableCell>
+            <TableCell align="right">Amount</TableCell>
+            {/* <TableCell align="center">Type</TableCell>
+              <TableCell align="center">Amount</TableCell>
+              <TableCell align="right"></TableCell>  */}
           </TableRow>
         </TableHead>
 
         <TableBody>
           {subscribarList.map((subscriber, index) => (
             <TableRow key={index}>
-              <TableCell align="left">{subscriber.name}</TableCell>
-              <TableCell align="center">{subscriber.company}</TableCell>
-              <TableCell align="center">{subscriber.date}</TableCell>
-              <TableCell align="center">{subscriber.status}</TableCell>
-              <TableCell align="center">${subscriber.amount}</TableCell>
-              <TableCell align="right">
-                <IconButton>
-                  <Icon color="error">close</Icon>
-                </IconButton>
-              </TableCell>
+              {/* <Icon className="icon">{subscriber.icon}</Icon> */}
+              <TableCell align="left">{<Icon className="icon">{subscriber.icon}</Icon>}</TableCell>
+              <TableCell align="center">{subscriber.dueDate}</TableCell>
+              <TableCell align="right">{subscriber.amount}</TableCell>
             </TableRow>
           ))}
         </TableBody>

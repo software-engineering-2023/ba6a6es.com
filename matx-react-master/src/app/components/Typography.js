@@ -156,7 +156,7 @@ export const Small = ({ children, className, ellipsis, textTransform, ...props }
         [className || '']: true,
       })}
       component="small"
-      fontSize="12px"
+      fontSize="30px"
       fontWeight="500"
       lineHeight="1.5"
       {...props}

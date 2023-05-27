@@ -3,6 +3,7 @@ import {
   Box,
   Card,
   Icon,
+  Button,
   IconButton,
   MenuItem,
   Select,
@@ -14,7 +15,7 @@ import {
   TableRow,
   useTheme,
 } from '@mui/material';
-import { Paragraph } from 'app/components/Typography';
+import { Paragraph, Span } from 'app/components/Typography';
 
 const CardHeader = styled(Box)(() => ({
   display: 'flex',
@@ -64,11 +65,16 @@ const TopSellingTable = () => {
   return (
     <Card elevation={3} sx={{ pt: '20px', mb: 3 }}>
       <CardHeader>
-        <Title>top selling products</Title>
-        <Select size="small" defaultValue="this_month">
+        <Title>Recent Transactions</Title>
+        {
+          /* <Select size="small" defaultValue="this_month">
           <MenuItem value="this_month">This Month</MenuItem>
           <MenuItem value="last_month">Last Month</MenuItem>
-        </Select>
+        </Select> */
+          <Button color="primary" variant="contained" type="submit">
+            <Span sx={{ pl: 1, textTransform: 'capitalize' }}>View All Transactions</Span>
+          </Button>
+        }
       </CardHeader>
 
       <Box overflow="auto">
@@ -79,7 +85,7 @@ const TopSellingTable = () => {
                 Name
               </TableCell>
               <TableCell sx={{ px: 0 }} colSpan={2}>
-                Revenue
+                Amount
               </TableCell>
               <TableCell sx={{ px: 0 }} colSpan={2}>
                 Stock Status
