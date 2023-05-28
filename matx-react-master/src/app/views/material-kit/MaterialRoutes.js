@@ -38,8 +38,8 @@ const ApplyLoan = Loadable(lazy(() => import('./loans/ApplyLoan')));
 const ViewPayLoans = Loadable(lazy(() => import('./loans/ViewPayLoans')));
 const ViewRedeemPoints = Loadable(lazy(() => import('../points/ViewRedeemPoints')));
 const ViewAllTransactions = Loadable(lazy(() => import('../ViewAllTrans/ViewAllTransactions')));
-const SettingsPage = Loadable(lazy(() => import('../settings/SettingsPage')));
-const PasswordPage = Loadable(lazy(() => import('../settings/PasswordPage')));
+const SettingsPage = Loadable(lazy(() => import('../Settings/SettingsPage')));
+const PasswordPage = Loadable(lazy(() => import('../Settings/PasswordPage')));
 const FAQPage = Loadable(lazy(() => import('../faq/FAQPage')));
 
 const materialRoutes = [
