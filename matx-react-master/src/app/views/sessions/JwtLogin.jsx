@@ -65,26 +65,36 @@ const JwtLogin = () => {
   //   }
   // };
 
+  const [userType, setUserType] = useState(CurrentUserType.getUserType());
+
+  function changeUserType(type) {
+    CurrentUserType.setUserType(type);
+    setUserType(CurrentUserType.getUserType());
+  }
+
   const handleFormSubmit = async (values) => {
     setLoading(true);
     try {
       await login(values.email, values.password);
+      console.log(CurrentUserType.getUserType());
       switch (values.password) {
         case 'pass123': {
-          navigate('/dashboard_banker');
-          CurrentUserType.userType = 'banker';
+          // navigate('/dashboard_banker');
+          changeUserType('banker');
           break;
         }
         case 'pass456': {
-          navigate('/material/bank/OpenBankAccount');
-          CurrentUserType.userType = 'client';
+          // navigate('/material/bank/OpenBankAccount');
+          changeUserType('client');
           break;
         }
         default: {
-          CurrentUserType.userType = 'admin';
-          navigate('/');
+          changeUserType('admin');
+          // navigate('/');
         }
       }
+      console.log(CurrentUserType.getUserType());
+      navigate('/');
     } catch (e) {
       setLoading(false);
     }
