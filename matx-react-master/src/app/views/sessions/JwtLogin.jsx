@@ -94,7 +94,7 @@ const JwtLogin = () => {
         }
       }
       console.log(CurrentUserType.getUserType());
-      navigate('/');
+      navigate('/dashboard/default');
     } catch (e) {
       setLoading(false);
     }
