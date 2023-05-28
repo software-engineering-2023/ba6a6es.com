@@ -42,7 +42,7 @@ const initialValues = {
 // form field validation schema
 const validationSchema = Yup.object().shape({
   password: Yup.string()
-    .min(6, 'Password must be 6 character length')
+    .min(6, 'Password must be 6 characters long')
     .required('Password is required!'),
   email: Yup.string().email('Invalid Email address').required('Email is required!'),
 });
@@ -149,7 +149,7 @@ const JwtLogin = () => {
                         to="/session/forgot-password"
                         style={{ color: theme.palette.primary.main }}
                       >
-                        Forgot password?
+                        Forgotten password?
                       </NavLink>
                     </FlexBox>
 

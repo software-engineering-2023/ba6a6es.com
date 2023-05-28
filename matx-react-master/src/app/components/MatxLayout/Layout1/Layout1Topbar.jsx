@@ -123,7 +123,14 @@ const Layout1Topbar = () => {
             <NotificationBar />
           </NotificationProvider>
 
-          <ShoppingCart />
+          {/* <ShoppingCart /> */}
+
+          {/* FAQ button*/}
+          <IconButton>
+            <Link to="/material/faq/FAQPage">
+              <Icon sx={{ color: theme.palette.text.primary }}>live_help</Icon>
+            </Link>
+          </IconButton>
 
           <MatxMenu
             menuButton={

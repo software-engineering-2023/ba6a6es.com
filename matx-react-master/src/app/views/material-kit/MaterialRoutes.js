@@ -38,8 +38,9 @@ const ApplyLoan = Loadable(lazy(() => import('./loans/ApplyLoan')));
 const ViewPayLoans = Loadable(lazy(() => import('./loans/ViewPayLoans')));
 const ViewRedeemPoints = Loadable(lazy(() => import('../points/ViewRedeemPoints')));
 const ViewAllTransactions = Loadable(lazy(() => import('../ViewAllTrans/ViewAllTransactions')));
-const SettingsPage = Loadable(lazy(() => import('../Settings/SettingsPage')));
-const PasswordPage = Loadable(lazy(() => import('../Settings/PasswordPage')));
+const SettingsPage = Loadable(lazy(() => import('../settings/SettingsPage')));
+const PasswordPage = Loadable(lazy(() => import('../settings/PasswordPage')));
+const FAQPage = Loadable(lazy(() => import('../faq/FAQPage')));
 
 const materialRoutes = [
   {
@@ -153,8 +154,6 @@ const materialRoutes = [
   {
     path: '/material/loans/ViewPayLoan',
     element: <ViewPayLoans />,
-    path: '/material/loans/ViewPayLoans',
-    element: <ViewPayLoans />,
   },
   {
     path: '/material/points/ViewRedeemPoints',
@@ -164,6 +163,18 @@ const materialRoutes = [
   {
     path: '/material/ViewAllTrans/ViewAllTransactions',
     element: <ViewAllTransactions />,
+  },
+  {
+    path: '/material/settings/SettingsPage',
+    element: <SettingsPage />,
+  },
+  {
+    path: '/material/settings/PasswordPage',
+    element: <PasswordPage />,
+  },
+  {
+    path: '/material/faq/FAQPage',
+    element: <FAQPage />,
   },
 ];
 
