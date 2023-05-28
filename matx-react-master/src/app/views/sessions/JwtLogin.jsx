@@ -54,11 +54,30 @@ const JwtLogin = () => {
 
   const { login } = useAuth();
 
+  // const handleFormSubmit = async (values) => {
+  //   setLoading(true);
+  //   try {
+  //     await login(values.email, values.password);
+  //     navigate('/');
+  //   } catch (e) {
+  //     setLoading(false);
+  //   }
+  // };
+
   const handleFormSubmit = async (values) => {
     setLoading(true);
     try {
       await login(values.email, values.password);
-      navigate('/');
+      switch (values.password) {
+        case 'pass123':
+          navigate('/dashboard_banker');
+          break;
+        case 'pass456':
+          navigate('/material/bank/OpenBankAccount');
+          break;
+        default:
+          navigate('/');
+      }
     } catch (e) {
       setLoading(false);
     }
