@@ -1,6 +1,6 @@
-import { DatePicker } from "@mui/lab";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import { DatePicker } from '@mui/lab';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import {
   Button,
   Checkbox,
@@ -10,26 +10,29 @@ import {
   Radio,
   RadioGroup,
   styled,
-} from "@mui/material";
-import { Span } from "app/components/Typography";
-import { useEffect, useState } from "react";
-import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
+} from '@mui/material';
+import { Span } from 'app/components/Typography';
+import { useEffect, useState } from 'react';
+import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
+import SelectedMenu from '../menu/SelectedMenu';
+import { Balance } from '@mui/icons-material';
+import BankAccountDetails from '../bank/BankAccountDetails';
 
 const TextField = styled(TextValidator)(() => ({
-  width: "100%",
-  marginBottom: "16px",
+  width: '100%',
+  marginBottom: '16px',
 }));
 
 const MakeInternationalBankTransfer = () => {
   const [state, setState] = useState({ date: new Date() });
 
   useEffect(() => {
-    ValidatorForm.addValidationRule("isPasswordMatch", (value) => {
+    ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
       if (value !== state.password) return false;
 
       return true;
     });
-    return () => ValidatorForm.removeValidationRule("isPasswordMatch");
+    return () => ValidatorForm.removeValidationRule('isPasswordMatch');
   }, [state.password]);
 
   const handleSubmit = (event) => {
@@ -43,149 +46,274 @@ const MakeInternationalBankTransfer = () => {
   };
 
   const handleDateChange = (date) => setState({ ...state, date });
-
-  const {
-    username,
-    firstName,
-    creditCard,
-    mobile,
-    password,
-    confirmPassword,
-    gender,
-    date,
-    email,
-  } = state;
+  const countries = [
+    'Afghanistan',
+    'Albania',
+    'Algeria',
+    'Andorra',
+    'Angola',
+    'Anguilla',
+    'Antigua &amp; Barbuda',
+    'Argentina',
+    'Armenia',
+    'Aruba',
+    'Australia',
+    'Austria',
+    'Azerbaijan',
+    'Bahamas',
+    'Bahrain',
+    'Bangladesh',
+    'Barbados',
+    'Belarus',
+    'Belgium',
+    'Belize',
+    'Benin',
+    'Bermuda',
+    'Bhutan',
+    'Bolivia',
+    'Bosnia & Herzegovina',
+    'Botswana',
+    'Brazil',
+    'British Virgin Islands',
+    'Brunei',
+    'Bulgaria',
+    'Burkina Faso',
+    'Burundi',
+    'Cambodia',
+    'Cameroon',
+    'Cape Verde',
+    'Cayman Islands',
+    'Chad',
+    'Chile',
+    'China',
+    'Colombia',
+    'Congo',
+    'Cook Islands',
+    'Costa Rica',
+    'Cote D Ivoire',
+    'Croatia',
+    'Cruise Ship',
+    'Cuba',
+    'Cyprus',
+    'Czech Republic',
+    'Denmark',
+    'Djibouti',
+    'Dominica',
+    'Dominican Republic',
+    'Ecuador',
+    'Egypt',
+    'El Salvador',
+    'Equatorial Guinea',
+    'Estonia',
+    'Ethiopia',
+    'Falkland Islands',
+    'Faroe Islands',
+    'Fiji',
+    'Finland',
+    'France',
+    'French Polynesia',
+    'French West Indies',
+    'Gabon',
+    'Gambia',
+    'Georgia',
+    'Germany',
+    'Ghana',
+    'Gibraltar',
+    'Greece',
+    'Greenland',
+    'Grenada',
+    'Guam',
+    'Guatemala',
+    'Guernsey',
+    'Guinea',
+    'Guinea Bissau',
+    'Guyana',
+    'Haiti',
+    'Honduras',
+    'Hong Kong',
+    'Hungary',
+    'Iceland',
+    'India',
+    'Indonesia',
+    'Iran',
+    'Iraq',
+    'Ireland',
+    'Isle of Man',
+    'Israel',
+    'Italy',
+    'Jamaica',
+    'Japan',
+    'Jersey',
+    'Jordan',
+    'Kazakhstan',
+    'Kenya',
+    'Kuwait',
+    'Kyrgyz Republic',
+    'Laos',
+    'Latvia',
+    'Lebanon',
+    'Lesotho',
+    'Liberia',
+    'Libya',
+    'Liechtenstein',
+    'Lithuania',
+    'Luxembourg',
+    'Macau',
+    'Macedonia',
+    'Madagascar',
+    'Malawi',
+    'Malaysia',
+    'Maldives',
+    'Mali',
+    'Malta',
+    'Mauritania',
+    'Mauritius',
+    'Mexico',
+    'Moldova',
+    'Monaco',
+    'Mongolia',
+    'Montenegro',
+    'Montserrat',
+    'Morocco',
+    'Mozambique',
+    'Namibia',
+    'Nepal',
+    'Netherlands',
+    'Netherlands Antilles',
+    'New Caledonia',
+    'New Zealand',
+    'Nicaragua',
+    'Niger',
+    'Nigeria',
+    'Norway',
+    'Oman',
+    'Pakistan',
+    'Palestine',
+    'Panama',
+    'Papua New Guinea',
+    'Paraguay',
+    'Peru',
+    'Philippines',
+    'Poland',
+    'Portugal',
+    'Puerto Rico',
+    'Qatar',
+    'Reunion',
+    'Romania',
+    'Russia',
+    'Rwanda',
+    'Saint Pierre & Miquelon',
+    'Samoa',
+    'San Marino',
+    'Satellite',
+    'Saudi Arabia',
+    'Senegal',
+    'Serbia',
+    'Seychelles',
+    'Sierra Leone',
+    'Singapore',
+    'Slovakia',
+    'Slovenia',
+    'South Africa',
+    'South Korea',
+    'Spain',
+    'Sri Lanka',
+    'St Kitts &amp; Nevis',
+    'St Lucia',
+    'St Vincent',
+    'St. Lucia',
+    'Sudan',
+    'Suriname',
+    'Swaziland',
+    'Sweden',
+    'Switzerland',
+    'Syria',
+    'Taiwan',
+    'Tajikistan',
+    'Tanzania',
+    'Thailand',
+    "Timor L'Este",
+    'Togo',
+    'Tonga',
+    'Trinidad & Tobago',
+    'Tunisia',
+    'Turkey',
+    'Turkmenistan',
+    'Turks &amp; Caicos',
+    'Uganda',
+    'Ukraine',
+    'United Arab Emirates',
+    'United Kingdom',
+    'Uruguay',
+    'Uzbekistan',
+    'Venezuela',
+    'Vietnam',
+    'Virgin Islands (US)',
+    'Yemen',
+    'Zambia',
+    'Zimbabwe',
+  ];
+  const { recieverBankAccount, amount, pin } = state;
+  const [Balance, setBalance] = useState(-1);
+  const [country, setCountry] = useState('');
 
   return (
     <div>
       <ValidatorForm onSubmit={handleSubmit} onError={() => null}>
         <Grid container spacing={6}>
           <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
-            <TextField
-              type="text"
-              name="username"
-              id="standard-basic"
-              value={username || ""}
-              onChange={handleChange}
-              errorMessages={["this field is required"]}
-              label="Username (Min length 4, Max length 9)"
-              validators={["required", "minStringLength: 4", "maxStringLength: 9"]}
+            <SelectedMenu
+              options={BankAccountDetails.map(
+                (bankAccounts) => BankAccountDetails.BankAccountData.accountNumber
+              )}
+              label={'Account number'}
+              onClick={() => setBalance(this.value.Balance)}
+            />
+
+            <SelectedMenu
+              options={{ countries }}
+              label={'Country of recepient'}
+              onClick={() => setCountry(this.value)}
             />
 
             <TextField
-              type="text"
-              name="firstName"
-              label="First Name"
-              onChange={handleChange}
-              value={firstName || ""}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
-            />
-
-            <TextField
-              type="email"
-              name="email"
-              label="Email"
-              value={email || ""}
-              onChange={handleChange}
-              validators={["required", "isEmail"]}
-              errorMessages={["this field is required", "email is not valid"]}
-            />
-
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <DatePicker
-                value={date}
-                onChange={handleDateChange}
-                renderInput={(props) => (
-                  <TextField
-                    {...props}
-                    label="Date picker"
-                    id="mui-pickers-date"
-                    sx={{ mb: 2, width: "100%" }}
-                  />
-                )}
-              />
-            </LocalizationProvider>
-
-            <TextField
-              sx={{ mb: 4 }}
               type="number"
-              name="creditCard"
-              label="Credit Card"
+              name="Account number"
+              label="Account number"
               onChange={handleChange}
-              value={creditCard || ""}
-              errorMessages={["this field is required"]}
-              validators={["required", "minStringLength:16", "maxStringLength: 16"]}
-            />
-          </Grid>
-
-          <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
-            <TextField
-              type="text"
-              name="mobile"
-              value={mobile || ""}
-              label="Mobile Nubmer"
-              onChange={handleChange}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
+              value={recieverBankAccount || ''}
+              validators={['required']}
+              errorMessages={['this field is required']}
             />
             <TextField
-              name="password"
-              type="password"
-              label="Password"
-              value={password || ""}
+              type="number"
+              name="Amount to transfer"
+              label="amount"
+              value={amount || ''}
               onChange={handleChange}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
+              validators={['required']}
+              errorMessages={['this field is required']}
             />
             <TextField
-              type="password"
-              name="confirmPassword"
+              type="number"
+              name="Pin number"
+              label="pin number to confirm"
+              value={pin || ''}
               onChange={handleChange}
-              label="Confirm Password"
-              value={confirmPassword || ""}
-              validators={["required", "isPasswordMatch"]}
-              errorMessages={["this field is required", "password didn't match"]}
+              validators={['required']}
+              errorMessages={['this field is required']}
             />
-            <RadioGroup
-              row
-              name="gender"
-              sx={{ mb: 2 }}
-              value={gender || ""}
-              onChange={handleChange}
-            >
-              <FormControlLabel
-                value="Male"
-                label="Male"
-                labelPlacement="end"
-                control={<Radio color="secondary" />}
-              />
-
-              <FormControlLabel
-                value="Female"
-                label="Female"
-                labelPlacement="end"
-                control={<Radio color="secondary" />}
-              />
-
-              <FormControlLabel
-                value="Others"
-                label="Others"
-                labelPlacement="end"
-                control={<Radio color="secondary" />}
-              />
-            </RadioGroup>
-
-            <FormControlLabel
-              control={<Checkbox />}
-              label="I have read and agree to the terms of service."
-            />
+            <Button color="primary" variant="contained" type="submit">
+              <Icon>send</Icon>
+              <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Confirm</Span>
+              onClick = {() => setBalance(Balance - amount)}
+            </Button>
           </Grid>
         </Grid>
 
         <Button color="primary" variant="contained" type="submit">
           <Icon>send</Icon>
-          <Span sx={{ pl: 1, textTransform: "capitalize" }}>Submit</Span>
+          <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Submit</Span>
         </Button>
       </ValidatorForm>
     </div>

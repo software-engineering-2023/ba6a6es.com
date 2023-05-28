@@ -59,7 +59,8 @@ const MakeDomesticBankTransferForm = () => {
                 (bankAccounts) => BankAccountDetails.BankAccountData.accountNumber
               )}
               label={'Account number'}
-              onClick={() => setBalance(BankAccountDetails.BankAccountData.accountNumber.Balance)}
+              //onClick={() => setBalance(BankAccountDetails.BankAccountData.accountNumber.Balance)}
+              onClick={() => setBalance(this.value.Balance)} //test it out 27teyaty
             />
 
             <TextField
