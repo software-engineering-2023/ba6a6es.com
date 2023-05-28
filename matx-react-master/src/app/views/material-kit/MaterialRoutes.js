@@ -165,6 +165,10 @@ const materialRoutes = [
     path: '/material/ViewAllTrans/ViewAllTransactions',
     element: <ViewAllTransactions />,
   },
+  {
+    path: '/material/Settings/SettingsPage',
+    element: <SettingsPage />,
+  },
 ];
 
 export default materialRoutes;
