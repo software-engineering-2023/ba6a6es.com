@@ -144,7 +144,7 @@ const JwtRegister = () => {
                       />
 
                       <Paragraph fontSize={13}>
-                        I have read and agree to the terms of service.
+                        I have read and agreed to the terms of service.
                       </Paragraph>
                     </FlexBox>
 
@@ -155,7 +155,7 @@ const JwtRegister = () => {
                       variant="contained"
                       sx={{ mb: 2, mt: 3 }}
                     >
-                      Regiser
+                      Register
                     </LoadingButton>
 
                     <Paragraph>
