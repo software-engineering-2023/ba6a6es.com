@@ -2,6 +2,8 @@ import { Box, Button, Card, Divider, Grid, Stack, styled, TextField } from '@mui
 import { FlexBox } from 'app/components/FlexBox';
 import { H5, Paragraph } from 'app/components/Typography';
 import { useFormik } from 'formik';
+import { useState } from 'react';
+import Alert from '../../components/Common/Alert/Alert';
 import * as Yup from 'yup';
 
 const Dot = styled(Box)(({ theme }) => ({
@@ -30,11 +32,13 @@ const Password = () => {
     ),
   });
 
+  const [submitted, setSubmitted] = useState(false);
+
   const { values, errors, handleSubmit, handleChange, handleBlur, touched } = useFormik({
     initialValues,
     validationSchema,
     onSubmit: (values) => {
-      alert('Password changed successfully');
+      setSubmitted(true);
     },
   });
 
@@ -125,6 +129,16 @@ const Password = () => {
               </FlexBox>
             </Stack>
           </Grid>
+          {submitted && (
+            <Grid item sm={6} xs={12}>
+              <Alert
+                title={'Success'}
+                description={'Password Changed Successfully'}
+                btnText={'OK'}
+                hiddenButton={true}
+              />
+            </Grid>
+          )}
         </Grid>
       </Box>
     </Card>
