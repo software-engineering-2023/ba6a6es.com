@@ -1,4 +1,14 @@
-import { Box, Card, Grid, Icon, IconButton, styled, Tooltip } from '@mui/material';
+import {
+  Box,
+  Card,
+  Grid,
+  Icon,
+  IconButton,
+  styled,
+  Tooltip,
+  MenuItem,
+  Select,
+} from '@mui/material';
 import { Small } from 'app/components/Typography';
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -15,44 +25,48 @@ const ContentBox = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexWrap: 'wrap',
   alignItems: 'center',
-  '& small': { color: theme.palette.text.secondary },
-  '& .icon': { opacity: 0.6, fontSize: '44px', color: theme.palette.primary.main },
+  '& small': { color: '#000000' },
+  '& .icon': { opacity: 2, fontSize: '50px', color: theme.palette.primary.main },
 }));
 
 const Heading = styled('h6')(({ theme }) => ({
   margin: 0,
   marginTop: '4px',
-  fontSize: '14px',
+  fontSize: '40px',
   fontWeight: '500',
   color: theme.palette.primary.main,
 }));
 
 const StatCards = () => {
   const cardList = [
-    { name: 'New Leads', amount: 3050, icon: 'group' },
-    { name: 'This week Sales', amount: '$80,500', icon: 'attach_money' },
-    { name: 'Inventory Status', amount: '8.5% Stock Surplus', icon: 'store' },
-    { name: 'Orders to deliver', amount: '305 Orders', icon: 'shopping_cart' },
+    { name: 'Account No.', amount: '100023114560', icon: 'person' },
+    { name: 'Balance', amount: '50.240k', icon: 'local_atm' },
   ];
 
   return (
-    <Grid container spacing={3} sx={{ mb: '24px' }}>
+    <Grid container spacing={3} sx={{ mb: '15px' }}>
       {cardList.map((item, index) => (
-        <Grid item xs={12} md={6} key={index}>
-          <StyledCard elevation={6}>
+        <Grid item xs={7} md={12} key={index}>
+          <StyledCard elevation={5}>
             <ContentBox>
               <Icon className="icon">{item.icon}</Icon>
-              <Box ml="12px">
+              <Box ml="32px">
                 <Small>{item.name}</Small>
                 <Heading>{item.amount}</Heading>
               </Box>
             </ContentBox>
 
-            <Tooltip title="View Details" placement="top">
-              <IconButton>
-                <Icon>arrow_right_alt</Icon>
-              </IconButton>
-            </Tooltip>
+            {
+              <Tooltip title="Switch Account" placement="top">
+                {/* //   <IconButton>
+              //     <Icon>arrow_right_alt</Icon>
+              //   </IconButton> */}
+                <Select size="small" defaultValue="main account">
+                  <MenuItem value="main account">Main account</MenuItem>
+                  <MenuItem value="secondary account">Secondary account</MenuItem>
+                </Select>
+              </Tooltip>
+            }
           </StyledCard>
         </Grid>
       ))}

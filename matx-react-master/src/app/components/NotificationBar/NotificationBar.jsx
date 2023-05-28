@@ -5,7 +5,7 @@ import useSettings from 'app/hooks/useSettings';
 import { sideNavWidth, topBarHeight } from 'app/utils/constant';
 import { getTimeDifference } from 'app/utils/utils.js';
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate,Routes,Route } from 'react-router-dom';
 import { themeShadows } from '../MatxTheme/themeColors';
 import { Paragraph, Small } from '../Typography';
 
@@ -78,6 +78,16 @@ const NotificationBar = ({ container }) => {
   const handleDrawerToggle = () => {
     setPanelOpen(!panelOpen);
   };
+  const navigate = useNavigate();
+
+  const  showAllNotifications =() => {
+    //I want this to call a page that has all the notifications, filter, add its path
+   
+    navigate("/dashboard/notification");
+    handleDrawerToggle();
+    
+
+  };
 
   const { palette } = useTheme();
   const textColor = palette.text.primary;
@@ -148,6 +158,9 @@ const NotificationBar = ({ container }) => {
                 <Button onClick={clearNotifications}>Clear Notifications</Button>
               </Box>
             )}
+          </Box>
+          <Box sx={{color: 'primary'}}>
+            <Button style={{color: "darkblue"}} onClick={showAllNotifications}>View All Notifications</Button>
           </Box>
         </Drawer>
       </ThemeProvider>

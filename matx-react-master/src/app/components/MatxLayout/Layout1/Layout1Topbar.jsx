@@ -123,7 +123,14 @@ const Layout1Topbar = () => {
             <NotificationBar />
           </NotificationProvider>
 
-          <ShoppingCart />
+          {/* <ShoppingCart /> */}
+
+          {/* FAQ button*/}
+          <IconButton>
+            <Link to="/material/faq/FAQPage">
+              <Icon sx={{ color: theme.palette.text.primary }}>live_help</Icon>
+            </Link>
+          </IconButton>
 
           <MatxMenu
             menuButton={
@@ -152,8 +159,10 @@ const Layout1Topbar = () => {
             </StyledItem>
 
             <StyledItem>
-              <Icon> settings </Icon>
-              <Span> Settings </Span>
+              <Link to="/material/settings/SettingsPage">
+                <Icon> settings </Icon>
+                <Span> Settings </Span>
+              </Link>
             </StyledItem>
 
             <StyledItem onClick={logout}>
