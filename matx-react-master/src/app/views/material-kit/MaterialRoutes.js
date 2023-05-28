@@ -169,6 +169,10 @@ const materialRoutes = [
     path: '/material/Settings/SettingsPage',
     element: <SettingsPage />,
   },
+  {
+    path: '/material/Settings/PasswordPage',
+    element: <PasswordPage />,
+  },
 ];
 
 export default materialRoutes;
