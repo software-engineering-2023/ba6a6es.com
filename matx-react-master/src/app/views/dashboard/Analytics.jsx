@@ -1,15 +1,8 @@
-import { Card, Grid, styled, useTheme, Button } from '@mui/material';
+import { Card, Grid, styled, useTheme, Button, Icon } from '@mui/material';
 import { Fragment } from 'react';
-import Campaigns from './shared/Campaigns';
-import DoughnutChart from './shared/Doughnut';
-import RowCards from './shared/RowCards';
 import StatCards from './shared/StatCards';
 import StatCards2 from './shared/StatCards2';
-import TopSellingTable from './shared/TopSellingTable';
-import UpgradeCard from './shared/UpgradeCard';
-import SimpleTable from '../material-kit/tables/SimpleTable';
 import { Span } from 'app/components/Typography';
-import Icon from '@mui/material';
 import TransactionTable from '../material-kit/tables/TransactionTable';
 import ReminderTable from '../material-kit/tables/ReminderTable';
 import { Link } from 'react-router-dom';
