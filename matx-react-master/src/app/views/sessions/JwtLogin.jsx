@@ -55,16 +55,36 @@ const JwtLogin = () => {
 
   const { login } = useAuth();
 
+  // const handleFormSubmit = async (values) => {
+  //   setLoading(true);
+  //   try {
+  //     await login(values.email, values.password);
+  //     navigate('/');
+  //   } catch (e) {
+  //     setLoading(false);
+  //   }
+  // };
+
   const handleFormSubmit = async (values) => {
     setLoading(true);
     try {
       await login(values.email, values.password);
-      if (values.password === '12345678') {
-        CurrentUserType.userType = 'admin';
-      } else {
-        CurrentUserType.userType = 'client';
+      switch (values.password) {
+        case 'pass123': {
+          navigate('/dashboard_banker');
+          CurrentUserType.userType = 'banker';
+          break;
+        }
+        case 'pass456': {
+          navigate('/material/bank/OpenBankAccount');
+          CurrentUserType.userType = 'client';
+          break;
+        }
+        default: {
+          CurrentUserType.userType = 'admin';
+          navigate('/');
+        }
       }
-      navigate('/');
     } catch (e) {
       setLoading(false);
     }
