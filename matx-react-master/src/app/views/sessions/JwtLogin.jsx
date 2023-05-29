@@ -86,20 +86,21 @@ const JwtLogin = () => {
         }
         case 'pass456': {
           // navigate('/material/bank/OpenBankAccount');
+          navigate('/');
           changeUserType('client');
           break;
         }
         default:
           changeUserType('admin');
-        // navigate('/');
+          navigate('/dashboard/dashboard_test2/default');
       }
-      console.log(CurrentUserType.getUserType());
+      // console.log(CurrentUserType.getUserType());
 
-      // if (CurrentUserType.getUserType === 'banker') {
-      //   navigate('/material/bank/OpenBankAccount');
-      // }
-      console.log(CurrentUserType.getUserType());
-      // navigate('/');
+      // // if (CurrentUserType.getUserType === 'banker') {
+      // //   navigate('/material/bank/OpenBankAccount');
+      // // }
+
+      // // navigate('/');
     } catch (e) {
       setLoading(false);
     }
