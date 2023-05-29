@@ -1,13 +1,13 @@
-import { Box, styled } from "@mui/material";
-import { Breadcrumb, SimpleCard } from "app/components";
-import OpenBankAccountRequestsTable from "app/views/material-kit/tables/OpenBankAccountRequestsTable";
+import { Box, styled } from '@mui/material';
+import { Breadcrumb, SimpleCard } from 'app/components';
+import OpenBankAccountRequestsTable from 'app/views/material-kit/tables/OpenBankAccountRequestsTable';
 
-const Container = styled("div")(({ theme }) => ({
-  margin: "30px",
-  [theme.breakpoints.down("sm")]: { margin: "16px" },
-  "& .breadcrumb": {
-    marginBottom: "30px",
-    [theme.breakpoints.down("sm")]: { marginBottom: "16px" },
+const Container = styled('div')(({ theme }) => ({
+  margin: '30px',
+  [theme.breakpoints.down('sm')]: { margin: '16px' },
+  '& .breadcrumb': {
+    marginBottom: '30px',
+    [theme.breakpoints.down('sm')]: { marginBottom: '16px' },
   },
 }));
 
@@ -18,11 +18,9 @@ const OpenAccountRequests = () => {
         <Breadcrumb routeSegments={[{ name: "Requests", path: "/banker/OpenAccountRequests  " }]} />
       </Box>
 
-      <SimpleCard title="Open Bank Account Requests Table">
+      <SimpleCard title="Open Account Requests Table">
         <OpenBankAccountRequestsTable />
       </SimpleCard>
-
-      
     </Container>
   );
 };

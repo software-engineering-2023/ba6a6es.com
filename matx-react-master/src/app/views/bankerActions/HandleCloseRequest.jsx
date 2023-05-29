@@ -2,8 +2,8 @@ import { Divider, styled, Tab, Tabs } from '@mui/material';
 import { Breadcrumb } from 'app/components';
 import { useState } from 'react';
 
-import UserFinancialStatus from './openRequestStuff/UserFinancialStatus';
-import UserPersonalInfo from './openRequestStuff/UserPersonalInfo';
+import UserFinancialStatus from './CloseRequestStuff/UserFinancialStatus';
+import UserPersonalInfo from './CloseRequestStuff/UserPersonalInfo';
 
 const Container = styled('div')(({ theme }) => ({
   margin: '30px',
@@ -14,7 +14,7 @@ const Container = styled('div')(({ theme }) => ({
   },
 }));
 
-const HandleOpenRequest = () => {
+const HandleCloseRequest = () => {
   const [tabIndex, setTabIndex] = useState(0);
 
   const handleTabChange = (e, value) => setTabIndex(value);
@@ -26,6 +26,7 @@ const HandleOpenRequest = () => {
           routeSegments={[{ name: 'Pages', path: '/pages' }, { name: 'View Customer' }]}
         />
       </div>
+
       <Tabs
         sx={{ mt: 2 }}
         value={tabIndex}
@@ -46,6 +47,6 @@ const HandleOpenRequest = () => {
   );
 };
 
-const tabList = ['PersonalInfo', 'Other Loans/Credit Cards'];
+const tabList = ['Personal Info', 'Other Credit Cards/Loans'];
 
-export default HandleOpenRequest;
+export default HandleCloseRequest;

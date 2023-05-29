@@ -1,4 +1,4 @@
-import { Check, Cancel } from '@mui/icons-material';
+import { LockOpen, Person } from '@mui/icons-material';
 import {
   Avatar,
   Button,
@@ -12,6 +12,7 @@ import {
 } from '@mui/material';
 import { FlexBetween, FlexBox } from 'app/components/FlexBox';
 import { H4, Small } from 'app/components/Typography';
+import CustomerBillings from './CustomerBillings';
 
 const ContentBox = styled(FlexBox)({
   alignItems: 'center',
@@ -23,7 +24,6 @@ const StyedSmall = styled(Small)({
   padding: '2px 4px',
   borderRadius: '4px',
   background: 'rgba(9, 182, 109, 0.15)',
-  fontSize: '12px',
 });
 
 const StyledButton = styled(Button)(({ theme }) => ({
@@ -32,12 +32,12 @@ const StyledButton = styled(Button)(({ theme }) => ({
   ':hover': { background: 'transparent' },
 }));
 
-const CardInfo = () => {
+const UserPersonalInfo = () => {
   return (
     <Card sx={{ pt: 3 }} elevation={3}>
       <ContentBox mb={3} alignContent="center">
-        {/* <H4 sx={{ mt: '16px', mb: '8px' }}>Ben Peterson</H4> */}
-        <Small color="text.primary">Loan Details</Small>
+        <H4 sx={{ mt: '16px', mb: '8px' }}>Ahmed Mohamed</H4>
+        <Small color="text.secondary">Computer Scientist</Small>
       </ContentBox>
 
       <Divider />
@@ -45,9 +45,10 @@ const CardInfo = () => {
       <Table>
         <TableBody>
           {/* <TableRow>
-            <TableCell sx={{ pl: 2 }}>Card Number</TableCell>
+            <TableCell sx={{ pl: 2 }}>Email</TableCell>
             <TableCell>
-              <div> **** **** **** 1234 </div>
+              <div>ui-lib@example.com</div>
+              <StyedSmall>Email Verified</StyedSmall>
             </TableCell>
           </TableRow> */}
 
@@ -61,22 +62,25 @@ const CardInfo = () => {
       </Table>
 
       <FlexBetween p={2}>
-        <StyledButton disableRipple startIcon={<Check fontSize="small" />}>
-          Accept Loan Request
+        <StyledButton disableRipple startIcon={<LockOpen fontSize="small" />}>
+          Reset & Send Password
         </StyledButton>
-        <StyledButton disableRipple startIcon={<Cancel fontSize="small" />}>
-          Reject Loan Request
+
+        <StyledButton disableRipple startIcon={<Person fontSize="small" />}>
+          Login as Customer
         </StyledButton>
       </FlexBetween>
+      <CustomerBillings />
     </Card>
   );
 };
 
 const customerInfo = [
-  { title: 'Loan Amount', value: 'EGP 500000' },
-  { title: 'Loan Type', value: 'Personal Loan' },
-  { title: 'Duration', value: '50 months' },
-  { title: 'Interest Rate', value: '1%' },
+  { title: 'Phone', value: '01236565798' },
+  { title: 'Country', value: 'Egypt' },
+  { title: 'City', value: 'Cairo' },
+  { title: 'Address 1', value: 'AlRehab, Group99' },
+  { title: 'email ', value: 'Ahmed-2002@gmail.com' },
 ];
 
-export default CardInfo;
+export default UserPersonalInfo;

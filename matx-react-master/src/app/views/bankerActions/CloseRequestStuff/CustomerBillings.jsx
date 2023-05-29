@@ -21,7 +21,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 const CustomerBillings = () => {
   return (
     <Card elevation={3}>
-      <H4 sx={{ p: 2 }}>Credit Card Details</H4>
+      <H4 sx={{ p: 2 }}>Account Details</H4>
       <Divider />
 
       <Table>
@@ -34,29 +34,14 @@ const CustomerBillings = () => {
           ))}
         </TableBody>
       </Table>
-
-      <FlexBetween p={2}>
-        <StyledButton disableRipple startIcon={<AttachMoney fontSize="small" />}>
-          Create Invoice
-        </StyledButton>
-
-        <StyledButton disableRipple startIcon={<Receipt fontSize="small" />}>
-          Resend Due Invoices
-        </StyledButton>
-      </FlexBetween>
     </Card>
   );
 };
 
 const customerInfo = [
-  { title: 'AllowancePerMonth', value: '50k egp' },
-  { title: 'Type', value: 'platinum' },
-  { title: 'DateOfRequest', value: '20-4-2023' },
-  { title: 'Payment method preference', value: 'Cash' },
-  // { title: "Draft", value: "2 ($150.00)" },
-  // { title: "Unpaid/Due", value: "1 ($355.00)" },
-  // { title: "Refunded", value: "0 ($0.00)" },
-  // { title: "Gross Income", value: "$2,100.00" },
+  { title: 'Account Number', value: '1107876543' },
+  { title: 'Has Pending Payments', value: 'yes' },
+  { title: 'Open Date', value: '20-9-2019' },
 ];
 
 export default CustomerBillings;
