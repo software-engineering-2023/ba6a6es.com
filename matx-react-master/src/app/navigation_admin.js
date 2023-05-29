@@ -1,6 +1,6 @@
 export const navigation_admin = [
   // TODO: DO NOT FORGET TO CHANGE THE PATH
-  { name: 'Dashboard', path: '/dashboard/dashboard_test2/default', icon: 'dashboard' },
+  { name: 'Dashboard', path: '/dashboard/admin/default', icon: 'dashboard' },
   { label: 'PAGES', type: 'label' },
   {
     name: 'Session/Auth',

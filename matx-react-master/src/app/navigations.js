@@ -1,5 +1,5 @@
 export const navigations = [
-  { name: 'Dashboard', path: '/dashboard/default', icon: 'dashboard' },
+  { name: 'Dashboard', path: '/dashboard/client/default', icon: 'dashboard' },
   { label: 'PAGES', type: 'label' },
   {
     name: 'Session/Auth',
@@ -59,8 +59,6 @@ export const navigations = [
       { name: 'Apply', path: '/creditCard/ApplyCreditCard', iconText: 'A' },
       { name: 'Report', path: '/creditCard/ReportCreditCard', iconText: 'B' },
       { name: 'Transactions', path: '/creditCard/CreditCardTransactions', iconText: 'A' },
-      
-      
     ],
   },
   //{ label: 'Loans', type: 'label' },
@@ -78,17 +76,13 @@ export const navigations = [
     name: 'Bills',
     icon: 'money',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
-    children: [
-      { name: 'View', path: '/bills/ViewBill', iconText: 'B' },
-      
-      
-    ],
+    children: [{ name: 'View', path: '/bills/ViewBill', iconText: 'B' }],
   },
   //{ label: 'Points', type: 'label' },
   {
     name: 'Points',
     icon: 'star',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
-    children: [{ name: 'View/Redeem', path: '/points/ViewRedeemPoints', iconText: 'B' }],
+    children: [{ name: 'Redeem', path: '/points/ViewRedeemPoints', iconText: 'B' }],
   },
 ];

@@ -1,10 +1,18 @@
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, useLocation } from 'react-router-dom';
+import CurrentUserType from 'app/CurrentUserType';
 
 const Redirect = () => {
   let location = useLocation();
 
   // Get redirect location or provide fallback
-  const from = location.state?.from || "/dashboard/default";
+  const from =
+    location.state?.from || CurrentUserType.getUserType() === 'client'
+      ? '/dashboard/client/default'
+      : CurrentUserType.getUserType() === 'banker'
+      ? '/dashboard/banker/default'
+      : CurrentUserType.getUserType() === 'admin'
+      ? '/dashboard/admin/default'
+      : '/';
 
   // console.log(from);
 

@@ -1,5 +1,6 @@
 import { Breadcrumbs, Hidden, Icon, styled, useTheme } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import CurrentUserType from 'app/CurrentUserType';
 
 const BreadcrumbRoot = styled('div')(() => ({
   display: 'flex',
@@ -50,7 +51,17 @@ const Breadcrumb = ({ routeSegments }) => {
         separator={<Icon sx={{ color: hint }}>navigate_next</Icon>}
         sx={{ display: 'flex', alignItems: 'center', position: 'relative' }}
       >
-        <NavLink to="/">
+        <NavLink
+          to={
+            CurrentUserType.getUserType() === 'client'
+              ? '/dashboard/client/default'
+              : CurrentUserType.getUserType() === 'banker'
+              ? '/dashboard/banker/default'
+              : CurrentUserType.getUserType() === 'admin'
+              ? '/dashboard/admin/default'
+              : '/dashboard/client/default'
+          }
+        >
           <StyledIcon color="primary">home</StyledIcon>
         </NavLink>
 

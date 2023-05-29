@@ -1,13 +1,13 @@
-import { Box, styled } from "@mui/material";
-import { Breadcrumb, SimpleCard } from "app/components";
-import CloseBankAccountTable from "app/views/material-kit/tables/CloseBankAccountTable";
+import { Box, styled } from '@mui/material';
+import { Breadcrumb, SimpleCard } from 'app/components';
+import CloseBankAccountTable from 'app/views/material-kit/tables/CloseBankAccountTable';
 
-const Container = styled("div")(({ theme }) => ({
-  margin: "30px",
-  [theme.breakpoints.down("sm")]: { margin: "16px" },
-  "& .breadcrumb": {
-    marginBottom: "30px",
-    [theme.breakpoints.down("sm")]: { marginBottom: "16px" },
+const Container = styled('div')(({ theme }) => ({
+  margin: '30px',
+  [theme.breakpoints.down('sm')]: { margin: '16px' },
+  '& .breadcrumb': {
+    marginBottom: '30px',
+    [theme.breakpoints.down('sm')]: { marginBottom: '16px' },
   },
 }));
 
@@ -15,14 +15,14 @@ const CloseBankAccount = () => {
   return (
     <Container>
       <Box className="breadcrumb">
-        <Breadcrumb routeSegments={[{ name: "Material", path: "/material" }, { name: "Table" }]} />
+        <Breadcrumb
+          routeSegments={[{ name: 'Material', path: '/material' }, { name: 'Close Bank Account' }]}
+        />
       </Box>
 
       <SimpleCard title="Close Bank Account Table">
         <CloseBankAccountTable />
       </SimpleCard>
-
-      
     </Container>
   );
 };

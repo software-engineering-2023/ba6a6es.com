@@ -13,7 +13,6 @@ import { H2 } from 'app/components/Typography';
 
 const Analytics_banker = () => {
   const { palette } = useTheme();
-
   return (
     <Grid container spacing={3}>
       <Grid item lg={8} md={8} sm={12} xs={12}>
