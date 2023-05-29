@@ -1,11 +1,9 @@
 import { Divider, styled, Tab, Tabs } from '@mui/material';
 import { Breadcrumb } from 'app/components';
 import { useState } from 'react';
-import CustomerDetails from './CustomerDetails';
-import CustomerInvoice from './CustomerInvoice';
-import CustomerLogs from './CustomerLogs';
-import UserPersonalInfo from './CardReqStuff/UserPersonalInfo';
+
 import UserFinancialStatus from './CardReqStuff/UserFinancialStatus';
+import UserPersonalInfo from './CardReqStuff/UserPersonalInfo';
 import CustomerBillings from './CardReqStuff/CustomerBillings';
 
 const Container = styled('div')(({ theme }) => ({
@@ -17,7 +15,7 @@ const Container = styled('div')(({ theme }) => ({
   },
 }));
 
-const CustomerViewer = () => {
+const HandleCardRequest = () => {
   const [tabIndex, setTabIndex] = useState(0);
 
   const handleTabChange = (e, value) => setTabIndex(value);
@@ -29,6 +27,7 @@ const CustomerViewer = () => {
           routeSegments={[{ name: 'Pages', path: '/pages' }, { name: 'View Customer' }]}
         />
       </div>
+
       <Tabs
         sx={{ mt: 2 }}
         value={tabIndex}
@@ -42,13 +41,14 @@ const CustomerViewer = () => {
       </Tabs>
       <Divider sx={{ mb: '24px' }} />
 
-      {tabIndex === 0 && <CustomerDetails />}
-      {tabIndex === 1 && <CustomerInvoice />}
+      {tabIndex === 0 && <UserPersonalInfo />}
+      {tabIndex === 1 && <UserPersonalInfo />}
       {/* {tabIndex === 2 && <CustomerLogs />} */}
+      <CustomerBillings />
     </Container>
   );
 };
 
 const tabList = ['Personal Info', 'Other Credit Cards/Loans'];
 
-export default CustomerViewer;
+export default HandleCardRequest;
