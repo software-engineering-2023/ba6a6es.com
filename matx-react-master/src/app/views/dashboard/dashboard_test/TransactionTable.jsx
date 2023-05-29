@@ -98,7 +98,7 @@ const TransactionTable = ({ subscribarList }) => {
                   variant="contained"
                   type="submit"
                   component={Link}
-                  to="/material/ViewAllTrans/ViewAllTransactions"
+                  to="/ViewAllTrans/ViewAllTransactions"
                 >
                   <Span sx={{ pl: 1, textTransform: 'capitalize' }}>{subscriber.text}</Span>
                 </Button>

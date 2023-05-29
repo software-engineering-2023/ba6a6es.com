@@ -127,7 +127,7 @@ const Layout1Topbar = () => {
 
           {/* FAQ button*/}
           <IconButton>
-            <Link to="/material/faq/FAQPage">
+            <Link to="/faq/FAQPage">
               <Icon sx={{ color: theme.palette.text.primary }}>live_help</Icon>
             </Link>
           </IconButton>
@@ -159,7 +159,7 @@ const Layout1Topbar = () => {
             </StyledItem>
 
             <StyledItem>
-              <Link to="/material/settings/SettingsPage">
+              <Link to="/settings/SettingsPage">
                 <Icon> settings </Icon>
                 <Span> Settings </Span>
               </Link>
