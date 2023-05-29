@@ -31,12 +31,9 @@ const Analytics = () => {
         <Grid container spacing={3}>
           <Grid item lg={8} md={8} sm={12} xs={12}>
             {<StatCards />}
-            {/* /* <TopSellingTable /> */}
 
-            {/* <H4>Recent Transaction</H4> */}
             <Card sx={{ px: 3, py: 2, mb: 3 }}>
               <Title>Recent Transactions </Title>
-              {/* <SubTitle>Stats and Reminders</SubTitle> */}
 
               <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '8px' }}>
                 <Button
@@ -60,50 +57,35 @@ const Analytics = () => {
                 subscribarList={[
                   {
                     // name: 'john doe',
-                    icon: 'arrow_downward',
+                    icon: 'arrow_upward',
                     date: '18-5-2023',
                     amount: 1000,
                     type: 'Bill(Water)',
                   },
                   {
-                    //name: 'kessy bryan',
-                    icon: 'arrow_downward',
+                    icon: 'arrow_upward',
                     date: '18-5-2023',
                     amount: 9000,
                     type: 'Transfer(local)',
-                    // company: 'My Fintech LTD.',
                   },
                   {
-                    //name: 'james cassegne',
-                    icon: 'arrow_upward',
+                    icon: 'arrow_downward',
                     date: '16-5-2023',
                     amount: 500,
                     type: 'Debited(Cash)',
-                    // company: 'Collboy Tech LTD.',
                   },
                   {
-                    //name: 'lucy brown',
-                    icon: 'arrow_upward',
+                    icon: 'arrow_downward',
                     date: '10-5-2023',
                     amount: 1050,
                     type: 'Debited(Cash)',
-                    // company: 'ABC Fintech LTD.',
                   },
                   {
-                    //name: 'lucy brown',
-                    icon: 'arrow_downward',
+                    icon: 'arrow_upward',
                     date: '9-5-2023',
                     amount: 10800,
                     type: 'Credited(PayPal)',
-                    // company: 'ABC Fintech LTD.',
                   },
-                  // {
-                  //   //name: 'lucy brown',
-                  //   date: '18-5-2023',
-                  //   amount: 89000,
-                  //   status: 'open',
-                  //   company: 'ABC Fintech LTD.',
-                  // },
                 ]}
               />
             </Card>
@@ -129,50 +111,30 @@ const Analytics = () => {
                 <ReminderTable
                   subscribarList={[
                     {
-                      // name: 'john doe',
                       icon: 'credit_card',
                       dueDate: '18-6-2023',
                       amount: 5500,
-                      //type: 'Bill(Water)',
                     },
                     {
-                      //name: 'kessy bryan',
                       icon: 'account_balance',
                       dueDate: '20-6-2023',
                       amount: '10k',
-                      //type: 'Transfer(local)',
-                      // company: 'My Fintech LTD.',
                     },
                     {
-                      //name: 'james cassegne',
-                      icon: 'arrow_upward',
+                      icon: 'money',
                       dueDate: '22-6-2023',
                       amount: 500,
-                      //type: 'Debited(Cash)',
-                      // company: 'Collboy Tech LTD.',
                     },
                     {
-                      //name: 'lucy brown',
-                      icon: 'arrow_upward',
+                      icon: 'money',
                       dueDate: '25-5-2023',
                       amount: 1050,
-                      //type: 'Debited(Cash)',
-                      // company: 'ABC Fintech LTD.',
                     },
                     {
-                      //name: 'lucy brown',
                       icon: 'account_balance',
                       dueDate: '26-5-2023',
                       amount: 8900,
-                      // type: 'Credited(PayPal)',
-                      // company: 'ABC Fintech LTD.',
                     },
-                    // {
-                    //   //name: 'lucy brown',
-                    //   icon: 'arrow_upward',
-                    //   dueDate: '28-5-2023',
-                    //   amount: 760,
-                    // },
                   ]}
                 />
               </Card>

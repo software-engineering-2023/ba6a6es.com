@@ -57,15 +57,15 @@ const StatCards = () => {
             </ContentBox>
 
             {
-              <Tooltip title="Switch Account" placement="top">
-                {/* //   <IconButton>
-              //     <Icon>arrow_right_alt</Icon>
-              //   </IconButton> */}
-                <Select size="small" defaultValue="main account">
-                  <MenuItem value="main account">Main account</MenuItem>
-                  <MenuItem value="secondary account">Secondary account</MenuItem>
-                </Select>
-              </Tooltip>
+              // <Tooltip title="Switch Account" placement="top">
+              //   {/* //   <IconButton>
+              // //     <Icon>arrow_right_alt</Icon>
+              // //   </IconButton> */}
+              //   <Select size="small" defaultValue="main account">
+              //     <MenuItem value="main account">Main account</MenuItem>
+              //     <MenuItem value="secondary account">Secondary account</MenuItem>
+              //   </Select>
+              // </Tooltip>
             }
           </StyledCard>
         </Grid>

@@ -52,7 +52,7 @@ const CreditCardRequests = Loadable(lazy(() => import('./banker/CreditCardReques
 const LoanRequests = Loadable(lazy(() => import('./banker/LoanRequests')));
 const SendBankAnnouncements = Loadable(lazy(() => import('./banker/SendBankAnnouncements')));
 const CreditCardGuide = Loadable(lazy(() => import('../banker_criteria/CreditCardGuide')));
-const HandleTechnicalIssues = Loadable(lazy(() => import('./admin/HandleTechnicalIssues')));
+const HandleTechnicalIssues = Loadable(lazy(() => import('../adminActions/HandleTechnicalIssues')));
 const HandleCardReport = Loadable(lazy(() => import('../bankerActions/HandleCardReport')));
 const HandleCardRequest = Loadable(lazy(() => import('../bankerActions/HandleCardRequest')));
 const HandleCloseRequest = Loadable(lazy(() => import('../bankerActions/HandleCloseRequest')));
