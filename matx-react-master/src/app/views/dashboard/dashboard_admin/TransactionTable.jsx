@@ -7,17 +7,18 @@ import {
   TableHead,
   TableRow,
   Button,
-} from '@mui/material';
-import { Link } from 'react-router-dom';
-import { Span } from 'app/components/Typography';
+} from "@mui/material";
+import { Link } from "react-router-dom";
+import { Span } from "app/components/Typography";
+import { func } from "prop-types";
 
 const StyledTable = styled(Table)(({ theme }) => ({
-  whiteSpace: 'pre',
-  '& thead': {
-    '& tr': { '& th': { paddingLeft: 0, paddingRight: 0 } },
+  whiteSpace: "pre",
+  "& thead": {
+    "& tr": { "& th": { paddingLeft: 0, paddingRight: 0 } },
   },
-  '& tbody': {
-    '& tr': { '& td': { paddingLeft: 0, textTransform: 'capitalize' } },
+  "& tbody": {
+    "& tr": { "& td": { paddingLeft: 0, textTransform: "capitalize" } },
   },
 }));
 
@@ -45,15 +46,17 @@ const TransactionTable = ({ subscribarList }) => {
               <TableCell align="center">{subscriber.Date}</TableCell>
               {/* //<TableCell align="center">{subscriber.state}</TableCell> */}
 
-              <TableCell align="right">
+              <TableCell align="center">
                 <Button
                   color="primary"
                   variant="contained"
                   type="submit"
-                  component={Link}
-                  to="/admin_criteria/adminLinks"
+                  // component={Link}
+                  // to="/admin_criteria/adminLinks"
                 >
-                  <Span sx={{ pl: 1, textTransform: 'capitalize' }}>{subscriber.text}</Span>
+                  <Span sx={{ pl: 1, textTransform: "capitalize" }}>
+                    {subscriber.text}
+                  </Span>
                 </Button>
               </TableCell>
             </TableRow>
