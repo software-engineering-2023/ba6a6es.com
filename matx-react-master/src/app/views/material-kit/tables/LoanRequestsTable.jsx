@@ -84,7 +84,7 @@ const LoanRequestsTable = () => {
       </IconButton>        }
       </TableCell>
             </TableRow>
-          ))}
+          ))}   
         </TableBody>
       </StyledTable>
     </Box>
