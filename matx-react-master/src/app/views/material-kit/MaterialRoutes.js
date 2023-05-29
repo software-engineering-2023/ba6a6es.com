@@ -30,12 +30,13 @@ const MakePersonalBankTransfer = Loadable(
 const MakeRegionalBankTransfer = Loadable(
   lazy(() => import('./bankTransfer/MakeRegionalBankTransfer'))
 );
-const ViewPaySetBill = Loadable(lazy(() => import('./bills/ViewPaySetBill')));
+const ViewBill = Loadable(lazy(() => import('./bills/ViewBill')));
 const ApplyCreditCard = Loadable(lazy(() => import('./creditCard/ApplyCreditCard')));
 const ReportCreditCard = Loadable(lazy(() => import('./creditCard/ReportCreditCard')));
-const ViewPayCreditCard = Loadable(lazy(() => import('./creditCard/ViewPayCreditCard')));
+const ViewCreditCard = Loadable(lazy(() => import('./creditCard/ViewCreditCard')));
+const CreditCardTransactions = Loadable(lazy(() => import('./creditCard/CreditCardTransactions')));
 const ApplyLoan = Loadable(lazy(() => import('./loans/ApplyLoan')));
-const ViewPayLoans = Loadable(lazy(() => import('./loans/ViewPayLoans')));
+const ViewLoans = Loadable(lazy(() => import('./loans/ViewLoans')));
 const ViewRedeemPoints = Loadable(lazy(() => import('../points/ViewRedeemPoints')));
 const ViewAllTransactions = Loadable(lazy(() => import('../ViewAllTrans/ViewAllTransactions')));
 const SettingsPage = Loadable(lazy(() => import('../Settings/SettingsPage')));
@@ -119,6 +120,17 @@ const materialRoutes = [
   {
     path: '/material/bankTransfer/MakeInternationalBankTransfer',
     element: <MakeInternationalBankTransfer />,
+    path:'/material/creditCard/ViewCreditCard',
+    element: <ViewCreditCard/>,
+  },
+  
+  {
+    path:'/material/loans/ApplyLoan',
+    element: <ApplyLoan/>,
+  },  
+  {
+    path:'/material/loans/ViewLoans',
+    element: <ViewLoans/>,
   },
   {
     path: '/material/bankTransfer/MakePersonalBankTransfer',
@@ -134,8 +146,8 @@ const materialRoutes = [
   },
 
   {
-    path: '/material/bills/ViewPaySetBill',
-    element: <ViewPaySetBill />,
+    path: '/material/bills/ViewBill',
+    element: <ViewBill />,
   },
 
   {
@@ -147,8 +159,12 @@ const materialRoutes = [
     element: <ReportCreditCard />,
   },
   {
-    path: '/material/creditCard/ViewPayCreditCard',
-    element: <ViewPayCreditCard />,
+    path: '/material/creditCard/ViewCreditCard',
+    element: <ViewCreditCard />,
+  },
+  {
+    path: '/material/creditCard/CreditCardTransactions',
+    element: <CreditCardTransactions />,
   },
 
   {
@@ -156,8 +172,8 @@ const materialRoutes = [
     element: <ApplyLoan />,
   },
   {
-    path: '/material/loans/ViewPayLoan',
-    element: <ViewPayLoans />,
+    path: '/material/loans/ViewLoans',
+    element: <ViewLoans />,
   },
   {
     path: '/material/points/ViewRedeemPoints',
@@ -169,11 +185,11 @@ const materialRoutes = [
     element: <ViewAllTransactions />,
   },
   {
-    path: '/material/settings/SettingsPage',
+    path: '/material/Settings/SettingsPage',
     element: <SettingsPage />,
   },
   {
-    path: '/material/settings/PasswordPage',
+    path: '/material/Settings/PasswordPage',
     element: <PasswordPage />,
   },
   {
