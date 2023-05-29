@@ -16,9 +16,9 @@ export const navigations = [
     icon: 'account_balance_wallet',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
     children: [
-      { name: 'View Bank Account', path: '/material/bank/ViewBankAccount', iconText: 'B' },
-      { name: 'Open Bank Account', path: '/material/bank/OpenBankAccount', iconText: 'A' },
-      { name: 'Close Bank Account', path: '/material/bank/CloseBankAccount', iconText: 'B' },
+      { name: 'View Bank Account', path: '/bank/ViewBankAccount', iconText: 'B' },
+      { name: 'Open Bank Account', path: '/bank/OpenBankAccount', iconText: 'A' },
+      { name: 'Close Bank Account', path: '/bank/CloseBankAccount', iconText: 'B' },
     ],
   },
   //{ label: 'Money Transfer', type: 'label' },
@@ -29,22 +29,22 @@ export const navigations = [
     children: [
       {
         name: 'Personal Bank Transfer',
-        path: '/material/bankTransfer/MakePersonalBankTransfer',
+        path: '/bankTransfer/MakePersonalBankTransfer',
         iconText: 'B',
       },
       {
         name: 'Domestic Bank Transfer',
-        path: '/material/bankTransfer/MakeDomesticBankTransfer',
+        path: '/bankTransfer/MakeDomesticBankTransfer',
         iconText: 'A',
       },
       {
         name: 'Regional Bank Transfer',
-        path: '/material/bankTransfer/MakeRegionalBankTransfer',
+        path: '/bankTransfer/MakeRegionalBankTransfer',
         iconText: 'B',
       },
       {
         name: 'International Bank Transfer',
-        path: '/material/bankTransfer/MakeInternationalBankTransfer',
+        path: '/bankTransfer/MakeInternationalBankTransfer',
         iconText: 'B',
       },
     ],
@@ -55,10 +55,10 @@ export const navigations = [
     icon: 'credit_card',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
     children: [
-      { name: 'View', path: '/material/creditCard/ViewCreditCard', iconText: 'B' },
-      { name: 'Apply', path: '/material/creditCard/ApplyCreditCard', iconText: 'A' },
-      { name: 'Report', path: '/material/creditCard/ReportCreditCard', iconText: 'B' },
-      { name: 'Transactions', path: '/material/creditCard/CreditCardTransactions', iconText: 'A' },
+      { name: 'View', path: '/creditCard/ViewCreditCard', iconText: 'B' },
+      { name: 'Apply', path: '/creditCard/ApplyCreditCard', iconText: 'A' },
+      { name: 'Report', path: '/creditCard/ReportCreditCard', iconText: 'B' },
+      { name: 'Transactions', path: '/creditCard/CreditCardTransactions', iconText: 'A' },
       
       
     ],
@@ -69,8 +69,8 @@ export const navigations = [
     icon: 'account_balance',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
     children: [
-      { name: 'View', path: '/material/loans/ViewLoans', iconText: 'B' },
-      { name: 'Apply', path: '/material/loans/ApplyLoan', iconText: 'A' },
+      { name: 'View', path: '/loans/ViewLoans', iconText: 'B' },
+      { name: 'Apply', path: '/loans/ApplyLoan', iconText: 'A' },
     ],
   },
   //{ label: 'Bills', type: 'label' },
@@ -79,7 +79,7 @@ export const navigations = [
     icon: 'money',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
     children: [
-      { name: 'View', path: '/material/bills/ViewBill', iconText: 'B' },
+      { name: 'View', path: '/bills/ViewBill', iconText: 'B' },
       
       
     ],
@@ -89,6 +89,6 @@ export const navigations = [
     name: 'Points',
     icon: 'star',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
-    children: [{ name: 'View/Redeem', path: '/material/points/ViewRedeemPoints', iconText: 'B' }],
+    children: [{ name: 'View/Redeem', path: '/points/ViewRedeemPoints', iconText: 'B' }],
   },
 ];
