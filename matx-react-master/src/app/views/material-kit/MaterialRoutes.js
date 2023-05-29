@@ -58,6 +58,9 @@ const HandleCardRequest = Loadable(lazy(() => import('../bankerActions/HandleCar
 const HandleCloseRequest = Loadable(lazy(() => import('../bankerActions/HandleCloseRequest')));
 const HandleLoanRequest = Loadable(lazy(() => import('../bankerActions/HandleLoanRequest')));
 const HandleOpenRequest = Loadable(lazy(() => import('../bankerActions/HandleOpenRequest')));
+const CustomerViewer = Loadable(
+  lazy(() => import('app/views/pages/customers/customer-viewer/CustomerViewer'))
+);
 
 const materialRoutes = [
   {
@@ -277,6 +280,10 @@ const materialRoutes = [
   {
     path: '/bankerActions/HandleOpenRequest',
     element: <HandleOpenRequest />,
+  },
+  {
+    path: '/pages/view-customer',
+    element: <CustomerViewer />,
   },
 ];
 export default materialRoutes;
