@@ -35,7 +35,7 @@ const Analytics_banker = () => {
                 // prettier-ignore
                 color: "primary",
                 // prettier-ignore
-                to: "material/ViewAllTrans/ViewAllTransactions",
+                to: "/ViewAllTrans/ViewAllTransactions",
               },
               {
                 //name: 'kessy bryan',
@@ -47,7 +47,7 @@ const Analytics_banker = () => {
                 // prettier-ignore
                 color: "primary",
                 // prettier-ignore
-                to: "/material/ViewAllTrans/ViewAllTransactions",
+                to: "ViewAllTrans/ViewAllTransactions",
                 /* eslint-enable */
               },
               {
@@ -60,8 +60,7 @@ const Analytics_banker = () => {
                 // prettier-ignore
                 color: "primary",
                 // prettier-ignore
-                to: "/material/ViewAllTrans/ViewAllTransactions",
-                /* eslint-enable */
+                to: "/ViewAllTrans/ViewAllTransactions",
               },
               {
                 //name: 'lucy brown',
@@ -73,10 +72,8 @@ const Analytics_banker = () => {
                 // prettier-ignore
                 color: "primary",
                 // prettier-ignore
-                to: "/material/ViewAllTrans/ViewAllTransactions",
+                to: "/ViewAllTrans/ViewAllTransactions",
                 /* eslint-enable */
-
-                // company: 'ABC Fintech LTD.',
               },
               {
                 //name: 'lucy brown',
@@ -127,21 +124,10 @@ const Analytics_banker = () => {
                 color: "inherit",
                 // prettier-ignore
                 to: "/dashboard/dashboard_test/default",
-                /* eslint-enable */
               },
-              // {
-              //   //name: 'lucy brown',
-              //   date: '18-5-2023',
-              //   amount: 89000,
-              //   status: 'open',
-              //   company: 'ABC Fintech LTD.',
-              // },
             ]}
           />
         </Card>
-        {/* <StatCards2 /> */}
-        {/* <H4>Ongoing Projects</H4> */}
-        {/* <RowCards /> */}
       </Grid>
 
       <Grid item lg={4} md={4} sm={12} xs={12}>

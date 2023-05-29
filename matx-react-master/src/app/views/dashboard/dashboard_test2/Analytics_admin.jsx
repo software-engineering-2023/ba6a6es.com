@@ -8,6 +8,7 @@ import { Title } from '@mui/icons-material';
 import { Subtitles } from '@mui/icons-material';
 import LineChart from 'app/views/charts/echarts/LineChart';
 import { H2 } from 'app/components/Typography';
+import TransactionTable from './TransactionTable';
 
 const Analytics_admin = () => {
   const { palette } = useTheme();
@@ -16,16 +17,44 @@ const Analytics_admin = () => {
     <Fragment>
       <Grid item lg={8} md={8} sm={12} xs={12}>
         <Card sx={{ px: 3, py: 2, mb: 3 }}>
-          <H2 style={{ marginBottom: '15px' }}>ADMIN</H2>
-          <LineChart
-            height="350px"
-            color={[palette.primary.dark, palette.primary.main, palette.primary.light]}
+          <H2 style={{ marginBottom: '15px' }}>Techical Issues</H2>
+          <TransactionTable
+            subscribarList={[
+              {
+                id: '#1010',
+                Date: '18/5/2023',
+                user: 'Waleed Algamal',
+                text: 'View and Resolve',
+              },
+              {
+                id: '#1011',
+                Date: '17/5/2023',
+                user: 'Hana Younes',
+                text: 'View and Resolve',
+              },
+              {
+                id: '#1012',
+                Date: '16/5/2023',
+                user: 'Zeyad Habash',
+                text: 'View and Resolve',
+              },
+              {
+                id: '#2011',
+                Date: '15/5/2023',
+                user: 'Haneen Khaled',
+                text: 'View and Resolve',
+              },
+              {
+                id: '#1013',
+                Date: '15/5/2023',
+                user: 'Shrouq Abdulraof',
+                text: 'View and Resolve',
+              },
+            ]}
           />
         </Card>
-      </Grid>
-      <Grid item lg={4} md={4} sm={12} xs={12}>
         <Card sx={{ px: 3, py: 2, mb: 3 }}>
-          <H2 style={{ marginBottom: '15px' }}>You might need</H2>
+          <H2 style={{ marginBottom: '15px' }}>UsefulLinks</H2>
           <Button
             color="primary"
             variant="text"
@@ -33,34 +62,7 @@ const Analytics_admin = () => {
             component={Link}
             to="/banker_criteria/OpenBank"
           >
-            <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Open Account Criteria </Span>
-          </Button>
-          <Button
-            color="primary"
-            variant="text"
-            type="submit"
-            component={Link}
-            to="/banker_criteria/CloseBank"
-          >
-            <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Close Account Criteria </Span>
-          </Button>
-          <Button
-            color="primary"
-            variant="text"
-            type="submit"
-            component={Link}
-            to="/banker_criteria/LoanGuide"
-          >
-            <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Loans Criteria</Span>
-          </Button>
-          <Button
-            color="primary"
-            variant="text"
-            type="submit"
-            component={Link}
-            to="/banker_criteria/CreditCardGuide"
-          >
-            <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Credit Card Criteris</Span>
+            <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Bank Tech Latest Updates </Span>
           </Button>
         </Card>
       </Grid>
