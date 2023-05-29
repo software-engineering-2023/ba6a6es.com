@@ -39,12 +39,12 @@ const CustomerInvoice = () => {
               <TableCell sx={{ pl: 2 }} colSpan={2}>
                 No.
               </TableCell>
-              <TableCell colSpan={2}>Date</TableCell>
-              <TableCell colSpan={3}>Description</TableCell>
-              <TableCell colSpan={1}>Method</TableCell>
-              <TableCell colSpan={1}>Total</TableCell>
+              <TableCell colSpan={2}>Type</TableCell>
+              <TableCell colSpan={3}>id</TableCell>
+              <TableCell colSpan={1}>Description</TableCell>
+              {/* <TableCell colSpan={1}>Total</TableCell> */}
               <TableCell colSpan={1}>Status</TableCell>
-              <TableCell colSpan={1}>Action</TableCell>
+              {/* <TableCell colSpan={1}>Action</TableCell> */}
             </TableRow>
           </TableHead>
 
@@ -60,26 +60,26 @@ const CustomerInvoice = () => {
                 </StyledCell>
 
                 <StyledCell align="left" colSpan={3}>
-                  {invoice.description}
+                  {invoice.type}
                 </StyledCell>
 
                 <StyledCell align="left" colSpan={1}>
-                  {invoice.method}
+                  {invoice.id}
                 </StyledCell>
 
                 <StyledCell align="left" colSpan={1}>
-                  ${invoice.total.toFixed(2)}
+                  <StyedSmall Description={invoice.Description}>{invoice.Description}</StyedSmall>
                 </StyledCell>
 
                 <StyledCell colSpan={1}>
                   <StyedSmall status={invoice.status}>{invoice.status}</StyedSmall>
                 </StyledCell>
 
-                <StyledCell colSpan={1}>
+                {/* <StyledCell colSpan={1}>
                   <IconButton>
                     <Icon>arrow_right_alt</Icon>
                   </IconButton>
-                </StyledCell>
+                </StyledCell> */}
               </TableRow>
             ))}
           </TableBody>

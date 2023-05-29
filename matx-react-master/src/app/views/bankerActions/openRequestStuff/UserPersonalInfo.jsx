@@ -31,11 +31,10 @@ const StyledButton = styled(Button)(({ theme }) => ({
   ':hover': { background: 'transparent' },
 }));
 
-const CustomerInfo = () => {
+const UserPersonalInfo = () => {
   return (
     <Card sx={{ pt: 3 }} elevation={3}>
       <ContentBox mb={3} alignContent="center">
-        <Avatar sx={{ width: 84, height: 84 }} src="/assets/images/faces/10.jpg" />
         <H4 sx={{ mt: '16px', mb: '8px' }}>Ahmed Mohamed</H4>
         <Small color="text.secondary">Computer Scientist</Small>
       </ContentBox>
@@ -79,7 +78,7 @@ const customerInfo = [
   { title: 'Country', value: 'Egypt' },
   { title: 'City', value: 'Cairo' },
   { title: 'Address 1', value: 'AlRehab, Group99' },
-  { title: 'Address 2', value: 'Almokattam,St.9' },
+  { title: 'email ', value: 'Ahmed-2002@gmail.com' },
 ];
 
-export default CustomerInfo;
+export default UserPersonalInfo;
