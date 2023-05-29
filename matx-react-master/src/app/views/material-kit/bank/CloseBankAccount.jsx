@@ -1,6 +1,6 @@
 import { Box, styled } from "@mui/material";
 import { Breadcrumb, SimpleCard } from "app/components";
-import CloseBankAccountTable from "app/views/material-kit/tables/CloseBankAccountTable";
+import CloseBankAccountForm from "app/views/material-kit/forms/CloseBankAccountForm";
 
 const Container = styled("div")(({ theme }) => ({
   margin: "30px",
@@ -23,8 +23,8 @@ const CloseBankAccount = () => {
         />
       </Box>
 
-      <SimpleCard title="Close Bank Account Table">
-        <CloseBankAccountTable />
+      <SimpleCard title="Please Fill the following form.">
+        <CloseBankAccountForm />
       </SimpleCard>
     </Container>
   );
