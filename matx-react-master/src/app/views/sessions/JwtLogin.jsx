@@ -80,6 +80,7 @@ const JwtLogin = () => {
       switch (values.password) {
         case 'pass123': {
           // navigate('/dashboard_banker');
+          navigate('/dashboard/dashboard_test/default');
           changeUserType('banker');
           break;
         }
@@ -88,13 +89,17 @@ const JwtLogin = () => {
           changeUserType('client');
           break;
         }
-        default: {
+        default:
           changeUserType('admin');
-          // navigate('/');
-        }
+        // navigate('/');
       }
       console.log(CurrentUserType.getUserType());
-      navigate('/');
+
+      // if (CurrentUserType.getUserType === 'banker') {
+      //   navigate('/material/bank/OpenBankAccount');
+      // }
+      console.log(CurrentUserType.getUserType());
+      // navigate('/');
     } catch (e) {
       setLoading(false);
     }
