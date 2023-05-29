@@ -31,7 +31,7 @@ const Analytics_admin = () => {
             variant="text"
             type="submit"
             component={Link}
-            to="/material/banker_criteria/OpenBank"
+            to="/banker_criteria/OpenBank"
           >
             <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Open Account Criteria </Span>
           </Button>
@@ -40,7 +40,7 @@ const Analytics_admin = () => {
             variant="text"
             type="submit"
             component={Link}
-            to="/material/banker_criteria/CloseBank"
+            to="/banker_criteria/CloseBank"
           >
             <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Close Account Criteria </Span>
           </Button>
@@ -49,7 +49,7 @@ const Analytics_admin = () => {
             variant="text"
             type="submit"
             component={Link}
-            to="/material/banker_criteria/LoanGuide"
+            to="/banker_criteria/LoanGuide"
           >
             <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Loans Criteria</Span>
           </Button>
@@ -58,7 +58,7 @@ const Analytics_admin = () => {
             variant="text"
             type="submit"
             component={Link}
-            to="/material/banker_criteria/CreditCardGuide"
+            to="/banker_criteria/CreditCardGuide"
           >
             <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Credit Card Criteris</Span>
           </Button>

@@ -10,7 +10,7 @@ import {
   TableRow,
   Button,
 } from '@mui/material';
-import { Link } from 'react-router-dom/dist';
+import { Link } from 'react-router-dom';
 import { Span } from 'app/components/Typography';
 
 const StyledTable = styled(Table)(({ theme }) => ({

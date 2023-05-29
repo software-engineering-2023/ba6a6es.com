@@ -1,110 +1,124 @@
-import { DatePicker } from '@mui/lab';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import {
-  Button,
-  Checkbox,
-  FormControlLabel,
-  Grid,
-  Icon,
-  Radio,
-  RadioGroup,
-  styled,
-} from '@mui/material';
-import { Span } from 'app/components/Typography';
-import { useEffect, useState } from 'react';
-import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
-import BankAccountDetails from '../bank/BankAccountDetails';
-import SelectedMenu from '../menu/SelectedMenu';
-import ConfirmationDialog from '../dialog/ConfirmationDialog';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-
-const TextField = styled(TextValidator)(() => ({
-  width: '100%',
-  marginBottom: '16px',
-}));
+import { useState } from 'react';
+import { Box, Button, Grid, TextField, Typography } from '@mui/material';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 const MakeDomesticBankTransferForm = () => {
-  const [state, setState] = useState({ date: new Date() });
+  const [balance, setBalance] = useState(1000);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  useEffect(() => {
-    ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
-      if (value !== state.password) return false;
-
-      return true;
-    });
-    return () => ValidatorForm.removeValidationRule('isPasswordMatch');
-  }, [state.password]);
-
-  const handleSubmit = (event) => {
-    // console.log("submitted");
-    // console.log(event);
-  };
-
-  const handleChange = (event) => {
-    event.persist();
-    setState({ ...state, [event.target.name]: event.target.value });
-  };
-
-  const handleDateChange = (date) => setState({ ...state, date });
-  const { recieverBankAccount, amount, pin } = state;
-  const [Balance, setBalance] = useState(-1);
-  //const [submit, setSubmit] = useState(false);
+  const formik = useFormik({
+    initialValues: {
+      account: '',
+      sent: '',
+      amount: '',
+      pin: '',
+    },
+    validationSchema: Yup.object({
+      account: Yup.string()
+        .required('Required')
+        .matches(/^[0-9]+$/, 'Must be a number'),
+      sent: Yup.string()
+        .required('Required')
+        .matches(/^[0-9]+$/, 'Must be a number'),
+      amount: Yup.number()
+        .required('Required')
+        .positive('Must be a positive number')
+        .integer('Must be an integer')
+        .test('balance', 'Insufficient balance', (value) => value <= balance),
+      pin: Yup.string()
+        .required('Required')
+        .matches(/^[0-9]+$/, 'Must be a number'),
+    }),
+    onSubmit: (values) => {
+      console.log('Account:', values.account);
+      console.log('Sent:', values.sent);
+      console.log('Amount:', values.amount);
+      console.log('Pin:', values.pin);
+      setBalance(balance - parseInt(values.amount));
+      setErrorMessage('');
+      formik.resetForm();
+    },
+  });
 
   return (
-    <div>
-      <ValidatorForm onSubmit={handleSubmit} onError={() => null}>
-        <Grid container spacing={6}>
-          <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
-            <SelectedMenu
-              options={BankAccountDetails.map(
-                (bankAccounts) => BankAccountDetails.BankAccountData.accountNumber
-              )}
-              label={'Account number'}
-              //onClick={() => setBalance(BankAccountDetails.BankAccountData.accountNumber.Balance)}
-              onClick={() => setBalance(this.value.Balance)} //test it out 27teyaty
-            />
-
-            <TextField
-              type="number"
-              name="Account number"
-              label="Account number"
-              onChange={handleChange}
-              value={recieverBankAccount || ''}
-              validators={['required']}
-              errorMessages={['this field is required']}
-            />
-            <TextField
-              type="number"
-              name="Amount to transfer"
-              label="amount"
-              value={amount || ''}
-              onChange={handleChange}
-              validators={['required']}
-              errorMessages={['this field is required']}
-            />
-            <TextField
-              type="number"
-              name="Pin number"
-              label="pin number to confirm"
-              value={pin || ''}
-              onChange={handleChange}
-              validators={['required']}
-              errorMessages={['this field is required']}
-            />
-            <Button color="primary" variant="contained" type="submit">
-              <Icon>send</Icon>
-              <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Confirm</Span>
-              onClick = {() => setBalance(Balance - amount)}
-            </Button>
-          </Grid>
+    <Box padding={3}>
+      <Grid container spacing={5}>
+        <Grid item sm={6} xs={12}>
+          <form onSubmit={formik.handleSubmit}>
+            <Box marginBottom={2}>
+              <TextField
+                fullWidth
+                type="text"
+                name="account"
+                label="Sender Account Number"
+                variant="outlined"
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.account}
+                error={formik.touched.account && Boolean(formik.errors.account)}
+                helperText={formik.touched.account && formik.errors.account}
+              />
+            </Box>
+            <Box marginBottom={2}>
+              <TextField
+                fullWidth
+                type="text"
+                name="sent"
+                label="Receiver Account Number"
+                variant="outlined"
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.sent}
+                error={formik.touched.sent && Boolean(formik.errors.sent)}
+                helperText={formik.touched.sent && formik.errors.sent}
+              />
+            </Box>
+            <Box marginBottom={2}>
+              <TextField
+                fullWidth
+                type="text"
+                name="amount"
+                label="Amount"
+                variant="outlined"
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.amount}
+                error={formik.touched.amount && Boolean(formik.errors.amount)}
+                helperText={formik.touched.amount && formik.errors.amount}
+              />
+            </Box>
+            <Box marginBottom={2}>
+              <TextField
+                fullWidth
+                type="password"
+                name="pin"
+                label="Pin"
+                variant="outlined"
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.pin}
+                error={formik.touched.pin && Boolean(formik.errors.pin)}
+                helperText={formik.touched.pin && formik.errors.pin}
+              />
+            </Box>
+            <Box marginTop={2}>
+              <Button type="submit" variant="contained" color="primary">
+                Confirm
+              </Button>
+            </Box>
+          </form>
+          <Box marginTop={2}>
+            <Typography>Balance: {balance}</Typography>
+          </Box>
+          {errorMessage && (
+            <Box marginTop={2} color="red">
+              <Typography>{errorMessage}</Typography>
+            </Box>
+          )}
         </Grid>
-      </ValidatorForm>
-    </div>
+      </Grid>
+    </Box>
   );
 };
 

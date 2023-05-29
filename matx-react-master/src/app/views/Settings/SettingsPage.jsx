@@ -137,7 +137,7 @@ const Preferences = () => {
       </Stack> */}
 
       <Stack direction="row" spacing={3} padding={3}>
-        <Button variant="outlined" component={Link} to="/material/settings/PasswordPage">
+        <Button variant="outlined" component={Link} to="/settings/PasswordPage">
           Change Password
         </Button>
       </Stack>

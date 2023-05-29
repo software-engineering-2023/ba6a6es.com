@@ -55,7 +55,9 @@ const Sidenav = ({ children }) => {
               ? navigations
               : CurrentUserType.getUserType() === 'banker'
               ? navigation_banker
-              : navigation_admin
+              : CurrentUserType.getUserType() === 'admin'
+              ? navigation_admin
+              : []
           }
         />
       </StyledScrollBar>

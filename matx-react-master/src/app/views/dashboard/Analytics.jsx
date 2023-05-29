@@ -53,7 +53,7 @@ const Analytics = () => {
                 variant="contained"
                 type="submit"
                 component={Link}
-                to="/material/ViewAllTrans/ViewAllTransactions"
+                to="/ViewAllTrans/ViewAllTransactions"
               >
                 <Span sx={{ pl: 1, textTransform: 'capitalize' }}>View All Transactions</Span>
               </Button>

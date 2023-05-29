@@ -127,17 +127,17 @@ const materialRoutes = [
   {
     path: '/bankTransfer/MakeInternationalBankTransfer',
     element: <MakeInternationalBankTransfer />,
-    path:'/creditCard/ViewCreditCard',
-    element: <ViewCreditCard/>,
+    path: '/creditCard/ViewCreditCard',
+    element: <ViewCreditCard />,
   },
-  
+
   {
-    path:'/loans/ApplyLoan',
-    element: <ApplyLoan/>,
-  },  
+    path: '/loans/ApplyLoan',
+    element: <ApplyLoan />,
+  },
   {
-    path:'/loans/ViewLoans',
-    element: <ViewLoans/>,
+    path: '/loans/ViewLoans',
+    element: <ViewLoans />,
   },
   {
     path: '/bankTransfer/MakePersonalBankTransfer',
@@ -222,27 +222,30 @@ const materialRoutes = [
   {
     path: '/banker/OpenAccountRequests',
     element: <OpenAccountRequests />,
-  },{
+  },
+  {
     path: '/banker/CloseAccountRequests',
     element: <CloseAccountRequests />,
-  },{
+  },
+  {
     path: '/banker/CreditCardRequests',
     element: <CreditCardRequests />,
-  },{
+  },
+  {
     path: '/banker/LoanRequests',
     element: <LoanRequests />,
-  },{
+  },
+  {
     path: '/banker/CreditCardReports',
     element: <CreditCardReports />,
-  },{
+  },
+  {
     path: '/banker/SendBankAnnouncements',
     element: <SendBankAnnouncements />,
   },
   {
-    path: '/admin/HandleTechnicalIssues',
-    element: <HandleTechnicalIssues />,
+    path: '/banker/SendBankAnnouncements',
+    element: <SendBankAnnouncements />,
   },
-
 ];
-
 export default materialRoutes;

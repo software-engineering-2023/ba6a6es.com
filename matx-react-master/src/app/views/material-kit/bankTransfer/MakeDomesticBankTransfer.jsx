@@ -19,8 +19,6 @@ const MakeDomesticBankTransfer = () => {
       </Box>
 
       <Stack spacing={3}>
-        <h3>Transfer Domestically</h3>
-
         <SimpleCard title="Make Domestic Bank Transfer Form">
           <MakeDomesticBankTransferForm />
         </SimpleCard>
