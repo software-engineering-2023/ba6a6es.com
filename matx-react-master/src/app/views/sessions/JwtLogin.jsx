@@ -7,6 +7,7 @@ import { Formik } from 'formik';
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
+import CurrentUserType from 'app/CurrentUserType';
 
 const FlexBox = styled(Box)(() => ({ display: 'flex', alignItems: 'center' }));
 
@@ -54,11 +55,46 @@ const JwtLogin = () => {
 
   const { login } = useAuth();
 
+  // const handleFormSubmit = async (values) => {
+  //   setLoading(true);
+  //   try {
+  //     await login(values.email, values.password);
+  //     navigate('/');
+  //   } catch (e) {
+  //     setLoading(false);
+  //   }
+  // };
+
+  const [userType, setUserType] = useState(CurrentUserType.getUserType());
+
+  function changeUserType(type) {
+    CurrentUserType.setUserType(type);
+    setUserType(CurrentUserType.getUserType());
+  }
+
   const handleFormSubmit = async (values) => {
     setLoading(true);
     try {
       await login(values.email, values.password);
-      navigate('/');
+      console.log(CurrentUserType.getUserType());
+      switch (values.password) {
+        case 'pass123': {
+          // navigate('/dashboard_banker');
+          changeUserType('banker');
+          break;
+        }
+        case 'pass456': {
+          // navigate('/material/bank/OpenBankAccount');
+          changeUserType('client');
+          break;
+        }
+        default: {
+          changeUserType('admin');
+          // navigate('/');
+        }
+      }
+      console.log(CurrentUserType.getUserType());
+      navigate('/dashboard/default');
     } catch (e) {
       setLoading(false);
     }
