@@ -14,8 +14,6 @@ const Redirect = () => {
       ? '/dashboard/admin/default'
       : '/';
 
-  // console.log(from);
-
   // in auth callback logic, once authenticated navigate (redirect) back
   // to the route originally being accessed.
   return <Navigate to={from} />;

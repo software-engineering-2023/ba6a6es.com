@@ -1,17 +1,14 @@
-// import { DatePicker } from "@mui/lab";
-// import AdapterDateFns from "@mui/lab/AdapterDateFns";
-// import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import LoanConfirmationDialog from "../dialog/LoanConfirmationDialog";
-import "./App.css";
+import LoanConfirmationDialog from '../dialog/LoanConfirmationDialog';
+import './App.css';
 
-import { Button, Grid, Icon, styled } from "@mui/material";
-import { Span } from "app/components/Typography";
-import { useEffect, useState } from "react";
-import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
+import { Button, Grid, Icon, styled } from '@mui/material';
+import { Span } from 'app/components/Typography';
+import { useEffect, useState } from 'react';
+import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
 
 const TextField = styled(TextValidator)(() => ({
-  width: "100%",
-  marginBottom: "16px",
+  width: '100%',
+  marginBottom: '16px',
 }));
 
 const ApplyLoanForm = () => {
@@ -20,17 +17,13 @@ const ApplyLoanForm = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    ValidatorForm.addValidationRule("isPasswordMatch", (value) => {
-      if (value !== state.password) return false;
-
-      return true;
+    ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
+      return value === state.password;
     });
-    return () => ValidatorForm.removeValidationRule("isPasswordMatch");
+    return () => ValidatorForm.removeValidationRule('isPasswordMatch');
   }, [state.password]);
 
   const handleSubmit = (event) => {
-    // console.log("submitted");
-    // console.log(event);
     setShowPopup(true);
   };
 
@@ -38,8 +31,6 @@ const ApplyLoanForm = () => {
     event.persist();
     setState({ ...state, [event.target.name]: event.target.value });
   };
-
-  //const handleDateChange = (date) => setState({ ...state, date });
 
   const { fullName, mobile, email, nationalID, amount } = state;
 
@@ -53,49 +44,49 @@ const ApplyLoanForm = () => {
               name="fullName"
               label="Full Name"
               onChange={handleChange}
-              value={fullName || ""}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
+              value={fullName || ''}
+              validators={['required']}
+              errorMessages={['this field is required']}
             />
 
             <TextField
               type="email"
               name="email"
               label="Email"
-              value={email || ""}
+              value={email || ''}
               onChange={handleChange}
-              validators={["required", "isEmail"]}
-              errorMessages={["this field is required", "email is not valid"]}
+              validators={['required', 'isEmail']}
+              errorMessages={['this field is required', 'email is not valid']}
             />
 
             <TextField
               type="number"
               name="mobile"
-              value={mobile || ""}
+              value={mobile || ''}
               label="Mobile Number"
               onChange={handleChange}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
+              validators={['required']}
+              errorMessages={['this field is required']}
             />
 
             <TextField
               type="text"
               name="nationalID"
-              value={nationalID || ""}
+              value={nationalID || ''}
               label="National ID"
               onChange={handleChange}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
+              validators={['required']}
+              errorMessages={['this field is required']}
             />
 
             <TextField
               type="number"
               name="amount"
-              value={amount || ""}
+              value={amount || ''}
               label="Loan Amount"
               onChange={handleChange}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
+              validators={['required']}
+              errorMessages={['this field is required']}
             />
 
             {/* <FormControlLabel
@@ -107,7 +98,7 @@ const ApplyLoanForm = () => {
 
         <Button color="primary" variant="contained" type="submit">
           <Icon>send</Icon>
-          <Span sx={{ pl: 1, textTransform: "capitalize" }}>Submit</Span>
+          <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Submit</Span>
         </Button>
         {showPopup && <LoanConfirmationDialog />}
       </ValidatorForm>

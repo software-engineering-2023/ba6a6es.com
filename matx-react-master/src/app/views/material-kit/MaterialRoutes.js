@@ -132,6 +132,8 @@ const materialRoutes = [
   {
     path: '/bankTransfer/MakeInternationalBankTransfer',
     element: <MakeInternationalBankTransfer />,
+  },
+  {
     path: '/creditCard/ViewCreditCard',
     element: <ViewCreditCard />,
   },

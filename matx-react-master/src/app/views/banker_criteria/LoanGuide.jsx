@@ -1,7 +1,6 @@
 import React from 'react';
 import { SimpleCard } from 'app/components';
 import { H1, H2, Paragraph, Span } from 'app/components/Typography';
-import SelectedMenu from 'app/components/Common/Menus/SelectedMenu';
 
 function LoanGuide() {
   return (

@@ -1,4 +1,4 @@
-import { Card, Grid, styled, useTheme, Button, Icon, Box } from '@mui/material';
+import { Card, Grid, styled, Button, Box } from '@mui/material';
 import { Fragment } from 'react';
 import StatCards from '../shared/StatCards';
 import StatCards2 from '../shared/StatCards2';
@@ -24,16 +24,7 @@ const SubTitle = styled('span')(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const H4 = styled('h4')(({ theme }) => ({
-  fontSize: '1rem',
-  fontWeight: '500',
-  marginBottom: '16px',
-  textTransform: 'capitalize',
-  color: theme.palette.text.secondary,
-}));
-
 const Analytics = () => {
-  const { palette } = useTheme();
   return (
     <Fragment>
       <ContentBox className="analytics">

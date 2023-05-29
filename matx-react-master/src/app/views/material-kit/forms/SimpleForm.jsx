@@ -1,6 +1,6 @@
-import { DatePicker } from "@mui/lab";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import { DatePicker } from '@mui/lab';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import {
   Button,
   Checkbox,
@@ -10,31 +10,29 @@ import {
   Radio,
   RadioGroup,
   styled,
-} from "@mui/material";
-import { Span } from "app/components/Typography";
-import { useEffect, useState } from "react";
-import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
+} from '@mui/material';
+import { Span } from 'app/components/Typography';
+import { useEffect, useState } from 'react';
+import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
 
 const TextField = styled(TextValidator)(() => ({
-  width: "100%",
-  marginBottom: "16px",
+  width: '100%',
+  marginBottom: '16px',
 }));
 
 const SimpleForm = () => {
   const [state, setState] = useState({ date: new Date() });
 
   useEffect(() => {
-    ValidatorForm.addValidationRule("isPasswordMatch", (value) => {
-      if (value !== state.password) return false;
-
-      return true;
+    ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
+      return value === state.password;
     });
-    return () => ValidatorForm.removeValidationRule("isPasswordMatch");
+    return () => ValidatorForm.removeValidationRule('isPasswordMatch');
   }, [state.password]);
 
   const handleSubmit = (event) => {
-    // console.log("submitted");
-    // console.log(event);
+    console.log('submitted');
+    console.log(event);
   };
 
   const handleChange = (event) => {
@@ -65,15 +63,11 @@ const SimpleForm = () => {
               type="text"
               name="username"
               id="standard-basic"
-              value={username || ""}
+              value={username || ''}
               onChange={handleChange}
-              errorMessages={["this field is required"]}
+              errorMessages={['this field is required']}
               label="Username (Min length 4, Max length 9)"
-              validators={[
-                "required",
-                "minStringLength: 4",
-                "maxStringLength: 9",
-              ]}
+              validators={['required', 'minStringLength: 4', 'maxStringLength: 9']}
             />
 
             <TextField
@@ -81,19 +75,19 @@ const SimpleForm = () => {
               name="firstName"
               label="First Name"
               onChange={handleChange}
-              value={firstName || ""}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
+              value={firstName || ''}
+              validators={['required']}
+              errorMessages={['this field is required']}
             />
 
             <TextField
               type="email"
               name="email"
               label="Email"
-              value={email || ""}
+              value={email || ''}
               onChange={handleChange}
-              validators={["required", "isEmail"]}
-              errorMessages={["this field is required", "email is not valid"]}
+              validators={['required', 'isEmail']}
+              errorMessages={['this field is required', 'email is not valid']}
             />
 
             <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -105,7 +99,7 @@ const SimpleForm = () => {
                     {...props}
                     label="Date picker"
                     id="mui-pickers-date"
-                    sx={{ mb: 2, width: "100%" }}
+                    sx={{ mb: 2, width: '100%' }}
                   />
                 )}
               />
@@ -117,13 +111,9 @@ const SimpleForm = () => {
               name="creditCard"
               label="Credit Card"
               onChange={handleChange}
-              value={creditCard || ""}
-              errorMessages={["this field is required"]}
-              validators={[
-                "required",
-                "minStringLength:16",
-                "maxStringLength: 16",
-              ]}
+              value={creditCard || ''}
+              errorMessages={['this field is required']}
+              validators={['required', 'minStringLength:16', 'maxStringLength: 16']}
             />
           </Grid>
 
@@ -131,38 +121,35 @@ const SimpleForm = () => {
             <TextField
               type="text"
               name="mobile"
-              value={mobile || ""}
+              value={mobile || ''}
               label="Mobile Nubmer"
               onChange={handleChange}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
+              validators={['required']}
+              errorMessages={['this field is required']}
             />
             <TextField
               name="password"
               type="password"
               label="Password"
-              value={password || ""}
+              value={password || ''}
               onChange={handleChange}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
+              validators={['required']}
+              errorMessages={['this field is required']}
             />
             <TextField
               type="password"
               name="confirmPassword"
               onChange={handleChange}
               label="Confirm Password"
-              value={confirmPassword || ""}
-              validators={["required", "isPasswordMatch"]}
-              errorMessages={[
-                "this field is required",
-                "password didn't match",
-              ]}
+              value={confirmPassword || ''}
+              validators={['required', 'isPasswordMatch']}
+              errorMessages={['this field is required', "password didn't match"]}
             />
             <RadioGroup
               row
               name="gender"
               sx={{ mb: 2 }}
-              value={gender || ""}
+              value={gender || ''}
               onChange={handleChange}
             >
               <FormControlLabel
@@ -196,7 +183,7 @@ const SimpleForm = () => {
 
         <Button color="primary" variant="contained" type="submit">
           <Icon>send</Icon>
-          <Span sx={{ pl: 1, textTransform: "capitalize" }}>Submit</Span>
+          <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Submit</Span>
         </Button>
       </ValidatorForm>
     </div>

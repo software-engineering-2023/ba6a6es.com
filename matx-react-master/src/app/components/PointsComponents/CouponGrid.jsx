@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from '@mui/material';
 import CouponBox from './CouponBox';
-import { Paragraph, H5, H3, H1 } from '../Typography';
+import { H1 } from '../Typography';
 
 const CouponGrid = ({ couponDescriptions, icons, prices }) => {
   const [points, setPoints] = useState(1000);
