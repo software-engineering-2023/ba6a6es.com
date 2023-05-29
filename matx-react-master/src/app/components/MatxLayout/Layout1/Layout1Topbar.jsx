@@ -120,9 +120,11 @@ const Layout1Topbar = () => {
         <Box display="flex" alignItems="center">
           {/* <MatxSearchBox /> */}
 
-          <NotificationProvider>
-            <NotificationBar />
-          </NotificationProvider>
+          {CurrentUserType.getUserType() === 'client' && (
+            <NotificationProvider>
+              <NotificationBar />
+            </NotificationProvider>
+          )}
 
           {/* <ShoppingCart /> */}
 
