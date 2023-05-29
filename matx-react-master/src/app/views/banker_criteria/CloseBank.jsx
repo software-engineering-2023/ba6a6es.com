@@ -7,7 +7,9 @@ function CloseBank() {
   return (
     <div style={{ overflow: 'auto', maxHeight: '500px' }}>
       <SimpleCard>
-        <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '30px' }}>CloseBank</H1>
+        <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '30px' }}>
+          Close Bank Account
+        </H1>
         <H2 style={{ marginBottom: '30px' }}>How do I open an account?</H2>
         <Paragraph style={{ marginBottom: '50px' }}>
           <Span>

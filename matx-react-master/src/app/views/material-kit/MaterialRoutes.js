@@ -53,6 +53,11 @@ const LoanRequests = Loadable(lazy(() => import('./banker/LoanRequests')));
 const SendBankAnnouncements = Loadable(lazy(() => import('./banker/SendBankAnnouncements')));
 const CreditCardGuide = Loadable(lazy(() => import('../banker_criteria/CreditCardGuide')));
 const HandleTechnicalIssues = Loadable(lazy(() => import('./admin/HandleTechnicalIssues')));
+const HandleCardReport = Loadable(lazy(() => import('../bankerActions/HandleCardReport')));
+const HandleCardRequest = Loadable(lazy(() => import('../bankerActions/HandleCardRequest')));
+const HandleCloseRequest = Loadable(lazy(() => import('../bankerActions/HandleCloseRequest')));
+const HandleLoanRequest = Loadable(lazy(() => import('../bankerActions/HandleLoanRequest')));
+const HandleOpenRequest = Loadable(lazy(() => import('../bankerActions/HandleOpenRequest')));
 
 const materialRoutes = [
   {
@@ -246,6 +251,30 @@ const materialRoutes = [
   {
     path: '/banker/SendBankAnnouncements',
     element: <SendBankAnnouncements />,
+  },
+  {
+    path: '/admin/HandleTechnicalIssues',
+    element: <HandleTechnicalIssues />,
+  },
+  {
+    path: '/bankerActions/HandleCardReport',
+    element: <HandleCardReport />,
+  },
+  {
+    path: '/bankerActions/HandleCardRequest',
+    element: <HandleCardRequest />,
+  },
+  {
+    path: '/bankerActions/HandleCloseRequest',
+    element: <HandleCloseRequest />,
+  },
+  {
+    path: '/bankerActions/HandleLoanRequest',
+    element: <HandleLoanRequest />,
+  },
+  {
+    path: '/bankerActions/HandleOpenRequest',
+    element: <HandleOpenRequest />,
   },
 ];
 export default materialRoutes;

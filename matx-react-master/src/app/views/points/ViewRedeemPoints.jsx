@@ -25,6 +25,7 @@ const ViewRedeemPoints = () => {
               '15% off your next purchase',
             ]}
             icons={[
+              // TODO: add proper brand images
               '3d_rotation',
               'ac_unit',
               'access_alarm',

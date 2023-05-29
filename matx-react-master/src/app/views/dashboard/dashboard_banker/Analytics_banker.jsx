@@ -34,7 +34,7 @@ const Analytics_banker = () => {
                 // prettier-ignore
                 color: "primary",
                 // prettier-ignore
-                to: "/ViewAllTrans/ViewAllTransactions",
+                to: "/bankerActions/HandleOpenRequest",
               },
               {
                 //name: 'kessy bryan',
@@ -46,7 +46,7 @@ const Analytics_banker = () => {
                 // prettier-ignore
                 color: "primary",
                 // prettier-ignore
-                to: "ViewAllTrans/ViewAllTransactions",
+                to: "/bankerActions/HandleCloseRequest",
                 /* eslint-enable */
               },
               {
@@ -59,7 +59,7 @@ const Analytics_banker = () => {
                 // prettier-ignore
                 color: "primary",
                 // prettier-ignore
-                to: "/ViewAllTrans/ViewAllTransactions",
+                to: "/bankerActions/HandleCardRequest",
               },
               {
                 //name: 'lucy brown',
@@ -71,7 +71,7 @@ const Analytics_banker = () => {
                 // prettier-ignore
                 color: "primary",
                 // prettier-ignore
-                to: "/ViewAllTrans/ViewAllTransactions",
+                to: "/bankerActions/HandleCardReport",
                 /* eslint-enable */
               },
               {
@@ -84,7 +84,7 @@ const Analytics_banker = () => {
                 // prettier-ignore
                 color: "primary",
                 // prettier-ignore
-                to: "/ViewAllTrans/ViewAllTransactions",
+                to: "/bankerActions/HandleLoanRequest",
                 /* eslint-enable */
               },
               {
@@ -97,7 +97,7 @@ const Analytics_banker = () => {
                 // prettier-ignore
                 color: "inherit",
                 // prettier-ignore
-                to: "/dashboard/dashboard_test/default",
+                to: "/bankerActions/HandleCardRequest",
                 /* eslint-enable */
               },
               {
@@ -109,7 +109,7 @@ const Analytics_banker = () => {
                 // prettier-ignore
                 color:  "inherit",
                 // prettier-ignore
-                to: "/dashboard/dashboard_test/default",
+                to: "/bankerActions/HandleCardReport",
                 /* eslint-enable */
               },
 
@@ -122,7 +122,7 @@ const Analytics_banker = () => {
                 // prettier-ignore
                 color: "inherit",
                 // prettier-ignore
-                to: "/dashboard/dashboard_test/default",
+                to: "/bankerActions/HandleLoanRequest",
               },
             ]}
           />
@@ -144,7 +144,7 @@ const Analytics_banker = () => {
             variant="text"
             type="submit"
             component={Link}
-            to="/material/banker_criteria/OpenBank"
+            to="/banker_criteria/OpenBank"
           >
             <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Open/Close Account Criteria </Span>
           </Button>
@@ -153,7 +153,7 @@ const Analytics_banker = () => {
             variant="text"
             type="submit"
             component={Link}
-            to="/material/banker_criteria/CloseBank"
+            to="/banker_criteria/CloseBank"
           >
             <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Close Account Criteria </Span>
           </Button>  */}
@@ -162,7 +162,7 @@ const Analytics_banker = () => {
             variant="text"
             type="submit"
             component={Link}
-            to="/material/banker_criteria/LoanGuide"
+            to="/banker_criteria/LoanGuide"
           >
             <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Loans Criteria</Span>
           </Button>
@@ -171,7 +171,7 @@ const Analytics_banker = () => {
             variant="text"
             type="submit"
             component={Link}
-            to="/material/banker_criteria/CreditCardGuide"
+            to="/banker_criteria/CreditCardGuide"
           >
             <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Credit Card Criteria</Span>
           </Button>
@@ -200,7 +200,7 @@ export default Analytics_banker;
             variant="text"
             type="submit"
             component={Link}
-            to="/material/banker_criteria/OpenBank"
+            to="/banker_criteria/OpenBank"
           >
             <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Open Account Criteria </Span>
           </Button>
@@ -209,7 +209,7 @@ export default Analytics_banker;
             variant="text"
             type="submit"
             component={Link}
-            to="/material/banker_criteria/CloseBank"
+            to="/banker_criteria/CloseBank"
           >
             <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Close Account Criteria </Span>
           </Button>
@@ -218,7 +218,7 @@ export default Analytics_banker;
             variant="text"
             type="submit"
             component={Link}
-            to="/material/banker_criteria/LoanGuide"
+            to="/banker_criteria/LoanGuide"
           >
             <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Loans Criteria</Span>
           </Button>
@@ -227,7 +227,7 @@ export default Analytics_banker;
             variant="text"
             type="submit"
             component={Link}
-            to="/material/banker_criteria/CreditCardGuide"
+            to="/banker_criteria/CreditCardGuide"
           >
             <Span sx={{ pl: 1, textTransform: 'capitalize' }}>Credit Card Criteris</Span>
           </Button>
