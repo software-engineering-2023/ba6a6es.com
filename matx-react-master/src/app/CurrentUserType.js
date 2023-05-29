@@ -1,9 +1,9 @@
 class CurrentUserType {
-  static userType = sessionStorage.getItem('userType') || 'nouser';
+  static userType = localStorage.getItem('userType') || 'nouser';
 
   static setUserType(userType) {
     this.userType = userType;
-    sessionStorage.setItem('userType', userType);
+    localStorage.setItem('userType', userType);
   }
 
   static getUserType() {
