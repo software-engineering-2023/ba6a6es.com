@@ -16,15 +16,18 @@ const OpenBankAccount = () => {
   return (
     <Container>
       <Box className="breadcrumb">
-        <Breadcrumb routeSegments={[{ name: "Material", path: "/material" }, { name: "Form" }]} />
+        <Breadcrumb
+          routeSegments={[
+            { name: "Bank Accounts", path: "" },
+            { name: "Open A New Account" },
+          ]}
+        />
       </Box>
 
       <Stack spacing={3}>
-        <SimpleCard title="Open Bank Account Form">
-          <OpenBankAccountForm/>
+        <SimpleCard title="Please fill the following form.">
+          <OpenBankAccountForm />
         </SimpleCard>
-
-        
       </Stack>
     </Container>
   );

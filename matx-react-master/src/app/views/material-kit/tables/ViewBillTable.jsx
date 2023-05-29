@@ -30,42 +30,48 @@ const SimpleTable = () => {
       type: "Water",
       dueDate: "03-06-2023",
       amount: "EGP545",
+      index: 0,
     },
     {
       type: "Electricty",
       dueDate: "29-06-2023",
       amount: "EGP870",
+      index: 1,
     },
     {
       type: "Telephone",
       dueDate: "01-08-2023",
       amount: "EGP80",
+      index: 2,
     },
     {
       type: "Internet",
       dueDate: "15-07-2023",
       amount: "EGP440",
+      index: 3,
     },
     {
       type: "Gas",
       dueDate: "04-09-2023",
       amount: "EGP460",
+      index: 4,
     },
   ]);
 
   const [open, setOpen] = useState(false);
 
-  const handlePayBill = (indOf, inputAmount) => {
-    const newArray = subscribarList.map((item, i) => {
-      if (indOf === i) {
-        return {
-          ...item,
-          amount: inputAmount === 0 ? "-" : "EGP" + inputAmount,
-        };
-      } else {
-        return item;
-      }
-    });
+  const handlePayBill = (indOf) => {
+    // const newArray = subscribarList.map((item, i) => {
+    //   if (indOf === i) {
+    //     return {
+    //       ...item,
+    //       amount: inputAmount === 0 ? "-" : "EGP" + inputAmount,
+    //     };
+    //   } else {
+    //     return item;
+    //   }
+    // });
+    const newArray = subscribarList.filter((item) => item.index !== indOf);
     setSubscribarList(newArray);
   };
 
@@ -95,8 +101,8 @@ const SimpleTable = () => {
               <TableCell align="center">
                 <BillPaymentDialog
                   handlePayBill={handlePayBill}
-                  indOf={index}
-                  currAmount={subscribarList[index].amount}
+                  indOf={subscribarList[index].index}
+                  currAmount={subscribarList[index].amount.substring(3)}
                 />
               </TableCell>
               <TableCell align="center">

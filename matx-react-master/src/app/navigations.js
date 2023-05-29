@@ -12,13 +12,13 @@ export const navigations = [
     ],
   },
   {
-    name: 'Bank Account',
+    name: 'Bank Accounts',
     icon: 'account_balance_wallet',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
     children: [
-      { name: 'View Bank Account', path: '/bank/ViewBankAccount', iconText: 'B' },
-      { name: 'Open Bank Account', path: '/bank/OpenBankAccount', iconText: 'A' },
-      { name: 'Close Bank Account', path: '/bank/CloseBankAccount', iconText: 'B' },
+      { name: 'View', path: '/bank/ViewBankAccount', iconText: 'B' },
+      { name: 'Open A New Account', path: '/bank/OpenBankAccount', iconText: 'A' },
+      { name: 'Close An Account', path: '/bank/CloseBankAccount', iconText: 'B' },
     ],
   },
   //{ label: 'Money Transfer', type: 'label' },

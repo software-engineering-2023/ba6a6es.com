@@ -15,14 +15,17 @@ const ViewBankAccount = () => {
   return (
     <Container>
       <Box className="breadcrumb">
-        <Breadcrumb routeSegments={[{ name: "Material", path: "/material" }, { name: "Table" }]} />
+        <Breadcrumb
+          routeSegments={[
+            { name: "Bank Accounts", path: "" },
+            { name: "View" },
+          ]}
+        />
       </Box>
 
-      <SimpleCard title="View Bank Account Table">
+      <SimpleCard title="Your Accounts">
         <ViewBankAccountTable />
       </SimpleCard>
-
-      
     </Container>
   );
 };

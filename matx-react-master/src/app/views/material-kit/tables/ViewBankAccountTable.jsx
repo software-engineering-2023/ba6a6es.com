@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import SourceIcon from "@mui/icons-material/Source";
 import BankAccountDetails from "app/views/material-kit/bank/BankAccountDetails";
+import BankAccountDetailsPanel from "../expansion-panel/BankAccountDetailsPanel";
 
 const StyledTable = styled(Table)(({ theme }) => ({
   whiteSpace: "pre",
@@ -24,46 +25,25 @@ const StyledTable = styled(Table)(({ theme }) => ({
 
 const subscribarList = [
   {
-    name: "john doe",
-    date: "18 january, 2019",
-    amount: 1000,
-    status: "close",
-    company: "ABC Fintech LTD.",
+    type: "Current",
+    openDate: "18-01-2019",
+    balance: "EGP18,040",
+    status: "Open",
+    accountNo: "100023114560",
   },
   {
-    name: "kessy bryan",
-    date: "10 january, 2019",
-    amount: 9000,
-    status: "open",
-    company: "My Fintech LTD.",
+    type: "Current",
+    openDate: "30-08-2020",
+    balance: "EGP54,800",
+    status: "Open",
+    accountNo: "100023454430",
   },
   {
-    name: "james cassegne",
-    date: "8 january, 2019",
-    amount: 5000,
-    status: "close",
-    company: "Collboy Tech LTD.",
-  },
-  {
-    name: "lucy brown",
-    date: "1 january, 2019",
-    amount: 89000,
-    status: "open",
-    company: "ABC Fintech LTD.",
-  },
-  {
-    name: "lucy brown",
-    date: "1 january, 2019",
-    amount: 89000,
-    status: "open",
-    company: "ABC Fintech LTD.",
-  },
-  {
-    name: "lucy brown",
-    date: "1 january, 2019",
-    amount: 89000,
-    status: "open",
-    company: "ABC Fintech LTD.",
+    type: "Savings",
+    openDate: "05-06-2021",
+    balance: "EGP360,000",
+    status: "Open",
+    accountNo: "964023574220",
   },
 ];
 
@@ -79,35 +59,35 @@ const ViewBankAccountTable = () => {
       <StyledTable>
         <TableHead>
           <TableRow>
-            <TableCell align="left">Name</TableCell>
-            <TableCell align="center">Company</TableCell>
-            <TableCell align="center">Start Date</TableCell>
+            <TableCell align="center">Account Type</TableCell>
+            <TableCell align="center">Account Number</TableCell>
+            <TableCell align="center">Open Date</TableCell>
             <TableCell align="center">Status</TableCell>
-            <TableCell align="center">Amount</TableCell>
-            <TableCell align="right">View Bank Account Details</TableCell>
+            <TableCell align="center">Balance</TableCell>
+            <TableCell align="center">Details</TableCell>
           </TableRow>
         </TableHead>
 
         <TableBody>
           {subscribarList.map((subscriber, index) => (
-            <TableRow key={index}>
-              <TableCell align="left">{subscriber.name}</TableCell>
-              <TableCell align="center">{subscriber.company}</TableCell>
-              <TableCell align="center">{subscriber.date}</TableCell>
+            <TableRow key={index} hover={true}>
+              <TableCell align="center">{subscriber.type}</TableCell>
+              <TableCell align="center">{subscriber.accountNo}</TableCell>
+              <TableCell align="center">{subscriber.openDate}</TableCell>
               <TableCell align="center">{subscriber.status}</TableCell>
-              <TableCell align="center">${subscriber.amount}</TableCell>
-              <TableCell align="right">
-                <IconButton onClick={handleIconClick}>
+              <TableCell align="center">{subscriber.balance}</TableCell>
+              <TableCell align="center">
+                {/* <IconButton onClick={handleIconClick}>
                   <SourceIcon color="primary" />
                 </IconButton>
-                {showBankAccountDetails && <BankAccountDetails />}
+                {showBankAccountDetails && <BankAccountDetails />} */}
+                <BankAccountDetailsPanel />
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </StyledTable>
-      </Box>
+    </Box>
   );
 };
 export default ViewBankAccountTable;
-
