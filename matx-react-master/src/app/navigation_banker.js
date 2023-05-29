@@ -1,6 +1,6 @@
 export const navigation_banker = [
   // TODO: DO NOT FORGET TO CHANGE THE PATH
-  { name: 'Dashboard', path: '/dashboard/default', icon: 'dashboard' },
+  { name: 'Dashboard', path: '/dashboard/dashboard_test/default', icon: 'dashboard' },
   { label: 'PAGES', type: 'label' },
   {
     name: 'Session/Auth',

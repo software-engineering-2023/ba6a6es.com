@@ -41,6 +41,10 @@ const ViewAllTransactions = Loadable(lazy(() => import('../ViewAllTrans/ViewAllT
 const SettingsPage = Loadable(lazy(() => import('../Settings/SettingsPage')));
 const PasswordPage = Loadable(lazy(() => import('../Settings/PasswordPage')));
 const FAQPage = Loadable(lazy(() => import('../faq/FAQPage')));
+const OpenBank = Loadable(lazy(() => import('../banker_criteria/OpenBank')));
+const CloseBank = Loadable(lazy(() => import('../banker_criteria/CloseBank')));
+const LoanGuide = Loadable(lazy(() => import('../banker_criteria/LoanGuide')));
+const CreditCardGuide = Loadable(lazy(() => import('../banker_criteria/CreditCardGuide')));
 
 const materialRoutes = [
   {
@@ -175,6 +179,22 @@ const materialRoutes = [
   {
     path: '/material/faq/FAQPage',
     element: <FAQPage />,
+  },
+  {
+    path: '/material/banker_criteria/OpenBank',
+    element: <OpenBank />,
+  },
+  {
+    path: '/material/banker_criteria/CloseBank',
+    element: <CloseBank />,
+  },
+  {
+    path: '/material/banker_criteria/LoanGuide',
+    element: <LoanGuide />,
+  },
+  {
+    path: '/material/banker_criteria/CreditCardGuide',
+    element: <CreditCardGuide />,
   },
 ];
 
