@@ -12,8 +12,10 @@ function HandleOpenRequest() {
         <H2 style={{ marginBottom: '30px' }}>Personal Info</H2>
         <Paragraph style={{ marginBottom: '50px' }}>
           <Span>
-            <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '15px' }}>Name:</H1>
-            Shoroq Abdulraof
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '50px' }}>
+              <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginRight: '10px' }}>Name:</H1>
+              Shoroq Abdulraof
+            </div>
             <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '15px' }}>
               NationalID:
             </H1>
