@@ -15,7 +15,7 @@ import { Span } from "app/components/Typography";
 import { useEffect, useState } from "react";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import { KeyboardArrowDown } from "@mui/icons-material";
-import CloseAccountConfirmationDialog from "../dialog/CloseAccountConfirmationDialog";
+import CustomizedDialog from "../dialog/CustomizedDialog";
 
 const TextField = styled(TextValidator)(() => ({
   width: "100%",
@@ -91,7 +91,7 @@ const SendBankAnnouncementForm = () => {
           <Icon>send</Icon>
           <Span sx={{ pl: 1, textTransform: "capitalize" }}>Submit</Span>
         </Button>
-        {showPopup && <CloseAccountConfirmationDialog />}
+        {showPopup && <CustomizedDialog />}
       </ValidatorForm>
     </div>
   );
