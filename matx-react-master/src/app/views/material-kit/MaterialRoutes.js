@@ -61,6 +61,7 @@ const HandleOpenRequest = Loadable(lazy(() => import('../bankerActions/HandleOpe
 const CustomerViewer = Loadable(
   lazy(() => import('app/views/pages/customers/customer-viewer/CustomerViewer'))
 );
+const ReportTechnicalIssue = Loadable(lazy(() => import('./technicalIssue/ReportTechnicalIssue')));
 
 const materialRoutes = [
   {
@@ -284,6 +285,7 @@ const materialRoutes = [
   {
     path: '/pages/view-customer',
     element: <CustomerViewer />,
+    path: '/technicalIssue/ReportTechnicalIssue',
+    element: <ReportTechnicalIssue />,
   },
 ];
-export default materialRoutes;

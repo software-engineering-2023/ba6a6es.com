@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import {
   Box,
   styled,
+  Badge,
+  Icon,
+  IconButton,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
 } from "@mui/material";
+import { Link,useNavigate } from 'react-router-dom';
 
 
 const StyledTable = styled(Table)(({ theme }) => ({
@@ -22,60 +26,45 @@ const StyledTable = styled(Table)(({ theme }) => ({
 
 const subscribarList = [
   {
-    name: "Hana",
+    name: "Gas Bill",
     date: "18 january, 2019",
     amount: 1000,
     status: "open",
-    company: "ABC Fintech LTD.",
-  },
-  {
-    name: "kessy bryan",
-    date: "10 january, 2019",
-    amount: 9000,
+    company: "ABC&Co for Natural Gas", },
+    {name: "Bank Announcement",
+    date: "1 feb, 2019",
+    amount: 1000,
     status: "open",
-    company: "My Fintech LTD.",
-  },
-  {
-    name: "james cassegne",
-    date: "8 january, 2019",
-    amount: 5000,
+    company: "New 15% interest certificates ", },
+   { name: "Technical Issue Resolution #5372",
+    date: "9 march, 2019",
+    amount: 1000,
     status: "open",
-    company: "Collboy Tech LTD.",
+    company: "Points not redeemed",
   },
-  {
-    name: "lucy brown",
-    date: "1 january, 2019",
-    amount: 89000,
-    status: "open",
-    company: "ABC Fintech LTD.",
-  },
-  {
-    name: "lucy brown",
-    date: "1 january, 2019",
-    amount: 89000,
-    status: "open",
-    company: "ABC Fintech LTD.",
-  },
-  {
-    name: "lucy brown",
-    date: "1 january, 2019",
-    amount: 89000,
-    status: "open",
-    company: "ABC Fintech LTD.",
-  },
+  
 ];
 
 
-
-  const ViewAllNotifications = () => {return ( 
+  const ViewAllNotifications = () => {
+    const navigate=useNavigate();
+    const showNotificationDetail =() => {
+      navigate("/dashboard/notificationDetails");
+    
+    }
+    
+    
+    
+    return ( 
     <Box width="100%" overflow="auto">
       <StyledTable>
         <TableHead>
           <TableRow>
-            <TableCell align="left">Title</TableCell>
+            <TableCell align="left">Type</TableCell>
             <TableCell align="center">Content</TableCell>
             <TableCell align="center">Date</TableCell>
-            <TableCell align="right">Type</TableCell>
+            <TableCell align="right"></TableCell>
+
             
           </TableRow>
         </TableHead>
@@ -86,8 +75,11 @@ const subscribarList = [
               <TableCell align="left">{subscriber.name}</TableCell>
               <TableCell align="center">{subscriber.company}</TableCell>
               <TableCell align="center">{subscriber.date}</TableCell>
-              <TableCell align="right">{subscriber.status}</TableCell>
-              
+              <TableCell align="right">{
+              <IconButton onClick={showNotificationDetail}>
+          <Icon  sx={{ color: "text.primary" }}>information</Icon>
+      </IconButton>        }
+      </TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -9,6 +9,7 @@ import TextField from "@mui/material/TextField";
 import React from "react";
 import { useState } from "react";
 
+
 export default function FormDialog({ state }) {
   const [open, setOpen] = React.useState(state);
 
@@ -48,7 +49,7 @@ export default function FormDialog({ state }) {
           <Button onClick={handleClose} color="primary">
             Pay
           </Button>
-          {showPopup && <PaymentConfirmationDialog />}
+          {/* {showPopup && <PaymentConfirmationDialog />} */}
         </DialogActions>
       </Dialog>
     </Box>

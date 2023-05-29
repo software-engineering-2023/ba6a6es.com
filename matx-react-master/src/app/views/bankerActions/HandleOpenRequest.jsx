@@ -1,38 +1,50 @@
 import React from 'react';
 import { SimpleCard } from 'app/components';
+import { Card } from '@mui/material';
 import { H1, H2, Paragraph, Span } from 'app/components/Typography';
 
 function HandleOpenRequest() {
   return (
     <div style={{ overflow: 'auto', maxHeight: '500px' }}>
       <SimpleCard>
-        <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '30px' }}>
+        <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '10px' }}>
           Opening BankAccount Request
         </H1>
-        <H2 style={{ marginBottom: '30px' }}>Personal Info</H2>
-        <Paragraph style={{ marginBottom: '50px' }}>
+        <H2 style={{ marginBottom: '10px' }}>Personal Info</H2>
+        <Paragraph style={{ marginBottom: '10px' }}>
           <Span>
-            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '50px' }}>
-              <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginRight: '10px' }}>Name:</H1>
-              Shoroq Abdulraof
-            </div>
-            <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '15px' }}>
-              NationalID:
-            </H1>
-            302045345676980
-            <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '15px' }}>Age:</H1>
-            20
-            <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '15px' }}>
-              phone number:
-            </H1>
-            0100000565665
-            <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '15px' }}>mail:</H1>
-            shrouqshar@gmail.com
-            <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '15px' }}>OtherL:</H1>2
+            <Card>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                <H2 style={{ color: '#0072A2', fontWeight: 'bold', marginRight: '10px' }}>Name:</H2>
+                Shoroq Abdulraof
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                <H2 style={{ color: '#0072A2', fontWeight: 'bold', marginRight: '10px' }}>
+                  Nat.Id:
+                </H2>
+                30206767898546
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                <H2 style={{ color: '#0072A2', fontWeight: 'bold', marginRight: '10px' }}>Age:</H2>
+                20
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                <H2 style={{ color: '#0072A2', fontWeight: 'bold', marginRight: '10px' }}>
+                  Phone num:
+                </H2>
+                010657879543
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '50px' }}>
+                <H2 style={{ color: '#0072A2', fontWeight: 'bold', marginRight: '10px' }}>
+                  Email:
+                </H2>
+                shrouqshar@gmail.com
+              </div>
+            </Card>
           </Span>
         </Paragraph>
 
-        <H2 style={{ marginBottom: '30px' }}>What is the minimum balance required?</H2>
+        <H2 style={{ marginBottom: '30px' }}>Financial Status</H2>
         <Paragraph style={{ marginBottom: '50px' }}>
           <Span>
             The minimum balance required for a savings account is{' '}
