@@ -77,7 +77,7 @@ const TransactionTable = ({ subscribarList }) => {
             <TableCell align="left">ID</TableCell>
             <TableCell align="center">Date</TableCell>
             <TableCell align="center">Type</TableCell>
-            <TableCell align="center">State</TableCell>
+            {/* <TableCell align="center">State</TableCell> */}
             <TableCell align="center">Action</TableCell>
           </TableRow>
         </TableHead>
@@ -90,15 +90,15 @@ const TransactionTable = ({ subscribarList }) => {
               <TableCell align="left">{subscriber.id}</TableCell>
               <TableCell align="center">{subscriber.Date}</TableCell>
               <TableCell align="center">{subscriber.type}</TableCell>
-              <TableCell align="center">{subscriber.state}</TableCell>
+              {/* //<TableCell align="center">{subscriber.state}</TableCell> */}
 
               <TableCell align="right">
                 <Button
-                  color="primary"
+                  color={subscriber.color}
                   variant="contained"
                   type="submit"
                   component={Link}
-                  to="/ViewAllTrans/ViewAllTransactions"
+                  to={subscriber.to}
                 >
                   <Span sx={{ pl: 1, textTransform: 'capitalize' }}>{subscriber.text}</Span>
                 </Button>
