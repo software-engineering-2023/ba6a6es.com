@@ -13,7 +13,7 @@ import {
 import SourceIcon from "@mui/icons-material/Source";
 import BankAccountDetails from "app/views/material-kit/bank/BankAccountDetails";
 import BankAccountDetailsPanel from "../expansion-panel/BankAccountDetailsPanel";
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 
 const StyledTable = styled(Table)(({ theme }) => ({
   whiteSpace: "pre",
@@ -50,11 +50,10 @@ const subscribarList = [
 ];
 
 const CloseBankAccountRequestsTable = () => {
-    const navigate=useNavigate();
-    const showRequestDetail =() => {
-      navigate("/bankerActions/HandleCloseRequest");
-    
-    }
+  const navigate = useNavigate();
+  const showRequestDetail = () => {
+    navigate("/bankerActions/HandleCloseRequest");
+  };
 
   return (
     <Box width="100%" overflow="auto">
@@ -78,11 +77,13 @@ const CloseBankAccountRequestsTable = () => {
               <TableCell align="center">{subscriber.openDate}</TableCell>
               <TableCell align="center">{subscriber.status}</TableCell>
               <TableCell align="center">{subscriber.balance}</TableCell>
-              <TableCell align="right">{
-              <IconButton onClick={showRequestDetail}>
-          <Icon  sx={{ color: "text.primary" }}>information</Icon>
-      </IconButton>        }
-      </TableCell>
+              <TableCell align="center">
+                {
+                  <IconButton onClick={showRequestDetail}>
+                    <Icon sx={{ color: "text.primary" }}>information</Icon>
+                  </IconButton>
+                }
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
