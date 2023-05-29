@@ -1,93 +1,51 @@
-import React from 'react';
-import { SimpleCard } from 'app/components';
-import { Card } from '@mui/material';
-import { H1, H2, Paragraph, Span } from 'app/components/Typography';
+import { Divider, styled, Tab, Tabs } from '@mui/material';
+import { Breadcrumb } from 'app/components';
+import { useState } from 'react';
 
-function HandleOpenRequest() {
+import UserFinancialStatus from './openRequestStuff/UserFinancialStatus';
+import UserPersonalInfo from './openRequestStuff/UserPersonalInfo';
+
+const Container = styled('div')(({ theme }) => ({
+  margin: '30px',
+  [theme.breakpoints.down('sm')]: { margin: '16px' },
+  '& .breadcrumb': {
+    marginBottom: '30px',
+    [theme.breakpoints.down('sm')]: { marginBottom: '16px' },
+  },
+}));
+
+const HandleOpenRequest = () => {
+  const [tabIndex, setTabIndex] = useState(0);
+
+  const handleTabChange = (e, value) => setTabIndex(value);
+
   return (
-    <div style={{ overflow: 'auto', maxHeight: '500px' }}>
-      <SimpleCard>
-        <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '10px' }}>
-          Opening BankAccount Request
-        </H1>
-        <H2 style={{ marginBottom: '10px' }}>Personal Info</H2>
-        <Paragraph style={{ marginBottom: '10px' }}>
-          <Span>
-            <Card>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                <H2 style={{ color: '#0072A2', fontWeight: 'bold', marginRight: '10px' }}>Name:</H2>
-                Shoroq Abdulraof
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                <H2 style={{ color: '#0072A2', fontWeight: 'bold', marginRight: '10px' }}>
-                  Nat.Id:
-                </H2>
-                30206767898546
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                <H2 style={{ color: '#0072A2', fontWeight: 'bold', marginRight: '10px' }}>Age:</H2>
-                20
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                <H2 style={{ color: '#0072A2', fontWeight: 'bold', marginRight: '10px' }}>
-                  Phone num:
-                </H2>
-                010657879543
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '50px' }}>
-                <H2 style={{ color: '#0072A2', fontWeight: 'bold', marginRight: '10px' }}>
-                  Email:
-                </H2>
-                shrouqshar@gmail.com
-              </div>
-            </Card>
-          </Span>
-        </Paragraph>
+    <Container>
+      <div className="breadcrumb">
+        <Breadcrumb
+          routeSegments={[{ name: 'Pages', path: '/pages' }, { name: 'View Customer' }]}
+        />
+      </div>
+      <Tabs
+        sx={{ mt: 2 }}
+        value={tabIndex}
+        onChange={handleTabChange}
+        indicatorColor="primary"
+        textColor="primary"
+      >
+        {tabList.map((item, ind) => (
+          <Tab key={ind} value={ind} label={item} sx={{ textTransform: 'capitalize' }} />
+        ))}
+      </Tabs>
+      <Divider sx={{ mb: '24px' }} />
 
-        <H2 style={{ marginBottom: '30px' }}>Financial Status</H2>
-        <Paragraph style={{ marginBottom: '50px' }}>
-          <Span>
-            The minimum balance required for a savings account is{' '}
-            <Span style={{ fontWeight: 'bold' }}>$1000</Span>.
-          </Span>
-        </Paragraph>
-
-        <H2 style={{ marginBottom: '30px' }}>How do I reset my password?</H2>
-        <Paragraph style={{ marginBottom: '50px' }}>
-          <Span>
-            You can reset your password by clicking on the "Forgot Password" link on the login page
-            and following the instructions.
-          </Span>
-        </Paragraph>
-
-        <H2 style={{ marginBottom: '30px' }}>What is the interest rate for loans?</H2>
-        <Paragraph style={{ marginBottom: '50px' }}>
-          <Span>
-            The interest rate for loans varies depending on the type of loan and your credit score.
-            Please contact one of our loan officers for more information.
-          </Span>
-        </Paragraph>
-
-        <H2 style={{ marginBottom: '30px' }}>How do I apply for a loan?</H2>
-        <Paragraph style={{ marginBottom: '50px' }}>
-          <Span>
-            You can apply for a loan by visiting one of our branches or by filling out an online
-            application form on our website.
-          </Span>
-        </Paragraph>
-
-        <H2 style={{ marginBottom: '30px' }}>
-          What is the maximum amount I can withdraw from an ATM?
-        </H2>
-        <Paragraph style={{ marginBottom: '50px' }}>
-          <Span>
-            The maximum amount you can withdraw from an ATM is{' '}
-            <Span style={{ fontWeight: 'bold' }}>$500</Span> per day.
-          </Span>
-        </Paragraph>
-      </SimpleCard>
-    </div>
+      {tabIndex === 0 && <UserPersonalInfo />}
+      {tabIndex === 1 && <UserFinancialStatus />}
+      {/* {tabIndex === 2 && <CustomerLogs />} */}
+    </Container>
   );
-}
+};
+
+const tabList = ['PersonalInfo', 'Other Loans/Credit Cards'];
 
 export default HandleOpenRequest;
