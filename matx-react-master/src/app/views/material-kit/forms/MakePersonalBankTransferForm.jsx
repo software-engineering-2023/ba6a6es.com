@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import TransferDialog from "../dialog/TransferDialog";
 
-const MakeDomesticBankTransferForm = () => {
+const MakePersonalBankTransferForm = () => {
   const [balance, setBalance] = useState(1000);
   const [errorMessage, setErrorMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
@@ -126,4 +126,4 @@ const MakeDomesticBankTransferForm = () => {
   );
 };
 
-export default MakeDomesticBankTransferForm;
+export default MakePersonalBankTransferForm;

@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import TransferDialog from "../dialog/TransferDialog";
 
-const MakeDomesticBankTransferForm = () => {
+const MakeInternationalBankTransferForm = () => {
   const [balance, setBalance] = useState(1000);
   const [errorMessage, setErrorMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
@@ -81,6 +81,20 @@ const MakeDomesticBankTransferForm = () => {
               <TextField
                 fullWidth
                 type="text"
+                name="country"
+                label="Country of Receiver"
+                variant="outlined"
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.sent}
+                error={formik.touched.sent && Boolean(formik.errors.sent)}
+                helperText={formik.touched.sent && formik.errors.sent}
+              />
+            </Box>
+            <Box marginBottom={2}>
+              <TextField
+                fullWidth
+                type="text"
                 name="amount"
                 label="Amount"
                 variant="outlined"
@@ -126,4 +140,4 @@ const MakeDomesticBankTransferForm = () => {
   );
 };
 
-export default MakeDomesticBankTransferForm;
+export default MakeInternationalBankTransferForm;
