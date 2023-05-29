@@ -7,7 +7,9 @@ import { getTimeDifference } from 'app/utils/utils.js';
 import React, { Fragment } from 'react';
 import { Link,useNavigate,Routes,Route } from 'react-router-dom';
 import { themeShadows } from '../MatxTheme/themeColors';
-import { Paragraph, Small } from '../Typography';
+import { Paragraph, Small2 } from '../Typography';
+
+
 
 const Notification = styled('div')(() => ({
   padding: '16px',
@@ -55,7 +57,7 @@ const CardLeftContent = styled('div')(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   background: 'rgba(0, 0, 0, 0.01)',
-  '& small': {
+  '& small2': {
     fontWeight: '500',
     marginLeft: '16px',
     color: theme.palette.text.secondary,
@@ -121,7 +123,7 @@ const NotificationBar = ({ container }) => {
             {notifications?.map((notification) => (
               <NotificationCard key={notification.id}>
                 <DeleteButton
-                  size="small"
+                  size="small2"
                   className="deleteButton"
                   onClick={() => deleteNotification(notification.id)}
                 >
@@ -140,14 +142,14 @@ const NotificationBar = ({ container }) => {
                         </Icon>
                         <Heading>{notification.heading}</Heading>
                       </Box>
-                      <Small className="messageTime">
+                      <Small2 className="messageTime">
                         {getTimeDifference(new Date(notification.timestamp))}
                         ago
-                      </Small>
+                      </Small2>
                     </CardLeftContent>
                     <Box sx={{ px: 2, pt: 1, pb: 2 }}>
                       <Paragraph sx={{ m: 0 }}>{notification.title}</Paragraph>
-                      <Small sx={{ color: secondary }}>{notification.subtitle}</Small>
+                      <Small2 sx={{ color: secondary }}>{notification.subtitle}</Small2>
                     </Box>
                   </Card>
                 </Link>
