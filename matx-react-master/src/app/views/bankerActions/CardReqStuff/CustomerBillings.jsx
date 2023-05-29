@@ -35,7 +35,7 @@ const CustomerBillings = () => {
         </TableBody>
       </Table>
 
-      <FlexBetween p={2}>
+      {/* <FlexBetween p={2}>
         <StyledButton disableRipple startIcon={<AttachMoney fontSize="small" />}>
           Create Invoice
         </StyledButton>
@@ -43,7 +43,7 @@ const CustomerBillings = () => {
         <StyledButton disableRipple startIcon={<Receipt fontSize="small" />}>
           Resend Due Invoices
         </StyledButton>
-      </FlexBetween>
+      </FlexBetween> */}
     </Card>
   );
 };

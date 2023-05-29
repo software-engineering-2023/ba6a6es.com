@@ -19,28 +19,31 @@
 
 // const CustomerViewer = () => {
 //   const [tabIndex, setTabIndex] = useState(0);
+const HandleCardRequest = () => {
+  const [tabIndex, setTabIndex] = useState(0);
 
 //   const handleTabChange = (e, value) => setTabIndex(value);
 
-//   return (
-//     <Container>
-//       <div className="breadcrumb">
-//         <Breadcrumb
-//           routeSegments={[{ name: 'Pages', path: '/pages' }, { name: 'View Customer' }]}
-//         />
-//       </div>
-//       <Tabs
-//         sx={{ mt: 2 }}
-//         value={tabIndex}
-//         onChange={handleTabChange}
-//         indicatorColor="primary"
-//         textColor="primary"
-//       >
-//         {tabList.map((item, ind) => (
-//           <Tab key={ind} value={ind} label={item} sx={{ textTransform: 'capitalize' }} />
-//         ))}
-//       </Tabs>
-//       <Divider sx={{ mb: '24px' }} />
+  return (
+    <Container>
+      <div className="breadcrumb">
+        <Breadcrumb
+          routeSegments={[{ name: 'Pages', path: '/pages' }, { name: 'View Customer' }]}
+        />
+      </div>
+
+      <Tabs
+        sx={{ mt: 2 }}
+        value={tabIndex}
+        onChange={handleTabChange}
+        indicatorColor="primary"
+        textColor="primary"
+      >
+        {tabList.map((item, ind) => (
+          <Tab key={ind} value={ind} label={item} sx={{ textTransform: 'capitalize' }} />
+        ))}
+      </Tabs>
+      <Divider sx={{ mb: '24px' }} />
 
 //       {tabIndex === 0 && <CustomerDetails />}
 //       {tabIndex === 1 && <CustomerInvoice />}
@@ -48,7 +51,14 @@
 //     </Container>
 //   );
 // };
+      {tabIndex === 0 && <UserPersonalInfo />}
+      {tabIndex === 1 && <UserPersonalInfo />}
+      {/* {tabIndex === 2 && <CustomerLogs />} */}
+      <CustomerBillings />
+    </Container>
+  );
+};
 
 // const tabList = ['Personal Info', 'Other Credit Cards/Loans'];
 
-// export default CustomerViewer;
+export default HandleCardRequest;
