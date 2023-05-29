@@ -11,7 +11,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function ReportConfirmationDialog() {
+export default function ReportConfirmationDialog({ value }) {
   const [open, setOpen] = React.useState(true);
 
   function handleClose() {
@@ -33,7 +33,7 @@ export default function ReportConfirmationDialog() {
 
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            Report sent successfully and a new card has been applied for.{" "}
+            Report sent successfully. {value}{" "}
           </DialogContentText>
         </DialogContent>
 
