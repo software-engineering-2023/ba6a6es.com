@@ -289,3 +289,5 @@ const materialRoutes = [
     element: <ReportTechnicalIssue />,
   },
 ];
+
+export default materialRoutes;
