@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Box,
   styled,
-  IconButton,
   Table,
   TableBody,
   TableCell,
@@ -23,37 +22,25 @@ const StyledTable = styled(Table)(({ theme }) => ({
 
 const subscribarList = [
   {
-    name: "Gas Bill",
+    name: "Bill Reminder",
     date: "18 january, 2019",
     amount: 1000,
-    status: "open",
-    company: "ABC for Natural Gas",
-    name: "Bank Announcement",
-    date: "18 january, 2019",
-    amount: 1000,
-    status: "open",
-    company: "ABC Fintech LTD.",
-    name: "Hana",
-    date: "18 january, 2019",
-    amount: 1000,
-    status: "open",
-    company: "ABC Fintech LTD.",
+    status: "Unpaid",
+    company: "Gas Bill",
   },
-  
 ];
 
 
 
-  const ViewAllNotifications = () => {return ( 
+  const NotificationSpecificTable = () => {return ( 
     <Box width="100%" overflow="auto">
       <StyledTable>
         <TableHead>
           <TableRow>
-            <TableCell align="left">Type</TableCell>
-            <TableCell align="center">Content</TableCell>
-            <TableCell align="center">Date</TableCell>
-            <TableCell align="right"></TableCell>
-
+            {/* <TableCell align="left">Title</TableCell> */}
+            <TableCell align="left">Content</TableCell>
+            <TableCell align="center">Due Date</TableCell>
+            <TableCell align="right">Type</TableCell>
             
           </TableRow>
         </TableHead>
@@ -61,10 +48,11 @@ const subscribarList = [
         <TableBody>
           {subscribarList.map((subscriber, index) => (
             <TableRow key={index}>
-              <TableCell align="left">{subscriber.name}</TableCell>
-              <TableCell align="center">{subscriber.company}</TableCell>
+              {/* <TableCell align="left">{subscriber.name}</TableCell> */}
+              <TableCell align="left">{subscriber.company}</TableCell>
               <TableCell align="center">{subscriber.date}</TableCell>
-                          
+              <TableCell align="right">{subscriber.status}</TableCell>
+              
             </TableRow>
           ))}
         </TableBody>
@@ -72,5 +60,5 @@ const subscribarList = [
       </Box>
   );
 };
-export default ViewAllNotifications;
+export default NotificationSpecificTable;
 
