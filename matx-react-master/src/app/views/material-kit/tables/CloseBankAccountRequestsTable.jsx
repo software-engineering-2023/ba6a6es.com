@@ -28,22 +28,22 @@ const StyledTable = styled(Table)(({ theme }) => ({
 const subscribarList = [
   {
     type: "Current",
-    openDate: "18-01-2019",
-    balance: "EGP18,040",
-    status: "Open",
+    requestDate: "18-01-2019",
+    balance: "EGP100",
+    status: "open",
     accountNo: "100023114560",
   },
   {
     type: "Current",
-    openDate: "30-08-2020",
-    balance: "EGP54,800",
-    status: "Open",
+    requestDate: "30-08-2020",
+    balance: "EGP0",
+    status: "indebted",
     accountNo: "100023454430",
   },
   {
     type: "Savings",
-    openDate: "05-06-2021",
-    balance: "EGP360,000",
+    requestDate: "05-06-2021",
+    balance: "EGP36,000",
     status: "Open",
     accountNo: "964023574220",
   },
@@ -62,7 +62,7 @@ const CloseBankAccountRequestsTable = () => {
           <TableRow>
             <TableCell align="center">Account Type</TableCell>
             <TableCell align="center">Account Number</TableCell>
-            <TableCell align="center">Open Date</TableCell>
+            <TableCell align="center">Request Date</TableCell>
             <TableCell align="center">Status</TableCell>
             <TableCell align="center">Balance</TableCell>
             <TableCell align="center">Details</TableCell>
@@ -74,7 +74,7 @@ const CloseBankAccountRequestsTable = () => {
             <TableRow key={index} hover={true}>
               <TableCell align="center">{subscriber.type}</TableCell>
               <TableCell align="center">{subscriber.accountNo}</TableCell>
-              <TableCell align="center">{subscriber.openDate}</TableCell>
+              <TableCell align="center">{subscriber.requestDate}</TableCell>
               <TableCell align="center">{subscriber.status}</TableCell>
               <TableCell align="center">{subscriber.balance}</TableCell>
               <TableCell align="center">

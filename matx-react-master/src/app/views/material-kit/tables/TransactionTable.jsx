@@ -8,15 +8,15 @@ import {
   TableCell,
   TableHead,
   TableRow,
-} from "@mui/material";
+} from '@mui/material';
 
 const StyledTable = styled(Table)(({ theme }) => ({
-  whiteSpace: "pre",
-  "& thead": {
-    "& tr": { "& th": { paddingLeft: 0, paddingRight: 0 } },
+  whiteSpace: 'pre',
+  '& thead': {
+    '& tr': { '& th': { paddingLeft: 0, paddingRight: 0 } },
   },
-  "& tbody": {
-    "& tr": { "& td": { paddingLeft: 0, textTransform: "capitalize" } },
+  '& tbody': {
+    '& tr': { '& td': { paddingLeft: 0, textTransform: 'capitalize' } },
   },
 }));
 
@@ -71,12 +71,12 @@ const SimpleTable = ({ subscribarList }) => {
       <StyledTable>
         <TableHead>
           <TableRow>
-            <TableCell align="center"></TableCell>
+            <TableCell align="left"></TableCell>
             <TableCell align="center">Date</TableCell>
             <TableCell align="center">Amount</TableCell>
             <TableCell align="center">Type</TableCell>
             {/* <TableCell align="center">Amount</TableCell>*/}
-            <TableCell align="center"></TableCell>
+            <TableCell align="right"></TableCell>
           </TableRow>
         </TableHead>
 
@@ -84,18 +84,16 @@ const SimpleTable = ({ subscribarList }) => {
           {subscribarList.map((subscriber, index) => (
             <TableRow key={index}>
               {/* <Icon className="icon">{subscriber.icon}</Icon> */}
-              <TableCell align="center">
-                {<Icon className="icon">{subscriber.icon}</Icon>}
-              </TableCell>
+              <TableCell align="left">{<Icon className="icon">{subscriber.icon}</Icon>}</TableCell>
               <TableCell align="center">{subscriber.date}</TableCell>
               <TableCell align="center">{subscriber.amount}</TableCell>
               <TableCell align="center">{subscriber.type}</TableCell>
               {/* <TableCell align="center">${subscriber.amount}</TableCell> */}
-              <TableCell align="center">
-                <IconButton color="primary">
-                  <Icon color="">info</Icon>
-                </IconButton>
-                {/* <Icon className="icon">info</Icon> */}
+              <TableCell align="right">
+                {/* <IconButton>
+                    <Icon color="error">close</Icon>
+                  </IconButton> */}
+                <Icon className="icon">info</Icon>
               </TableCell>
             </TableRow>
           ))}
