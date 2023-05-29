@@ -63,7 +63,7 @@ const JwtLogin = () => {
 
   function changeUserType(type) {
     CurrentUserType.setUserType(type);
-    setUserType(CurrentUserType.getUserType());
+    setUserType(type);
   }
 
   const handleFormSubmit = async (values) => {
@@ -73,17 +73,17 @@ const JwtLogin = () => {
       console.log(CurrentUserType.getUserType());
       switch (values.password) {
         case 'pass123': {
-          navigate('/dashboard/dashboard_test/default');
+          navigate('/dashboard/banker/default');
           changeUserType('banker');
           break;
         }
         case 'pass456': {
-          navigate('/dashboard/default');
+          navigate('/dashboard/client/default');
           changeUserType('client');
           break;
         }
-        case 'pass899': {
-          navigate('/dashboard/dashboard_test2/default');
+        case 'pass789': {
+          navigate('/dashboard/admin/default');
           changeUserType('admin');
           break;
         }

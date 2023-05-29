@@ -1,10 +1,10 @@
 import { Card, Grid, styled, useTheme, Button, Icon } from '@mui/material';
 import { Fragment } from 'react';
-import StatCards from './shared/StatCards';
-import StatCards2 from './shared/StatCards2';
+import StatCards from '../shared/StatCards';
+import StatCards2 from '../shared/StatCards2';
 import { Span } from 'app/components/Typography';
-import TransactionTable from '../material-kit/tables/TransactionTable';
-import ReminderTable from '../material-kit/tables/ReminderTable';
+import TransactionTable from '../../material-kit/tables/TransactionTable';
+import ReminderTable from '../../material-kit/tables/ReminderTable';
 import { Link } from 'react-router-dom';
 
 const ContentBox = styled('div')(({ theme }) => ({
@@ -34,7 +34,6 @@ const H4 = styled('h4')(({ theme }) => ({
 
 const Analytics = () => {
   const { palette } = useTheme();
-
   return (
     <Fragment>
       <ContentBox className="analytics">

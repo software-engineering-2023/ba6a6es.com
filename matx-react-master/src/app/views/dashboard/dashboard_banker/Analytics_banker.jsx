@@ -13,7 +13,6 @@ import { H2 } from 'app/components/Typography';
 
 const Analytics_banker = () => {
   const { palette } = useTheme();
-
   return (
     <Grid container spacing={3}>
       <Grid item lg={8} md={8} sm={12} xs={12}>
@@ -30,35 +29,51 @@ const Analytics_banker = () => {
                 id: '#1010',
                 Date: '18/5/2023',
                 type: 'Open Acc',
-                state: 'Pending',
+                // state: 'Pending',
                 text: 'Check ',
+                // prettier-ignore
+                color: "primary",
+                // prettier-ignore
+                to: "material/ViewAllTrans/ViewAllTransactions",
               },
               {
                 //name: 'kessy bryan',
                 id: '#1011',
                 Date: '17/5/2023',
                 type: 'Close Acc',
-                state: 'Pending',
+                // state: 'Pending',
                 text: 'Check ',
-
-                // company: 'My Fintech LTD.',
+                // prettier-ignore
+                color: "primary",
+                // prettier-ignore
+                to: "/material/ViewAllTrans/ViewAllTransactions",
+                /* eslint-enable */
               },
               {
                 //name: 'james cassegne',
                 id: '#1012',
                 Date: '16/5/2023',
                 type: 'CreditCard',
-                state: 'Pending',
+                // state: 'Pending',
                 text: 'Check ',
-                // company: 'Collboy Tech LTD.',
+                // prettier-ignore
+                color: "primary",
+                // prettier-ignore
+                to: "/material/ViewAllTrans/ViewAllTransactions",
+                /* eslint-enable */
               },
               {
                 //name: 'lucy brown',
                 id: '#2011',
                 Date: '15/5/2023',
                 type: 'CardReport',
-                state: 'Pending',
+                // state: 'Pending',
                 text: 'Check ',
+                // prettier-ignore
+                color: "primary",
+                // prettier-ignore
+                to: "/material/ViewAllTrans/ViewAllTransactions",
+                /* eslint-enable */
 
                 // company: 'ABC Fintech LTD.',
               },
@@ -67,34 +82,51 @@ const Analytics_banker = () => {
                 id: '#1013',
                 Date: '15/5/2023',
                 type: 'Loan',
-                state: 'Pending',
+                // state: 'Pending',
                 text: 'Check',
-                // company: 'ABC Fintech LTD.',
+                // prettier-ignore
+                color: "primary",
+                // prettier-ignore
+                to: "/ViewAllTrans/ViewAllTransactions",
+                /* eslint-enable */
               },
               {
                 //name: 'lucy brown',
                 id: '#1014',
                 Date: '10/5/2023',
                 type: 'CreditCard',
-                state: 'Handled',
-                text: 'Check ',
-
-                // company: 'ABC Fintech LTD.',
+                // state: 'Handled',
+                text: 'Handled ',
+                // prettier-ignore
+                color: "inherit",
+                // prettier-ignore
+                to: "/dashboard/dashboard_test/default",
+                /* eslint-enable */
               },
               {
                 id: '#2022',
                 Date: '9/5/2023',
                 type: 'CardReport',
-                state: 'Handled',
-                text: 'Check',
+                // state: 'Handled',
+                text: 'Handled',
+                // prettier-ignore
+                color:  "inherit",
+                // prettier-ignore
+                to: "/dashboard/dashboard_test/default",
+                /* eslint-enable */
               },
 
               {
                 id: '#1099',
                 Date: '7/5/2023',
                 type: 'Loan',
-                state: 'Handled',
-                text: 'Check ',
+                // state: 'Handled',
+                text: 'Handled ',
+                // prettier-ignore
+                color: "inherit",
+                // prettier-ignore
+                to: "/dashboard/dashboard_test/default",
+                /* eslint-enable */
               },
               // {
               //   //name: 'lucy brown',

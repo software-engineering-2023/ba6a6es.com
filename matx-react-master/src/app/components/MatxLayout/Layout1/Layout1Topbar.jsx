@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import { Span } from '../../../components/Typography';
 import NotificationBar from '../../NotificationBar/NotificationBar';
 import ShoppingCart from '../../ShoppingCart';
+import CurrentUserType from 'app/CurrentUserType';
 
 const StyledIconButton = styled(IconButton)(({ theme }) => ({
   color: theme.palette.text.primary,
@@ -101,7 +102,7 @@ const Layout1Topbar = () => {
             <Icon>menu</Icon>
           </StyledIconButton>
 
-          <IconBox>
+          {/* <IconBox>
             <StyledIconButton>
               <Icon>mail_outline</Icon>
             </StyledIconButton>
@@ -113,11 +114,11 @@ const Layout1Topbar = () => {
             <StyledIconButton>
               <Icon>star_outline</Icon>
             </StyledIconButton>
-          </IconBox>
+          </IconBox> */}
         </Box>
 
         <Box display="flex" alignItems="center">
-          <MatxSearchBox />
+          {/* <MatxSearchBox /> */}
 
           <NotificationProvider>
             <NotificationBar />
@@ -126,11 +127,13 @@ const Layout1Topbar = () => {
           {/* <ShoppingCart /> */}
 
           {/* FAQ button*/}
-          <IconButton>
-            <Link to="/faq/FAQPage">
-              <Icon sx={{ color: theme.palette.text.primary }}>live_help</Icon>
-            </Link>
-          </IconButton>
+          {CurrentUserType.getUserType() === 'client' && (
+            <IconButton>
+              <Link to="/faq/FAQPage">
+                <Icon sx={{ color: theme.palette.text.primary }}>live_help</Icon>
+              </Link>
+            </IconButton>
+          )}
 
           <MatxMenu
             menuButton={
@@ -144,7 +147,7 @@ const Layout1Topbar = () => {
               </UserMenu>
             }
           >
-            <StyledItem>
+            {/* <StyledItem>
               <Link to="/">
                 <Icon> home </Icon>
                 <Span> Home </Span>
@@ -156,7 +159,7 @@ const Layout1Topbar = () => {
                 <Icon> person </Icon>
                 <Span> Profile </Span>
               </Link>
-            </StyledItem>
+            </StyledItem> */}
 
             <StyledItem>
               <Link to="/settings/SettingsPage">
