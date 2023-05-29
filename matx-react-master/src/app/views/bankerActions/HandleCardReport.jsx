@@ -21,9 +21,7 @@ const HandleCardReport = () => {
   return (
     <Container>
       <div className="breadcrumb">
-        <Breadcrumb
-          routeSegments={[{ name: 'Pages', path: '/pages' }, { name: 'View Customer' }]}
-        />
+        <Breadcrumb routeSegments={[{ name: 'Card Report' }]} />
       </div>
       <Tabs
         sx={{ mt: 2 }}
