@@ -27,7 +27,7 @@ const TransactionTable = ({ subscribarList }) => {
       <StyledTable>
         <TableHead>
           <TableRow>
-            <TableCell align="center">ID</TableCell>
+            <TableCell align="left">ID</TableCell>
             <TableCell align="center">Username</TableCell>
             <TableCell align="center">Date</TableCell>
             {/* <TableCell align="center">State</TableCell> */}
@@ -40,7 +40,7 @@ const TransactionTable = ({ subscribarList }) => {
             <TableRow key={index}>
               {/* <Icon className="icon">{subscriber.icon}</Icon> */}
 
-              <TableCell align="center">{subscriber.id}</TableCell>
+              <TableCell align="left">{subscriber.id}</TableCell>
               <TableCell align="center">{subscriber.user}</TableCell>
               <TableCell align="center">{subscriber.Date}</TableCell>
               {/* //<TableCell align="center">{subscriber.state}</TableCell> */}
