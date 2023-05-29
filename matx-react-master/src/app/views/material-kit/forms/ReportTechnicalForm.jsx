@@ -49,7 +49,7 @@ const SimpleForm = () => {
 
   const handleDateChange = (date) => setState({ ...state, date });
 
-  const { creditCard, incident, date, description } = state;
+  const { description } = state;
 
   return (
     <div>
@@ -57,64 +57,10 @@ const SimpleForm = () => {
         <Grid container spacing={6}>
           <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
             <TextField
-              select
-              type="text"
-              name="creditCard"
-              variant="outlined"
-              label="Credit Card"
-              onChange={handleChange}
-              value={creditCard || ""}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
-              SelectProps={{ native: true, IconComponent: KeyboardArrowDown }}
-            >
-              <option value="default"></option>
-              <option value="card1">Hana Younis</option>
-              <option value="card2">Haneen Khaled</option>
-              <option value="card3">Zeyad Habash</option>
-              <option value="card4">Shorok Abdulraof</option>
-            </TextField>
-
-            <TextField
-              select
-              type="text"
-              name="incident"
-              label="Incident"
-              onChange={handleChange}
-              value={incident || ""}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
-              SelectProps={{ native: true, IconComponent: KeyboardArrowDown }}
-            >
-              <option value="default"></option>
-              <option value="incident1">Stolen</option>
-              <option value="incident2">Lost</option>
-              <option value="incident3">Damaged</option>
-              <option value="incident3">Other</option>
-            </TextField>
-
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <DatePicker
-                value={date}
-                disableFuture={true}
-                onChange={handleDateChange}
-                validators={["required"]}
-                errorMessages={["this field is required"]}
-                renderInput={(props) => (
-                  <TextField
-                    {...props}
-                    label="Date of Incident"
-                    id="mui-pickers-date"
-                    sx={{ mb: 2, width: "100%" }}
-                  />
-                )}
-              />
-            </LocalizationProvider>
-            <TextField
               type="text"
               name="description"
               variant="outlined"
-              label="Please describe what happened."
+              label="Please describe the issue that you are facing."
               onChange={handleChange}
               value={description || ""}
               validators={["required"]}
@@ -129,7 +75,7 @@ const SimpleForm = () => {
         </Button>
         {showPopup && (
           <ReportConfirmationDialog
-            value={"A new replacement card has been applied for."}
+            value={"We are working on resolving your issue promptly."}
           />
         )}
       </ValidatorForm>

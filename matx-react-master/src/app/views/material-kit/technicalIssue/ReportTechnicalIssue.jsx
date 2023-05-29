@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
 import { Box, styled } from "@mui/system";
 import { Breadcrumb, SimpleCard } from "app/components";
-import MakeDomesticBankTransferForm from "app/views/material-kit/forms/MakeDomesticBankTransferForm";
+import ReportTechnicalForm from "app/views/material-kit/forms/ReportTechnicalForm";
 
 const Container = styled("div")(({ theme }) => ({
   margin: "30px",
@@ -11,25 +11,26 @@ const Container = styled("div")(({ theme }) => ({
     [theme.breakpoints.down("sm")]: { marginBottom: "16px" },
   },
 }));
-const MakeDomesticBankTransfer = () => {
+
+const ReportTechnicalIssue = () => {
   return (
     <Container>
       <Box className="breadcrumb">
         <Breadcrumb
           routeSegments={[
-            { name: "Bank Transfer", path: "" },
-            { name: "Domestic Account" },
+            // { name: "Credit Cards", path: "" },
+            { name: "Report" },
           ]}
         />
       </Box>
 
       <Stack spacing={3}>
-        <SimpleCard title="">
-          <MakeDomesticBankTransferForm />
+        <SimpleCard title="Report An Issue">
+          <ReportTechnicalForm />
         </SimpleCard>
       </Stack>
     </Container>
   );
 };
 
-export default MakeDomesticBankTransfer;
+export default ReportTechnicalIssue;

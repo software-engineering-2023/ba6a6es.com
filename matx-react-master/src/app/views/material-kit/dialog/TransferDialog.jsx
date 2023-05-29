@@ -16,7 +16,6 @@ export default function ReportConfirmationDialog({ value }) {
 
   function handleClose() {
     setOpen(false);
-    window.location.reload(true);
   }
 
   return (
@@ -33,7 +32,7 @@ export default function ReportConfirmationDialog({ value }) {
 
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            Report sent successfully. {value}{" "}
+            Transfer made successfully. {value}{" "}
           </DialogContentText>
         </DialogContent>
 

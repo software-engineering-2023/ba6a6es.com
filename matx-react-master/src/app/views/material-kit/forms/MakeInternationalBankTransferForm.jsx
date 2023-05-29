@@ -1,43 +1,46 @@
-import { useState } from 'react';
-import { Box, Button, Grid, TextField, Typography } from '@mui/material';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import { useState } from "react";
+import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import TransferDialog from "../dialog/TransferDialog";
 
-const MakeDomesticBankTransferForm = () => {
+const MakeInternationalBankTransferForm = () => {
   const [balance, setBalance] = useState(1000);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
 
   const formik = useFormik({
     initialValues: {
-      account: '',
-      sent: '',
-      amount: '',
-      pin: '',
+      account: "",
+      sent: "",
+      amount: "",
+      pin: "",
     },
     validationSchema: Yup.object({
       account: Yup.string()
-        .required('Required')
-        .matches(/^[0-9]+$/, 'Must be a number'),
+        .required("Required")
+        .matches(/^[0-9]+$/, "Must be a number"),
       sent: Yup.string()
-        .required('Required')
-        .matches(/^[0-9]+$/, 'Must be a number'),
+        .required("Required")
+        .matches(/^[0-9]+$/, "Must be a number"),
       amount: Yup.number()
-        .required('Required')
-        .positive('Must be a positive number')
-        .integer('Must be an integer')
-        .test('balance', 'Insufficient balance', (value) => value <= balance),
+        .required("Required")
+        .positive("Must be a positive number")
+        .integer("Must be an integer")
+        .test("balance", "Insufficient balance", (value) => value <= balance),
       pin: Yup.string()
-        .required('Required')
-        .matches(/^[0-9]+$/, 'Must be a number'),
+        .required("Required")
+        .matches(/^[0-9]+$/, "Must be a number"),
     }),
     onSubmit: (values) => {
-      console.log('Account:', values.account);
-      console.log('Sent:', values.sent);
-      console.log('Amount:', values.amount);
-      console.log('Pin:', values.pin);
+      console.log("Account:", values.account);
+      console.log("Sent:", values.sent);
+      console.log("Amount:", values.amount);
+      console.log("Pin:", values.pin);
       setBalance(balance - parseInt(values.amount));
-      setErrorMessage('');
+      setErrorMessage("");
       formik.resetForm();
+      setShowPopup(true);
     },
   });
 
@@ -66,6 +69,20 @@ const MakeDomesticBankTransferForm = () => {
                 type="text"
                 name="sent"
                 label="Receiver Account Number"
+                variant="outlined"
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.sent}
+                error={formik.touched.sent && Boolean(formik.errors.sent)}
+                helperText={formik.touched.sent && formik.errors.sent}
+              />
+            </Box>
+            <Box marginBottom={2}>
+              <TextField
+                fullWidth
+                type="text"
+                name="country"
+                label="Country of Receiver"
                 variant="outlined"
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
@@ -118,8 +135,9 @@ const MakeDomesticBankTransferForm = () => {
           )}
         </Grid>
       </Grid>
+      {showPopup && <TransferDialog />}
     </Box>
   );
 };
 
-export default MakeDomesticBankTransferForm;
+export default MakeInternationalBankTransferForm;

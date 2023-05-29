@@ -2,14 +2,9 @@ export const navigations = [
   { name: 'Dashboard', path: '/dashboard/client/default', icon: 'dashboard' },
   { label: 'PAGES', type: 'label' },
   // {
-  //   name: 'Session/Auth',
+  //   name: 'Temp',
   //   icon: 'security',
-  //   children: [
-  //     { name: 'Sign in', iconText: 'SI', path: '/session/signin' },
-  //     { name: 'Sign up', iconText: 'SU', path: '/session/signup' },
-  //     { name: 'Forgot Password', iconText: 'FP', path: '/session/forgot-password' },
-  //     { name: 'Error', iconText: '404', path: '/session/404' },
-  //   ],
+  //   children: [{ name: 'customer', iconText: 'SI', path: '/pages/view-customer' }],
   // },
   {
     name: 'Bank Accounts',
@@ -28,22 +23,22 @@ export const navigations = [
     badge: { value: '', color: 'secondary' }, //TODO remove 3
     children: [
       {
-        name: 'Personal Bank Transfer',
+        name: 'Internal Account',
         path: '/bankTransfer/MakePersonalBankTransfer',
         iconText: 'B',
       },
       {
-        name: 'Domestic Bank Transfer',
+        name: 'Domestic Account',
         path: '/bankTransfer/MakeDomesticBankTransfer',
         iconText: 'A',
       },
+      // {
+      //   name: 'Regional Account',
+      //   path: '/bankTransfer/MakeRegionalBankTransfer',
+      //   iconText: 'B',
+      // },
       {
-        name: 'Regional Bank Transfer',
-        path: '/bankTransfer/MakeRegionalBankTransfer',
-        iconText: 'B',
-      },
-      {
-        name: 'International Bank Transfer',
+        name: 'International Account',
         path: '/bankTransfer/MakeInternationalBankTransfer',
         iconText: 'B',
       },
