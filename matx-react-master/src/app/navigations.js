@@ -23,22 +23,22 @@ export const navigations = [
     badge: { value: '', color: 'secondary' }, //TODO remove 3
     children: [
       {
-        name: 'Personal Bank Transfer',
+        name: 'Internal Account',
         path: '/bankTransfer/MakePersonalBankTransfer',
         iconText: 'B',
       },
       {
-        name: 'Domestic Bank Transfer',
+        name: 'Domestic Account',
         path: '/bankTransfer/MakeDomesticBankTransfer',
         iconText: 'A',
       },
+      // {
+      //   name: 'Regional Account',
+      //   path: '/bankTransfer/MakeRegionalBankTransfer',
+      //   iconText: 'B',
+      // },
       {
-        name: 'Regional Bank Transfer',
-        path: '/bankTransfer/MakeRegionalBankTransfer',
-        iconText: 'B',
-      },
-      {
-        name: 'International Bank Transfer',
+        name: 'International Account',
         path: '/bankTransfer/MakeInternationalBankTransfer',
         iconText: 'B',
       },

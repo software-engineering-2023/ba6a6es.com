@@ -1,14 +1,14 @@
-import { Stack } from '@mui/material';
-import { Box, styled } from '@mui/system';
-import { Breadcrumb, SimpleCard } from 'app/components';
-import MakeRegionalBankTransferForm from 'app/views/material-kit/forms/MakeRegionalBankTransferForm';
+import { Stack } from "@mui/material";
+import { Box, styled } from "@mui/system";
+import { Breadcrumb, SimpleCard } from "app/components";
+import MakeRegionalBankTransferForm from "app/views/material-kit/forms/MakeRegionalBankTransferForm";
 
-const Container = styled('div')(({ theme }) => ({
-  margin: '30px',
-  [theme.breakpoints.down('sm')]: { margin: '16px' },
-  '& .breadcrumb': {
-    marginBottom: '30px',
-    [theme.breakpoints.down('sm')]: { marginBottom: '16px' },
+const Container = styled("div")(({ theme }) => ({
+  margin: "30px",
+  [theme.breakpoints.down("sm")]: { margin: "16px" },
+  "& .breadcrumb": {
+    marginBottom: "30px",
+    [theme.breakpoints.down("sm")]: { marginBottom: "16px" },
   },
 }));
 
@@ -16,12 +16,16 @@ const MakeRegionalBankTransfer = () => {
   return (
     <Container>
       <Box className="breadcrumb">
-        <Breadcrumb routeSegments={[{ name: 'Material', path: '/material' }, { name: 'Form' }]} />
+        <Breadcrumb
+          routeSegments={[
+            { name: "Bank Transfer", path: "" },
+            { name: "Regional Account" },
+          ]}
+        />
       </Box>
 
       <Stack spacing={3}>
-        <h3>Transfer to other banks</h3>
-        <SimpleCard title="Make Regional Bank Transfer Form">
+        <SimpleCard title="">
           <MakeRegionalBankTransferForm />
         </SimpleCard>
       </Stack>
