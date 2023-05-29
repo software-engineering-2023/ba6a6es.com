@@ -86,15 +86,20 @@ const JwtLogin = () => {
         }
         case 'pass456': {
           // navigate('/material/bank/OpenBankAccount');
-          navigate('/');
+          navigate('/dashboard/default');
           changeUserType('client');
           break;
         }
-        default:
-          changeUserType('admin');
+        case 'pass899': {
           navigate('/dashboard/dashboard_test2/default');
+          changeUserType('admin');
+        }
+        // navigate('/dashboard/dashboard_test2/default');
+        default:
+          //ERROR MESSAGE
+          break;
       }
-      // console.log(CurrentUserType.getUserType());
+      console.log(CurrentUserType.getUserType());
 
       // // if (CurrentUserType.getUserType === 'banker') {
       // //   navigate('/material/bank/OpenBankAccount');
