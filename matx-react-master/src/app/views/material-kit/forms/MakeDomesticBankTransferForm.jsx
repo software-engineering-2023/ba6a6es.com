@@ -16,7 +16,12 @@ import { useEffect, useState } from 'react';
 import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
 import BankAccountDetails from '../bank/BankAccountDetails';
 import SelectedMenu from '../menu/SelectedMenu';
-import { Balance } from '@mui/icons-material';
+import ConfirmationDialog from '../dialog/ConfirmationDialog';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 const TextField = styled(TextValidator)(() => ({
   width: '100%',
@@ -48,6 +53,7 @@ const MakeDomesticBankTransferForm = () => {
   const handleDateChange = (date) => setState({ ...state, date });
   const { recieverBankAccount, amount, pin } = state;
   const [Balance, setBalance] = useState(-1);
+  //const [submit, setSubmit] = useState(false);
 
   return (
     <div>
