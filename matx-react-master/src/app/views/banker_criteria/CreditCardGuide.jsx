@@ -1,13 +1,14 @@
 import React from 'react';
 import { SimpleCard } from 'app/components';
 import { H1, H2, Paragraph, Span } from 'app/components/Typography';
+import SelectedMenu from 'app/components/Common/Menus/SelectedMenu';
 
-function FAQPage() {
+function CreditCardGuide() {
   return (
     <div style={{ overflow: 'auto', maxHeight: '500px' }}>
       <SimpleCard>
         <H1 style={{ color: '#0072A2', fontWeight: 'bold', marginBottom: '30px' }}>
-          Frequently Asked Questions
+          CreditCardGuide{' '}
         </H1>
         <H2 style={{ marginBottom: '30px' }}>How do I open an account?</H2>
         <Paragraph style={{ marginBottom: '50px' }}>
@@ -63,4 +64,4 @@ function FAQPage() {
   );
 }
 
-export default FAQPage;
+export default CreditCardGuide;

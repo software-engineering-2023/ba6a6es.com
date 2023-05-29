@@ -1,5 +1,5 @@
 class CurrentUserType {
-  static userType = localStorage.getItem('userType') || 'client';
+  static userType = localStorage.getItem('userType') || 'nouser';
 
   static setUserType(userType) {
     this.userType = userType;
@@ -10,5 +10,4 @@ class CurrentUserType {
     return this.userType;
   }
 }
-
 export default CurrentUserType;
