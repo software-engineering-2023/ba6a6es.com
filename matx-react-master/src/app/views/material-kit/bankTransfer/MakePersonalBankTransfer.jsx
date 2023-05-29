@@ -20,7 +20,6 @@ const MakePersonalBankTransfer = () => {
       </Box>
 
       <Stack spacing={3}>
-        <h3>Transfer to your accounts</h3>
         <SimpleCard title="Make Personal Bank Transfer Form">
           <MakePersonalBankTransferForm />
         </SimpleCard>

@@ -3,7 +3,7 @@ import { Box, Button, Grid, TextField, Typography } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-const MakeDomesticBankTransferForm = () => {
+const MakePersonalBankTransferForm = () => {
   const [balance, setBalance] = useState(1000);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -122,4 +122,4 @@ const MakeDomesticBankTransferForm = () => {
   );
 };
 
-export default MakeDomesticBankTransferForm;
+export default MakePersonalBankTransferForm;

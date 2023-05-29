@@ -3,7 +3,7 @@ import { Box, Button, Grid, TextField, Typography } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-const MakeDomesticBankTransferForm = () => {
+const MakeInternationalBankTransferForm = () => {
   const [balance, setBalance] = useState(1000);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -11,6 +11,7 @@ const MakeDomesticBankTransferForm = () => {
     initialValues: {
       account: '',
       sent: '',
+      country: '',
       amount: '',
       pin: '',
     },
@@ -21,6 +22,7 @@ const MakeDomesticBankTransferForm = () => {
       sent: Yup.string()
         .required('Required')
         .matches(/^[0-9]+$/, 'Must be a number'),
+      country: Yup.string().required('Required').locationAutoComplete(),
       amount: Yup.number()
         .required('Required')
         .positive('Must be a positive number')
@@ -33,6 +35,7 @@ const MakeDomesticBankTransferForm = () => {
     onSubmit: (values) => {
       console.log('Account:', values.account);
       console.log('Sent:', values.sent);
+      console.log('Country:', values.country);
       console.log('Amount:', values.amount);
       console.log('Pin:', values.pin);
       setBalance(balance - parseInt(values.amount));
@@ -66,6 +69,20 @@ const MakeDomesticBankTransferForm = () => {
                 type="text"
                 name="sent"
                 label="Receiver Account Number"
+                variant="outlined"
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.sent}
+                error={formik.touched.sent && Boolean(formik.errors.sent)}
+                helperText={formik.touched.sent && formik.errors.sent}
+              />
+            </Box>
+            <Box marginBottom={2}>
+              <TextField
+                fullWidth
+                type="text"
+                name="country"
+                label="Country of Receiver"
                 variant="outlined"
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
@@ -122,4 +139,4 @@ const MakeDomesticBankTransferForm = () => {
   );
 };
 
-export default MakeDomesticBankTransferForm;
+export default MakeInternationalBankTransferForm;
