@@ -4,6 +4,9 @@ import useSettings from 'app/hooks/useSettings';
 import { navigations } from 'app/navigations';
 import { Fragment } from 'react';
 import Scrollbar from 'react-perfect-scrollbar';
+import CurrentUserType from 'app/CurrentUserType';
+import { navigation_banker } from 'app/navigation_banker';
+import { navigation_admin } from 'app/navigation_admin';
 
 const StyledScrollBar = styled(Scrollbar)(() => ({
   paddingLeft: '1rem',
@@ -46,7 +49,15 @@ const Sidenav = ({ children }) => {
     <Fragment>
       <StyledScrollBar options={{ suppressScrollX: true }}>
         {children}
-        <MatxVerticalNav items={navigations} />
+        <MatxVerticalNav
+          items={
+            CurrentUserType.getUserType() === 'client'
+              ? navigations
+              : CurrentUserType.getUserType() === 'banker'
+              ? navigation_banker
+              : navigation_admin
+          }
+        />
       </StyledScrollBar>
 
       <SideNavMobile onClick={() => updateSidebarMode({ mode: 'close' })} />

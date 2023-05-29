@@ -18,7 +18,7 @@ const Toggle = styled('div')(() => ({
 const SecondarySidebarToggle = () => {
   const { settings, updateSettings } = useSettings();
 
-  const toggle = () => {
+  const toggle = () => { //call a new page that you can report
     updateSettings({
       secondarySidebar: { open: !settings.secondarySidebar.open },
     });
