@@ -15,12 +15,7 @@ const OpenAccountRequests = () => {
   return (
     <Container>
       <Box className="breadcrumb">
-        <Breadcrumb
-          routeSegments={[
-            { name: 'Requests', path: '/banker/OpenAccountRequests' },
-            { name: 'Table' },
-          ]}
-        />
+        <Breadcrumb routeSegments={[{ name: "Requests", path: "/banker/OpenAccountRequests  " }]} />
       </Box>
 
       <SimpleCard title="Open Account Requests Table">

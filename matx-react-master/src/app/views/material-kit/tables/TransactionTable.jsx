@@ -9,6 +9,7 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
+import { Link,useNavigate } from 'react-router-dom';
 
 const StyledTable = styled(Table)(({ theme }) => ({
   whiteSpace: 'pre',
@@ -66,6 +67,11 @@ const StyledTable = styled(Table)(({ theme }) => ({
 // ];
 
 const SimpleTable = ({ subscribarList }) => {
+  const navigate=useNavigate();
+    const showNotificationDetail =() => {
+      navigate("/dashboard/transactionDetails");
+    
+    }
   return (
     <Box width="100%" overflow="auto">
       <StyledTable>
@@ -89,12 +95,11 @@ const SimpleTable = ({ subscribarList }) => {
               <TableCell align="center">{subscriber.amount}</TableCell>
               <TableCell align="center">{subscriber.type}</TableCell>
               {/* <TableCell align="center">${subscriber.amount}</TableCell> */}
-              <TableCell align="right">
-                {/* <IconButton>
-                    <Icon color="error">close</Icon>
-                  </IconButton> */}
-                <Icon className="icon">info</Icon>
-              </TableCell>
+              <TableCell align="right">{
+              <IconButton onClick={showNotificationDetail}>
+          <Icon  sx={{ color: "text.primary" }}>information</Icon>
+      </IconButton>        }
+      </TableCell>
             </TableRow>
           ))}
         </TableBody>
