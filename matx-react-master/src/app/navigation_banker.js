@@ -17,9 +17,9 @@ export const navigation_banker = [
     icon: 'account_balance_wallet',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
     children: [
-      { name: 'Open Account Requests', path: '/material/bank/ViewBankAccount', iconText: 'B' },
-      { name: 'Close Account Requests', path: '/material/bank/OpenBankAccount', iconText: 'A' },
-      // { name: 'Close Bank Account', path: '/material/bank/CloseBankAccount', iconText: 'B' },
+      { name: 'Open Account Requests', path: '/banker/OpenAccountRequests', iconText: 'B' },
+      { name: 'Close Account Requests', path: '/banker/CloseAccountRequests', iconText: 'A' },
+      // { name: 'Close Bank Account', path: '/bank/CloseBankAccount', iconText: 'B' },
     ],
   },
   {
@@ -29,11 +29,11 @@ export const navigation_banker = [
     children: [
       {
         name: 'Check  Credit Card Requests',
-        path: '/material/creditCard/ViewPayCreditCard',
+        path: '/banker/CreditCardRequests',
         iconText: 'B',
       },
-      // { name: 'Apply', path: '/material/creditCard/ApplyCreditCard', iconText: 'A' },
-      // { name: 'Report', path: '/material/creditCard/ReportCreditCard', iconText: 'B' },
+      // { name: 'Apply', path: '/creditCard/ApplyCreditCard', iconText: 'A' },
+      // { name: 'Report', path: '/creditCard/ReportCreditCard', iconText: 'B' },
     ],
   },
   //{ label: 'Loans', type: 'label' },
@@ -42,8 +42,8 @@ export const navigation_banker = [
     icon: 'account_balance',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
     children: [
-      { name: 'Check Loan Requests', path: '/material/loans/ViewPayLoans', iconText: 'B' },
-      // { name: 'Apply', path: '/material/loans/ApplyLoan', iconText: 'A' },
+      { name: 'Check Loan Requests', path: '/banker/LoanRequests', iconText: 'B' },
+      // { name: 'Apply', path: '/loans/ApplyLoan', iconText: 'A' },
     ],
   },
   //{ label: 'Bills', type: 'label' },
@@ -52,7 +52,7 @@ export const navigation_banker = [
     icon: 'report',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
     children: [
-      { name: 'Check Credit Card Reports', path: '/material/bills/ViewPaySetBill', iconText: 'B' },
+      { name: 'Check Credit Card Reports', path: '/banker/CreditCardReports', iconText: 'B' },
     ],
   },
   //{ label: 'Points', type: 'label' },
@@ -61,7 +61,7 @@ export const navigation_banker = [
     icon: 'edit',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
     children: [
-      { name: 'Send new announcement', path: '/material/points/ViewRedeemPoints', iconText: 'B' },
+      { name: 'Send new announcement', path: '/banker/SendBankAnnouncements', iconText: 'B' },
     ],
   },
 ];

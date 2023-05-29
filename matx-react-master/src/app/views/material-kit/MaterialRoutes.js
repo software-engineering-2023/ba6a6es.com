@@ -30,12 +30,13 @@ const MakePersonalBankTransfer = Loadable(
 const MakeRegionalBankTransfer = Loadable(
   lazy(() => import('./bankTransfer/MakeRegionalBankTransfer'))
 );
-const ViewPaySetBill = Loadable(lazy(() => import('./bills/ViewPaySetBill')));
+const ViewBill = Loadable(lazy(() => import('./bills/ViewBill')));
 const ApplyCreditCard = Loadable(lazy(() => import('./creditCard/ApplyCreditCard')));
 const ReportCreditCard = Loadable(lazy(() => import('./creditCard/ReportCreditCard')));
-const ViewPayCreditCard = Loadable(lazy(() => import('./creditCard/ViewPayCreditCard')));
+const ViewCreditCard = Loadable(lazy(() => import('./creditCard/ViewCreditCard')));
+const CreditCardTransactions = Loadable(lazy(() => import('./creditCard/CreditCardTransactions')));
 const ApplyLoan = Loadable(lazy(() => import('./loans/ApplyLoan')));
-const ViewPayLoans = Loadable(lazy(() => import('./loans/ViewPayLoans')));
+const ViewLoans = Loadable(lazy(() => import('./loans/ViewLoans')));
 const ViewRedeemPoints = Loadable(lazy(() => import('../points/ViewRedeemPoints')));
 const ViewAllTransactions = Loadable(lazy(() => import('../ViewAllTrans/ViewAllTransactions')));
 const SettingsPage = Loadable(lazy(() => import('../Settings/SettingsPage')));
@@ -44,158 +45,204 @@ const FAQPage = Loadable(lazy(() => import('../faq/FAQPage')));
 const OpenBank = Loadable(lazy(() => import('../banker_criteria/OpenBank')));
 const CloseBank = Loadable(lazy(() => import('../banker_criteria/CloseBank')));
 const LoanGuide = Loadable(lazy(() => import('../banker_criteria/LoanGuide')));
+const CloseAccountRequests = Loadable(lazy(() => import('./banker/CloseAccountRequests')));
+const OpenAccountRequests = Loadable(lazy(() => import('./banker/OpenAccountRequests')));
+const CreditCardReports = Loadable(lazy(() => import('./banker/CreditCardReports')));
+const CreditCardRequests = Loadable(lazy(() => import('./banker/CreditCardRequests')));
+const LoanRequests = Loadable(lazy(() => import('./banker/LoanRequests')));
+const SendBankAnnouncements = Loadable(lazy(() => import('./banker/SendBankAnnouncements')));
 const CreditCardGuide = Loadable(lazy(() => import('../banker_criteria/CreditCardGuide')));
+const HandleTechnicalIssues = Loadable(lazy(() => import('./admin/HandleTechnicalIssues')));
 
 const materialRoutes = [
   {
-    path: '/material/table',
+    path: '/table',
     element: <AppTable />,
   },
   {
-    path: '/material/form',
+    path: '/form',
     element: <AppForm />,
   },
   {
-    path: '/material/buttons',
+    path: '/buttons',
     element: <AppButton />,
   },
   {
-    path: '/material/icons',
+    path: '/icons',
     element: <AppIcon />,
   },
   {
-    path: '/material/progress',
+    path: '/progress',
     element: <AppProgress />,
   },
   {
-    path: '/material/menu',
+    path: '/menu',
     element: <AppMenu />,
   },
   {
-    path: '/material/checkbox',
+    path: '/checkbox',
     element: <AppCheckbox />,
   },
   {
-    path: '/material/switch',
+    path: '/switch',
     element: <AppSwitch />,
   },
   {
-    path: '/material/radio',
+    path: '/radio',
     element: <AppRadio />,
   },
   {
-    path: '/material/slider',
+    path: '/slider',
     element: <AppSlider />,
   },
   {
-    path: '/material/autocomplete',
+    path: '/autocomplete',
     element: <AppAutoComplete />,
   },
   {
-    path: '/material/expansion-panel',
+    path: '/expansion-panel',
     element: <AppExpansionPanel />,
   },
   {
-    path: '/material/dialog',
+    path: '/dialog',
     element: <AppDialog />,
   },
   {
-    path: '/material/snackbar',
+    path: '/snackbar',
     element: <AppSnackbar />,
   },
   {
-    path: '/material/bank/OpenBankAccount',
+    path: '/bank/OpenBankAccount',
     element: <OpenBankAccount />,
   },
 
   {
-    path: '/material/bank/CloseBankAccount',
+    path: '/bank/CloseBankAccount',
     element: <CloseBankAccount />,
   },
   {
-    path: '/material/bank/ViewBankAccount',
+    path: '/bank/ViewBankAccount',
     element: <ViewBankAccount />,
   },
   {
-    path: '/material/bankTransfer/MakeInternationalBankTransfer',
+    path: '/bankTransfer/MakeInternationalBankTransfer',
     element: <MakeInternationalBankTransfer />,
+    path:'/creditCard/ViewCreditCard',
+    element: <ViewCreditCard/>,
+  },
+  
+  {
+    path:'/loans/ApplyLoan',
+    element: <ApplyLoan/>,
+  },  
+  {
+    path:'/loans/ViewLoans',
+    element: <ViewLoans/>,
   },
   {
-    path: '/material/bankTransfer/MakePersonalBankTransfer',
+    path: '/bankTransfer/MakePersonalBankTransfer',
     element: <MakePersonalBankTransfer />,
   },
   {
-    path: '/material/bankTransfer/MakeRegionalBankTransfer',
+    path: '/bankTransfer/MakeRegionalBankTransfer',
     element: <MakeRegionalBankTransfer />,
   },
   {
-    path: '/material/bankTransfer/MakeDomesticBankTransfer',
+    path: '/bankTransfer/MakeDomesticBankTransfer',
     element: <MakeDomesticBankTransfer />,
   },
 
   {
-    path: '/material/bills/ViewPaySetBill',
-    element: <ViewPaySetBill />,
+    path: '/bills/ViewBill',
+    element: <ViewBill />,
   },
 
   {
-    path: '/material/creditCard/ApplyCreditCard',
+    path: '/creditCard/ApplyCreditCard',
     element: <ApplyCreditCard />,
   },
   {
-    path: '/material/creditCard/ReportCreditCard',
+    path: '/creditCard/ReportCreditCard',
     element: <ReportCreditCard />,
   },
   {
-    path: '/material/creditCard/ViewPayCreditCard',
-    element: <ViewPayCreditCard />,
+    path: '/creditCard/ViewCreditCard',
+    element: <ViewCreditCard />,
+  },
+  {
+    path: '/creditCard/CreditCardTransactions',
+    element: <CreditCardTransactions />,
   },
 
   {
-    path: '/material/loans/ApplyLoan',
+    path: '/loans/ApplyLoan',
     element: <ApplyLoan />,
   },
   {
-    path: '/material/loans/ViewPayLoan',
-    element: <ViewPayLoans />,
+    path: '/loans/ViewLoans',
+    element: <ViewLoans />,
   },
   {
-    path: '/material/points/ViewRedeemPoints',
+    path: '/points/ViewRedeemPoints',
     element: <ViewRedeemPoints />,
   },
 
   {
-    path: '/material/ViewAllTrans/ViewAllTransactions',
+    path: '/ViewAllTrans/ViewAllTransactions',
     element: <ViewAllTransactions />,
   },
   {
-    path: '/material/settings/SettingsPage',
+    path: '/Settings/SettingsPage',
     element: <SettingsPage />,
   },
   {
-    path: '/material/settings/PasswordPage',
+    path: '/Settings/PasswordPage',
     element: <PasswordPage />,
   },
   {
-    path: '/material/faq/FAQPage',
+    path: '/faq/FAQPage',
     element: <FAQPage />,
   },
   {
-    path: '/material/banker_criteria/OpenBank',
+    path: '/banker_criteria/OpenBank',
     element: <OpenBank />,
   },
   {
-    path: '/material/banker_criteria/CloseBank',
+    path: '/banker_criteria/CloseBank',
     element: <CloseBank />,
   },
   {
-    path: '/material/banker_criteria/LoanGuide',
+    path: '/banker_criteria/LoanGuide',
     element: <LoanGuide />,
   },
   {
-    path: '/material/banker_criteria/CreditCardGuide',
+    path: '/banker_criteria/CreditCardGuide',
     element: <CreditCardGuide />,
   },
+  {
+    path: '/banker/OpenAccountRequests',
+    element: <OpenAccountRequests />,
+  },{
+    path: '/banker/CloseAccountRequests',
+    element: <CloseAccountRequests />,
+  },{
+    path: '/banker/CreditCardRequests',
+    element: <CreditCardRequests />,
+  },{
+    path: '/banker/LoanRequests',
+    element: <LoanRequests />,
+  },{
+    path: '/banker/CreditCardReports',
+    element: <CreditCardReports />,
+  },{
+    path: '/banker/SendBankAnnouncements',
+    element: <SendBankAnnouncements />,
+  },
+  {
+    path: '/admin/HandleTechnicalIssues',
+    element: <HandleTechnicalIssues />,
+  },
+
 ];
 
 export default materialRoutes;

@@ -165,6 +165,21 @@ export const Small = ({ children, className, ellipsis, textTransform, ...props }
     </StyledBox>
   );
 };
+export const Small2 = ({ children, className, ellipsis, textTransform, ...props }) => {
+  return (
+    <StyledBox
+      ellipsis={ellipsis}
+      className={clsx({ [className || '']: true })}
+      component="small"
+      fontSize="12px"
+      fontWeight="500"
+      lineHeight="1.5"
+      {...props}
+    >
+      {children}
+    </StyledBox>
+  );
+};
 
 export const Span = ({ children, className, ellipsis, textTransform, ...props }) => {
   return (
