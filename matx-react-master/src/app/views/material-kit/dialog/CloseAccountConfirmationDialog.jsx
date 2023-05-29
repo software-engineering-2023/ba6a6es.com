@@ -11,7 +11,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function ReportConfirmationDialog({ value }) {
+export default function ReportConfirmationDialog() {
   const [open, setOpen] = React.useState(true);
 
   function handleClose() {
@@ -33,15 +33,12 @@ export default function ReportConfirmationDialog({ value }) {
 
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            Report sent successfully. {value}{" "}
+            Request sent successfully. A representative from the bank will get
+            back to you in the next working day.{" "}
           </DialogContentText>
         </DialogContent>
 
         <DialogActions>
-          {/* <Button onClick={handleClose} color="primary">
-            Disagree
-          </Button> */}
-
           <Button onClick={handleClose} color="primary">
             Done
           </Button>

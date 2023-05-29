@@ -15,7 +15,7 @@ import { Span } from "app/components/Typography";
 import { useEffect, useState } from "react";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import { KeyboardArrowDown } from "@mui/icons-material";
-import ReportConfirmationDialog from "../dialog/ReportConfirmationDialog";
+import CloseAccountConfirmationDialog from "../dialog/CloseAccountConfirmationDialog";
 
 const TextField = styled(TextValidator)(() => ({
   width: "100%",
@@ -49,7 +49,7 @@ const SimpleForm = () => {
 
   const handleDateChange = (date) => setState({ ...state, date });
 
-  const { creditCard, incident, date, description } = state;
+  const { accountNo, description } = state;
 
   return (
     <div>
@@ -59,62 +59,26 @@ const SimpleForm = () => {
             <TextField
               select
               type="text"
-              name="creditCard"
+              name="accountNo"
               variant="outlined"
-              label="Credit Card"
+              label="Account Number"
               onChange={handleChange}
-              value={creditCard || ""}
+              value={accountNo || ""}
               validators={["required"]}
               errorMessages={["this field is required"]}
               SelectProps={{ native: true, IconComponent: KeyboardArrowDown }}
             >
               <option value="default"></option>
-              <option value="card1">Hana Younis</option>
-              <option value="card2">Haneen Khaled</option>
-              <option value="card3">Zeyad Habash</option>
-              <option value="card4">Shorok Abdulraof</option>
+              <option value="acc1">100023114560</option>
+              <option value="acc2">100023454430</option>
+              <option value="acc3">964023574220</option>
             </TextField>
 
             <TextField
-              select
-              type="text"
-              name="incident"
-              label="Incident"
-              onChange={handleChange}
-              value={incident || ""}
-              validators={["required"]}
-              errorMessages={["this field is required"]}
-              SelectProps={{ native: true, IconComponent: KeyboardArrowDown }}
-            >
-              <option value="default"></option>
-              <option value="incident1">Stolen</option>
-              <option value="incident2">Lost</option>
-              <option value="incident3">Damaged</option>
-              <option value="incident3">Other</option>
-            </TextField>
-
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <DatePicker
-                value={date}
-                disableFuture={true}
-                onChange={handleDateChange}
-                validators={["required"]}
-                errorMessages={["this field is required"]}
-                renderInput={(props) => (
-                  <TextField
-                    {...props}
-                    label="Date of Incident"
-                    id="mui-pickers-date"
-                    sx={{ mb: 2, width: "100%" }}
-                  />
-                )}
-              />
-            </LocalizationProvider>
-            <TextField
-              type="text"
+              type="text-area"
               name="description"
               variant="outlined"
-              label="Please describe what happened."
+              label="Please tell us why you would like to close the account."
               onChange={handleChange}
               value={description || ""}
               validators={["required"]}
@@ -127,11 +91,7 @@ const SimpleForm = () => {
           <Icon>send</Icon>
           <Span sx={{ pl: 1, textTransform: "capitalize" }}>Submit</Span>
         </Button>
-        {showPopup && (
-          <ReportConfirmationDialog
-            value={"A new replacement card has been applied for."}
-          />
-        )}
+        {showPopup && <CloseAccountConfirmationDialog />}
       </ValidatorForm>
     </div>
   );

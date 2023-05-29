@@ -1,6 +1,7 @@
-import { Box, styled } from "@mui/material";
+import { Stack } from "@mui/material";
+import { Box, styled } from "@mui/system";
 import { Breadcrumb, SimpleCard } from "app/components";
-import CloseBankAccountForm from "app/views/material-kit/forms/CloseBankAccountForm";
+import ReportTechnicalForm from "app/views/material-kit/forms/ReportTechnicalForm";
 
 const Container = styled("div")(({ theme }) => ({
   margin: "30px",
@@ -11,23 +12,25 @@ const Container = styled("div")(({ theme }) => ({
   },
 }));
 
-const CloseBankAccount = () => {
+const ReportTechnicalIssue = () => {
   return (
     <Container>
       <Box className="breadcrumb">
         <Breadcrumb
           routeSegments={[
-            { name: "Bank Accounts", path: "" },
-            { name: "Close An Account" },
+            // { name: "Credit Cards", path: "" },
+            { name: "Report" },
           ]}
         />
       </Box>
 
-      <SimpleCard title="Please Fill the following form.">
-        <CloseBankAccountForm />
-      </SimpleCard>
+      <Stack spacing={3}>
+        <SimpleCard title="Report An Issue">
+          <ReportTechnicalForm />
+        </SimpleCard>
+      </Stack>
     </Container>
   );
 };
 
-export default CloseBankAccount;
+export default ReportTechnicalIssue;
