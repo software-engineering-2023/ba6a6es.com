@@ -12,7 +12,8 @@ import {
 } from '@mui/material';
 import { H3, Small } from 'app/components/Typography';
 import { format } from 'date-fns';
-import PreviousLoanTable from './PreviousLoanTable';
+import CreditTransactionTable from 'app/views/material-kit/tables/CreditTransactionTable';
+import TransactionTable from './TransactionTable';
 
 const StyledCell = styled(TableCell)({
   paddingTop: '4px',
@@ -27,25 +28,32 @@ const StyedSmall = styled(Small)(({ theme, status }) => ({
   background: status === 'paid' ? '#08ad6c' : status === 'unpaid' && theme.palette.error.main,
 }));
 
-const CustomerInvoice = () => {
+const UserFinancialStatus = () => {
   return (
     <Fade in timeout={300}>
       <Card elevation={3} sx={{ width: '100%', overflow: 'auto' }}>
-        <PreviousLoanTable
+        <TransactionTable
           subscribarList={[
             {
-              amount: 'EGP 30000',
-              type: 'Personal Loan',
-              date: '18-05-2022',
-              duration: '0 months',
-              status: 'paid',
+              id: '#1',
+              type: 'CreditCard',
+              num: '4536***********9876',
+              description: '2020-2022',
+              status: 'unactive',
             },
             {
-              amount: 'EGP 500000',
-              type: 'Car Loan',
-              date: '11-09-2021',
-              duration: '2 months',
-              status: 'unpaid',
+              id: '#2',
+              type: 'Loan',
+              num: 'loan#122234',
+              description: '2021-2026',
+              status: 'active',
+            },
+            {
+              id: '#3',
+              type: 'Bank Account',
+              num: '10009876543',
+              description: '2020-present',
+              status: 'active/Saving',
             },
           ]}
         />
@@ -53,5 +61,4 @@ const CustomerInvoice = () => {
     </Fade>
   );
 };
-
-export default CustomerInvoice;
+export default UserFinancialStatus;
