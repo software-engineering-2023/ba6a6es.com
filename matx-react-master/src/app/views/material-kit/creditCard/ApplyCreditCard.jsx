@@ -16,15 +16,18 @@ const ApplyCreditCard = () => {
   return (
     <Container>
       <Box className="breadcrumb">
-        <Breadcrumb routeSegments={[{ name: "Material", path: "/material" }, { name: "Form" }]} />
+        <Breadcrumb
+          routeSegments={[
+            { name: "Credit Cards", path: "" },
+            { name: "Apply" },
+          ]}
+        />
       </Box>
 
       <Stack spacing={3}>
-        <SimpleCard title="Apply Credit Card Form">
+        <SimpleCard title="Apply For Credit Card">
           <ApplyCreditCardForm />
         </SimpleCard>
-
-       
       </Stack>
     </Container>
   );

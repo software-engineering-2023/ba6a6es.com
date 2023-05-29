@@ -1,7 +1,6 @@
-import { Stack } from "@mui/material";
-import { Box, styled } from "@mui/system";
+import { Box, styled } from "@mui/material";
 import { Breadcrumb, SimpleCard } from "app/components";
-import ApplyLoanForm from "app/views/material-kit/forms/ApplyLoanForm";
+import ViewCreditCardTable from "app/views/material-kit/tables/ViewCreditCardTable";
 
 const Container = styled("div")(({ theme }) => ({
   margin: "30px",
@@ -12,22 +11,20 @@ const Container = styled("div")(({ theme }) => ({
   },
 }));
 
-const ApplyLoan = () => {
+const ViewPayCreditCard = () => {
   return (
     <Container>
       <Box className="breadcrumb">
         <Breadcrumb
-          routeSegments={[{ name: "Loans", path: "" }, { name: "Apply" }]}
+          routeSegments={[{ name: "Credit Cards", path: "" }, { name: "View" }]}
         />
       </Box>
 
-      <Stack spacing={3}>
-        <SimpleCard title="Apply For Loan">
-          <ApplyLoanForm />
-        </SimpleCard>
-      </Stack>
+      <SimpleCard title="Credit Cards">
+        <ViewCreditCardTable />
+      </SimpleCard>
     </Container>
   );
 };
 
-export default ApplyLoan;
+export default ViewPayCreditCard;

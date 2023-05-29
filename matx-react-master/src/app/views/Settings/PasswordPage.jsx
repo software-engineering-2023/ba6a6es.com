@@ -1,46 +1,56 @@
-import { Box, Button, Card, Divider, Grid, Stack, styled, TextField } from '@mui/material';
-import { FlexBox } from 'app/components/FlexBox';
-import { H5, Paragraph } from 'app/components/Typography';
-import { useFormik } from 'formik';
-import { useState } from 'react';
-import Alert from '../../components/Common/Alert/Alert';
-import * as Yup from 'yup';
+import {
+  Box,
+  Button,
+  Card,
+  Divider,
+  Grid,
+  Stack,
+  styled,
+  TextField,
+} from "@mui/material";
+import { FlexBox } from "app/components/FlexBox";
+import { H5, Paragraph } from "app/components/Typography";
+import { useFormik } from "formik";
+import { useState } from "react";
+import Alert from "../../components/Common/Alert/Alert";
+import * as Yup from "yup";
 
 const Dot = styled(Box)(({ theme }) => ({
   width: 8,
   height: 8,
   flexShrink: 0,
-  borderRadius: '50%',
+  borderRadius: "50%",
   backgroundColor: theme.palette.primary.main,
 }));
 
 const Password = () => {
   const initialValues = {
-    currentPassword: '12345',
-    newPassword: '123456',
-    confirmNewPassword: '123456',
+    currentPassword: "12345",
+    newPassword: "123456",
+    confirmNewPassword: "123456",
   };
 
   const validationSchema = Yup.object({
     currentPassword: Yup.string()
-      .min(3, 'Must be greater then 3 characters')
-      .required('Current Password is Required!'),
-    newPassword: Yup.string().min(8).required('New Password is Required!'),
+      .min(3, "Must be greater then 3 characters")
+      .required("Current Password is Required!"),
+    newPassword: Yup.string().min(8).required("New Password is Required!"),
     confirmNewPassword: Yup.string().oneOf(
-      [Yup.ref('newPassword'), null],
+      [Yup.ref("newPassword"), null],
       "Password doesn't matched"
     ),
   });
 
   const [submitted, setSubmitted] = useState(false);
 
-  const { values, errors, handleSubmit, handleChange, handleBlur, touched } = useFormik({
-    initialValues,
-    validationSchema,
-    onSubmit: (values) => {
-      setSubmitted(true);
-    },
-  });
+  const { values, errors, handleSubmit, handleChange, handleBlur, touched } =
+    useFormik({
+      initialValues,
+      validationSchema,
+      onSubmit: (values) => {
+        setSubmitted(true);
+      },
+    });
 
   return (
     <Card>
@@ -62,7 +72,9 @@ const Password = () => {
                   onChange={handleChange}
                   value={values.currentPassword}
                   helperText={touched.currentPassword && errors.currentPassword}
-                  error={Boolean(touched.currentPassword && errors.currentPassword)}
+                  error={Boolean(
+                    touched.currentPassword && errors.currentPassword
+                  )}
                 />
 
                 <TextField
@@ -86,8 +98,12 @@ const Password = () => {
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.confirmNewPassword}
-                  helperText={touched.confirmNewPassword && errors.confirmNewPassword}
-                  error={Boolean(touched.confirmNewPassword && errors.confirmNewPassword)}
+                  helperText={
+                    touched.confirmNewPassword && errors.confirmNewPassword
+                  }
+                  error={Boolean(
+                    touched.confirmNewPassword && errors.confirmNewPassword
+                  )}
                 />
               </Stack>
 
@@ -101,7 +117,9 @@ const Password = () => {
 
           <Grid item sm={6} xs={12}>
             <H5>Password requirements:</H5>
-            <Paragraph lineHeight={1.7}>Ensure that these requirements are met:</Paragraph>
+            <Paragraph lineHeight={1.7}>
+              Ensure that these requirements are met:
+            </Paragraph>
 
             <Stack spacing={1} mt={2}>
               <FlexBox alignItems="center" gap={1}>
@@ -113,12 +131,16 @@ const Password = () => {
 
               <FlexBox alignItems="center" gap={1}>
                 <Dot />
-                <Paragraph fontSize={13}>At least one lowercase character</Paragraph>
+                <Paragraph fontSize={13}>
+                  At least one lowercase character
+                </Paragraph>
               </FlexBox>
 
               <FlexBox alignItems="center" gap={1}>
                 <Dot />
-                <Paragraph fontSize={13}>At least one uppercase character</Paragraph>
+                <Paragraph fontSize={13}>
+                  At least one uppercase character
+                </Paragraph>
               </FlexBox>
 
               <FlexBox alignItems="center" gap={1}>
@@ -132,9 +154,9 @@ const Password = () => {
           {submitted && (
             <Grid item sm={6} xs={12}>
               <Alert
-                title={'Success'}
-                description={'Password Changed Successfully'}
-                btnText={'OK'}
+                title={"Success"}
+                description={"Password Changed Successfully"}
+                btnText={"OK"}
                 hiddenButton={true}
               />
             </Grid>
