@@ -3,6 +3,7 @@ import { styled, useTheme } from '@mui/system';
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
 import useSettings from 'app/hooks/useSettings';
 import clsx from 'clsx';
+import CurrentUserType from 'app/CurrentUserType';
 
 const Toggle = styled('div')(() => ({
   position: 'fixed',
@@ -18,7 +19,8 @@ const Toggle = styled('div')(() => ({
 const SecondarySidebarToggle = () => {
   const { settings, updateSettings } = useSettings();
 
-  const toggle = () => { //call a new page that you can report
+  const toggle = () => {
+    //call a new page that you can report
     updateSettings({
       secondarySidebar: { open: !settings.secondarySidebar.open },
     });
@@ -35,9 +37,9 @@ const SecondarySidebarToggle = () => {
         </IconButton>
       )}
 
-      {!settings.secondarySidebar.open && (
+      {!settings.secondarySidebar.open && CurrentUserType.getUserType() === 'client' && (
         <Fab color="error.main" aria-label="expand" onClick={toggle}>
-          <ErrorOutlineOutlinedIcon  size="medium"  sx={{ color: palette.error.main }}/>
+          <ErrorOutlineOutlinedIcon size="medium" sx={{ color: palette.error.main }} />
         </Fab>
       )}
     </Toggle>

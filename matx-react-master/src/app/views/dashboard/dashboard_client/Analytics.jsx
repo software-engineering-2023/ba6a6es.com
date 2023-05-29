@@ -1,10 +1,10 @@
-import { Card, Grid, styled, useTheme, Button, Icon } from '@mui/material';
+import { Card, Grid, styled, useTheme, Button, Icon, Box } from '@mui/material';
 import { Fragment } from 'react';
-import StatCards from './shared/StatCards';
-import StatCards2 from './shared/StatCards2';
+import StatCards from '../shared/StatCards';
+import StatCards2 from '../shared/StatCards2';
 import { Span } from 'app/components/Typography';
-import TransactionTable from '../material-kit/tables/TransactionTable';
-import ReminderTable from '../material-kit/tables/ReminderTable';
+import TransactionTable from '../../material-kit/tables/TransactionTable';
+import ReminderTable from '../../material-kit/tables/ReminderTable';
 import { Link } from 'react-router-dom';
 
 const ContentBox = styled('div')(({ theme }) => ({
@@ -34,7 +34,6 @@ const H4 = styled('h4')(({ theme }) => ({
 
 const Analytics = () => {
   const { palette } = useTheme();
-
   return (
     <Fragment>
       <ContentBox className="analytics">
@@ -48,15 +47,23 @@ const Analytics = () => {
               <Title>Recent Transactions </Title>
               {/* <SubTitle>Stats and Reminders</SubTitle> */}
 
-              <Button
-                color="primary"
-                variant="contained"
-                type="submit"
-                component={Link}
-                to="/ViewAllTrans/ViewAllTransactions"
-              >
-                <Span sx={{ pl: 1, textTransform: 'capitalize' }}>View All Transactions</Span>
-              </Button>
+              <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '8px' }}>
+                <Button
+                  color="primary"
+                  variant="contained"
+                  type="submit"
+                  component={Link}
+                  to="/ViewAllTrans/ViewAllTransactions"
+                  sx={{
+                    position: 'relative',
+                    top: 0,
+                    left: 0,
+                    ml: 0,
+                  }}
+                >
+                  <Span sx={{ pl: 1, textTransform: 'capitalize' }}>View All Transactions</Span>
+                </Button>
+              </Box>
 
               <TransactionTable
                 subscribarList={[

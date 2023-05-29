@@ -15,7 +15,12 @@ const MakeDomesticBankTransfer = () => {
   return (
     <Container>
       <Box className="breadcrumb">
-        <Breadcrumb routeSegments={[{ name: 'Material', path: '/material' }, { name: 'Form' }]} />
+        <Breadcrumb
+          routeSegments={[
+            { name: 'Material', path: '/material' },
+            { name: 'Domestic Bank Transfer' },
+          ]}
+        />
       </Box>
 
       <Stack spacing={3}>

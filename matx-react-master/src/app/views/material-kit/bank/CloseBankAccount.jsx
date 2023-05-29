@@ -15,14 +15,17 @@ const CloseBankAccount = () => {
   return (
     <Container>
       <Box className="breadcrumb">
-        <Breadcrumb routeSegments={[{ name: "Material", path: "/material" }, { name: "Table" }]} />
+        <Breadcrumb
+          routeSegments={[
+            { name: "Bank Accounts", path: "" },
+            { name: "Close An Account" },
+          ]}
+        />
       </Box>
 
       <SimpleCard title="Close Bank Account Table">
         <CloseBankAccountTable />
       </SimpleCard>
-
-      
     </Container>
   );
 };

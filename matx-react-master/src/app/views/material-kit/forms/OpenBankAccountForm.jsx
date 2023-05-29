@@ -14,6 +14,7 @@ import {
 import { Span } from "app/components/Typography";
 import { useEffect, useState } from "react";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
+import OpenBankAccountConfirmationDialog from "../dialog/OpenBankAccountConfirmationDialog";
 
 const TextField = styled(TextValidator)(() => ({
   width: "100%",
@@ -22,6 +23,8 @@ const TextField = styled(TextValidator)(() => ({
 
 const OpenBankAccountForm = () => {
   const [state, setState] = useState({ date: new Date() });
+
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     ValidatorForm.addValidationRule("isPasswordMatch", (value) => {
@@ -33,8 +36,7 @@ const OpenBankAccountForm = () => {
   }, [state.password]);
 
   const handleSubmit = (event) => {
-    // console.log("submitted");
-    // console.log(event);
+    setShowPopup(true);
   };
 
   const handleChange = (event) => {
@@ -45,7 +47,6 @@ const OpenBankAccountForm = () => {
   const handleDateChange = (date) => setState({ ...state, date });
 
   const {
-    
     fullName,
     mobile,
     gender,
@@ -60,8 +61,6 @@ const OpenBankAccountForm = () => {
       <ValidatorForm onSubmit={handleSubmit} onError={() => null}>
         <Grid container spacing={6}>
           <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
-            
-
             <TextField
               type="text"
               name="fullName"
@@ -97,10 +96,11 @@ const OpenBankAccountForm = () => {
               />
             </LocalizationProvider>
             <TextField
-              type="text"
+              type="number"
               name="mobile"
               value={mobile || ""}
               label="Mobile Number"
+              pattern="[0-9]*"
               onChange={handleChange}
               validators={["required"]}
               errorMessages={["this field is required"]}
@@ -143,27 +143,15 @@ const OpenBankAccountForm = () => {
                 labelPlacement="end"
                 control={<Radio color="secondary" />}
               />
-
-              <FormControlLabel
-                value="Others"
-                label="Others"
-                labelPlacement="end"
-                control={<Radio color="secondary" />}
-              />
             </RadioGroup>
-
-            <FormControlLabel
-              control={<Checkbox />}
-              label="I have read and agree to the terms of service."
-            />
           </Grid>
-
         </Grid>
 
         <Button color="primary" variant="contained" type="submit">
           <Icon>send</Icon>
           <Span sx={{ pl: 1, textTransform: "capitalize" }}>Submit</Span>
         </Button>
+        {showPopup && <OpenBankAccountConfirmationDialog />}
       </ValidatorForm>
     </div>
   );

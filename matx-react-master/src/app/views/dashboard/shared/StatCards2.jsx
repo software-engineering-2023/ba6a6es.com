@@ -60,10 +60,10 @@ const StatCards2 = () => {
 
           <ContentBox sx={{ pt: 2 }}>
             <H1>10.8k</H1>
-            <IconBox sx={{ background: bgError }}>
+            {/* <IconBox sx={{ background: bgError }}>
               <Icon className="icon">expand_less</Icon>
             </IconBox>
-            <Span textcolor={textError}>(+19%)</Span>
+            <Span textcolor={textError}>(+19%)</Span> */}
           </ContentBox>
         </Card>
       </Grid>
@@ -82,10 +82,10 @@ const StatCards2 = () => {
 
           <ContentBox sx={{ pt: 2 }}>
             <H1>5.4k</H1>
-            <IconBox sx={{ background: 'rgba(9, 182, 109, 0.15)' }}>
+            {/* <IconBox sx={{ background: 'rgba(9, 182, 109, 0.15)' }}>
               <Icon className="icon">expand_less</Icon>
             </IconBox>
-            <Span textcolor={'#08ad6c'}>(+21%)</Span>
+            <Span textcolor={'#08ad6c'}>(+21%)</Span> */}
           </ContentBox>
         </Card>
       </Grid>
