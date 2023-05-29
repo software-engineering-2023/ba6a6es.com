@@ -24,13 +24,14 @@ const StyedSmall = styled(Small)(({ theme, status }) => ({
   padding: '2px 8px',
   borderRadius: '4px',
   background: status === 'paid' ? '#08ad6c' : status === 'unpaid' && theme.palette.error.main,
+  fontSize: '12px',
 }));
 
 const CustomerInvoice = () => {
   return (
     <Fade in timeout={300}>
       <Card elevation={3} sx={{ width: '100%', overflow: 'auto' }}>
-        <H3 sx={{ p: 2, pb: 0 }}>Other Credit Cards/Loans</H3>
+        <H3 sx={{ p: 2, pb: 0 }}>Billing</H3>
 
         <Table sx={{ minWidth: 1050 }}>
           <TableHead>
@@ -54,9 +55,9 @@ const CustomerInvoice = () => {
                   #{invoice._id}
                 </StyledCell>
 
-                {/* <StyledCell align="left" colSpan={2}>
-                  {format(new Date(invoice.date), "dd MMM, yyyy | hh:mm aa")}
-                </StyledCell> */}
+                <StyledCell align="left" colSpan={2}>
+                  {format(new Date(invoice.date), 'dd MMM, yyyy | hh:mm aa')}
+                </StyledCell>
 
                 <StyledCell align="left" colSpan={3}>
                   {invoice.type}
@@ -90,28 +91,28 @@ const CustomerInvoice = () => {
 
 const invoiceList = [
   {
-    _id: '1',
-    // date: new Date(),
-    type: 'CreditCard',
-    id: '4536***********9876',
-    description: '2020-2022',
-    status: 'unactive',
+    _id: '5ece2cef3e562cbd61996dfds',
+    date: new Date(),
+    description: 'Bit Bass Headphone',
+    method: 'PayPal',
+    total: 15.25,
+    status: 'paid',
   },
   {
-    _id: '2',
-    // date: new Date(),
-    type: 'Loan',
-    id: 'loan#122234',
-    description: '2021-2026',
-    status: 'active',
+    _id: '5ece2cef3efdsfsdfcbd61996',
+    date: new Date(),
+    description: 'Comlion Watch',
+    method: 'Visa Card',
+    total: 75.25,
+    status: 'unpaid',
   },
   {
-    _id: '3',
-    // date: new Date(),
-    type: 'CreditCard',
-    id: '3334***********9876',
-    description: '2020-present',
-    status: 'active',
+    _id: '5ece2cef3e56dsfdsfds61996',
+    date: new Date(),
+    description: 'Beats Headphone',
+    method: 'Master Card',
+    total: 45.25,
+    status: 'paid',
   },
 ];
 export default CustomerInvoice;

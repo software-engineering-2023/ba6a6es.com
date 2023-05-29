@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import { H3, Small } from 'app/components/Typography';
 import { format } from 'date-fns';
-import CreditTransactionTable from 'app/views/material-kit/tables/CreditTransactionTable';
+import PreviousLoanTable from './PreviousLoanTable';
 
 const StyledCell = styled(TableCell)({
   paddingTop: '4px',
@@ -31,70 +31,21 @@ const CustomerInvoice = () => {
   return (
     <Fade in timeout={300}>
       <Card elevation={3} sx={{ width: '100%', overflow: 'auto' }}>
-        <CreditTransactionTable
+        <PreviousLoanTable
           subscribarList={[
             {
-              cardNumber: '**** **** **** 1234',
-              icon: 'arrow_downward',
-              date: '18-05-2023',
-              amount: 'EGP1000',
-              type: 'Purchase',
-              transNumber: '54D879E56',
-              account: 'Water Company',
+              amount: 'EGP 30000',
+              type: 'Personal Loan',
+              date: '18-05-2022',
+              duration: '0 months',
+              status: 'paid',
             },
             {
-              cardNumber: '**** **** **** 1234',
-              icon: 'arrow_downward',
-              date: '18-05-2023',
-              amount: 'EGP5000',
-              type: 'Withdrawal',
-              transNumber: '632R65G32',
-              account: 'ATM',
-            },
-            {
-              cardNumber: '**** **** **** 1234',
-              icon: 'arrow_downward',
-              date: '16-05-2023',
-              amount: 'EGP500',
-              type: 'Purchase',
-              transNumber: '5A84345T6',
-              account: 'Gas Company',
-            },
-            {
-              cardNumber: '**** **** **** 1234',
-              icon: 'arrow_downward',
-              date: '10-05-2023',
-              amount: 'EGP1050',
-              type: 'Purchase',
-              transNumber: '4233FF456',
-              account: 'Carefour',
-            },
-            {
-              cardNumber: '**** **** **** 1234',
-              icon: 'arrow_upward',
-              date: '09-05-2023',
-              amount: 'EGP2400',
-              type: 'Refund',
-              transNumber: '542K345D6',
-              account: 'Amazon.com',
-            },
-            {
-              cardNumber: '**** **** **** 1234',
-              icon: 'arrow_downward',
-              date: '20-05-2023',
-              amount: 'EGP400',
-              type: 'Purchase',
-              transNumber: '2K345H5D6',
-              account: 'Internet Company',
-            },
-            {
-              cardNumber: '**** **** **** 1234',
-              icon: 'arrow_upward',
-              date: '02-05-2023',
-              amount: 'EGP300',
-              type: 'Refund',
-              transNumber: '3D3M495D6',
-              account: 'ZARA',
+              amount: 'EGP 500000',
+              type: 'Car Loan',
+              date: '11-09-2021',
+              duration: '2 months',
+              status: 'unpaid',
             },
           ]}
         />
