@@ -25,8 +25,8 @@ const subscribarList = [
     name: "Bill Reminder",
     date: "18 january, 2019",
     amount: 1000,
-    status: "Unpaid",
-    company: "Gas Bill",
+    status: "Outstanding : 1000 EGP",
+    company: "Gas Bill ID #5173",
   },
 ];
 
@@ -38,9 +38,9 @@ const subscribarList = [
         <TableHead>
           <TableRow>
             {/* <TableCell align="left">Title</TableCell> */}
-            <TableCell align="left">Content</TableCell>
+            <TableCell align="left">Details</TableCell>
             <TableCell align="center">Due Date</TableCell>
-            <TableCell align="right">Type</TableCell>
+            <TableCell align="right">Status</TableCell>
             
           </TableRow>
         </TableHead>

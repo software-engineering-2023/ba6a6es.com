@@ -25,7 +25,7 @@ const NotificationDB = {
             timestamp: 1570702702573,
             title: 'Gas bill due',
             subtitle: 'You have set a reminder for today for Gas Bill Payment',
-            path: 'page-layouts/user-profile',
+            path: 'dashboard/notificationDetails',
         },
         {
             id: shortId.generate(),

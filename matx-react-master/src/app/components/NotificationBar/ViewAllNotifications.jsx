@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import {
   Box,
   styled,
+  Badge,
+  Icon,
   IconButton,
   Table,
   TableBody,
@@ -9,6 +11,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
+import { Link,useNavigate } from 'react-router-dom';
 
 
 const StyledTable = styled(Table)(({ theme }) => ({
@@ -27,24 +30,32 @@ const subscribarList = [
     date: "18 january, 2019",
     amount: 1000,
     status: "open",
-    company: "ABC for Natural Gas",
-    name: "Bank Announcement",
-    date: "18 january, 2019",
+    company: "ABC&Co for Natural Gas", },
+    {name: "Bank Announcement",
+    date: "1 feb, 2019",
     amount: 1000,
     status: "open",
-    company: "ABC Fintech LTD.",
-    name: "Hana",
-    date: "18 january, 2019",
+    company: "New 15% interest certificates ", },
+   { name: "Technical Issue Resolution #5372",
+    date: "9 march, 2019",
     amount: 1000,
     status: "open",
-    company: "ABC Fintech LTD.",
+    company: "Points not redeemed",
   },
   
 ];
 
 
-
-  const ViewAllNotifications = () => {return ( 
+  const ViewAllNotifications = () => {
+    const navigate=useNavigate();
+    const showNotificationDetail =() => {
+      navigate("/dashboard/notificationDetails");
+    
+    }
+    
+    
+    
+    return ( 
     <Box width="100%" overflow="auto">
       <StyledTable>
         <TableHead>
@@ -64,7 +75,11 @@ const subscribarList = [
               <TableCell align="left">{subscriber.name}</TableCell>
               <TableCell align="center">{subscriber.company}</TableCell>
               <TableCell align="center">{subscriber.date}</TableCell>
-                          
+              <TableCell align="right">{
+              <IconButton onClick={showNotificationDetail}>
+          <Icon  sx={{ color: "text.primary" }}>information</Icon>
+      </IconButton>        }
+      </TableCell>
             </TableRow>
           ))}
         </TableBody>
