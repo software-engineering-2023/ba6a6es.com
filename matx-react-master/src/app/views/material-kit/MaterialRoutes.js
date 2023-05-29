@@ -45,7 +45,14 @@ const FAQPage = Loadable(lazy(() => import('../faq/FAQPage')));
 const OpenBank = Loadable(lazy(() => import('../banker_criteria/OpenBank')));
 const CloseBank = Loadable(lazy(() => import('../banker_criteria/CloseBank')));
 const LoanGuide = Loadable(lazy(() => import('../banker_criteria/LoanGuide')));
+const CloseAccountRequests = Loadable(lazy(() => import('./banker/CloseAccountRequests')));
+const OpenAccountRequests = Loadable(lazy(() => import('./banker/OpenAccountRequests')));
+const CreditCardReports = Loadable(lazy(() => import('./banker/CreditCardReports')));
+const CreditCardRequests = Loadable(lazy(() => import('./banker/CreditCardRequests')));
+const LoanRequests = Loadable(lazy(() => import('./banker/LoanRequests')));
+const SendBankAnnouncements = Loadable(lazy(() => import('./banker/SendBankAnnouncements')));
 const CreditCardGuide = Loadable(lazy(() => import('../banker_criteria/CreditCardGuide')));
+const HandleTechnicalIssues = Loadable(lazy(() => import('./admin/HandleTechnicalIssues')));
 
 const materialRoutes = [
   {
@@ -212,5 +219,29 @@ const materialRoutes = [
     path: '/material/banker_criteria/CreditCardGuide',
     element: <CreditCardGuide />,
   },
+  {
+    path: '/material/banker/OpenAccountRequests',
+    element: <OpenAccountRequests />,
+  },{
+    path: '/material/banker/CloseAccountRequests',
+    element: <CloseAccountRequests />,
+  },{
+    path: '/material/banker/CreditCardRequests',
+    element: <CreditCardRequests />,
+  },{
+    path: '/material/banker/LoanRequests',
+    element: <LoanRequests />,
+  },{
+    path: '/material/banker/CreditCardReports',
+    element: <CreditCardReports />,
+  },{
+    path: '/material/banker/SendBankAnnouncements',
+    element: <SendBankAnnouncements />,
+  },
+  {
+    path: '/material/banker/SendBankAnnouncements',
+    element: <SendBankAnnouncements />,
+  },
+
 ];
 export default materialRoutes;

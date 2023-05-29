@@ -17,7 +17,7 @@ export const navigation_admin = [
     icon: 'account_balance_wallet',
     badge: { value: '', color: 'secondary' }, //TODO remove 3
     children: [
-      { name: 'Handle Technical Issues', path: '/material/bank/ViewBankAccount', iconText: 'B' },
+      { name: 'Handle Technical Issues', path: '/admin/HandleTechnicalIssues', iconText: 'B' },
     ],
   },
 ];
