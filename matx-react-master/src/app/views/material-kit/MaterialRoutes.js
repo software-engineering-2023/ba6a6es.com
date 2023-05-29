@@ -120,17 +120,17 @@ const materialRoutes = [
   {
     path: '/material/bankTransfer/MakeInternationalBankTransfer',
     element: <MakeInternationalBankTransfer />,
-    path:'/material/creditCard/ViewCreditCard',
-    element: <ViewCreditCard/>,
+    path: '/material/creditCard/ViewCreditCard',
+    element: <ViewCreditCard />,
   },
-  
+
   {
-    path:'/material/loans/ApplyLoan',
-    element: <ApplyLoan/>,
-  },  
+    path: '/material/loans/ApplyLoan',
+    element: <ApplyLoan />,
+  },
   {
-    path:'/material/loans/ViewLoans',
-    element: <ViewLoans/>,
+    path: '/material/loans/ViewLoans',
+    element: <ViewLoans />,
   },
   {
     path: '/material/bankTransfer/MakePersonalBankTransfer',
@@ -213,5 +213,4 @@ const materialRoutes = [
     element: <CreditCardGuide />,
   },
 ];
-
 export default materialRoutes;
