@@ -76,8 +76,10 @@ const CustomerInfo = () => {
 
 const customerInfo = [
   { title: 'Phone', value: '01236565798' },
+  { title: 'mail', value: 'ahmed@gmail.com' },
   { title: 'Country', value: 'Egypt' },
   { title: 'City', value: 'Cairo' },
+  { title: 'CreditScore', value: '12300' },
   { title: 'Address 1', value: 'AlRehab, Group99' },
   { title: 'Address 2', value: 'Almokattam,St.9' },
 ];

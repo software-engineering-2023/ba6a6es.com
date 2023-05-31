@@ -1,4 +1,4 @@
-import { LockOpen, Person } from '@mui/icons-material';
+import { Check, Cancel } from '@mui/icons-material';
 import {
   Avatar,
   Button,
@@ -23,6 +23,7 @@ const StyedSmall = styled(Small)({
   padding: '2px 4px',
   borderRadius: '4px',
   background: 'rgba(9, 182, 109, 0.15)',
+  fontSize: '12px',
 });
 
 const StyledButton = styled(Button)(({ theme }) => ({
@@ -31,13 +32,12 @@ const StyledButton = styled(Button)(({ theme }) => ({
   ':hover': { background: 'transparent' },
 }));
 
-const CustomerInfo = () => {
+const CardInfo = () => {
   return (
     <Card sx={{ pt: 3 }} elevation={3}>
       <ContentBox mb={3} alignContent="center">
-        <Avatar sx={{ width: 84, height: 84 }} src="/assets/images/faces/10.jpg" />
-        <H4 sx={{ mt: '16px', mb: '8px' }}>Ahmed Mohamed</H4>
-        <Small color="text.secondary">Computer Scientist</Small>
+        {/* <H4 sx={{ mt: '16px', mb: '8px' }}>Ben Peterson</H4> */}
+        <Small color="text.primary">Loan Details</Small>
       </ContentBox>
 
       <Divider />
@@ -45,10 +45,9 @@ const CustomerInfo = () => {
       <Table>
         <TableBody>
           {/* <TableRow>
-            <TableCell sx={{ pl: 2 }}>Email</TableCell>
+            <TableCell sx={{ pl: 2 }}>Card Number</TableCell>
             <TableCell>
-              <div>ui-lib@example.com</div>
-              <StyedSmall>Email Verified</StyedSmall>
+              <div> **** **** **** 1234 </div>
             </TableCell>
           </TableRow> */}
 
@@ -62,12 +61,11 @@ const CustomerInfo = () => {
       </Table>
 
       <FlexBetween p={2}>
-        <StyledButton disableRipple startIcon={<LockOpen fontSize="small" />}>
-          Reset & Send Password
+        <StyledButton disableRipple startIcon={<Check fontSize="small" />}>
+          Accept Loan Request
         </StyledButton>
-
-        <StyledButton disableRipple startIcon={<Person fontSize="small" />}>
-          Login as Customer
+        <StyledButton disableRipple startIcon={<Cancel fontSize="small" />}>
+          Reject Loan Request
         </StyledButton>
       </FlexBetween>
     </Card>
@@ -75,11 +73,10 @@ const CustomerInfo = () => {
 };
 
 const customerInfo = [
-  { title: 'Phone', value: '01236565798' },
-  { title: 'Country', value: 'Egypt' },
-  { title: 'City', value: 'Cairo' },
-  { title: 'Address 1', value: 'AlRehab, Group99' },
-  { title: 'Address 2', value: 'Almokattam,St.9' },
+  { title: 'Loan Amount', value: 'EGP 500000' },
+  { title: 'Loan Type', value: 'Personal Loan' },
+  { title: 'Duration', value: '50 months' },
+  { title: 'Interest Rate', value: '1%' },
 ];
 
-export default CustomerInfo;
+export default CardInfo;

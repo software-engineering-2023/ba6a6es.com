@@ -27,11 +27,12 @@ const TransactionTable = ({ subscribarList }) => {
       <StyledTable>
         <TableHead>
           <TableRow>
-            <TableCell align="center">ID</TableCell>
-            <TableCell align="center">Username</TableCell>
-            <TableCell align="center">Date</TableCell>
+            <TableCell align="center"></TableCell>
+            <TableCell align="center">Type</TableCell>
+            <TableCell align="center">Num</TableCell>
             {/* <TableCell align="center">State</TableCell> */}
-            <TableCell align="center">Action</TableCell>
+            <TableCell align="center">Description</TableCell>
+            <TableCell align="center">Status</TableCell>
           </TableRow>
         </TableHead>
 
@@ -41,21 +42,12 @@ const TransactionTable = ({ subscribarList }) => {
               {/* <Icon className="icon">{subscriber.icon}</Icon> */}
 
               <TableCell align="center">{subscriber.id}</TableCell>
-              <TableCell align="center">{subscriber.user}</TableCell>
-              <TableCell align="center">{subscriber.Date}</TableCell>
-              {/* //<TableCell align="center">{subscriber.state}</TableCell> */}
+              <TableCell align="center">{subscriber.type}</TableCell>
+              <TableCell align="center">{subscriber.num}</TableCell>
+              <TableCell align="center">{subscriber.description}</TableCell>
+              <TableCell align="center">{subscriber.status}</TableCell>
 
-              <TableCell align="right">
-                <Button
-                  color="primary"
-                  variant="contained"
-                  type="submit"
-                  component={Link}
-                  to="/admin_criteria/adminLinks"
-                >
-                  <Span sx={{ pl: 1, textTransform: 'capitalize' }}>{subscriber.text}</Span>
-                </Button>
-              </TableCell>
+              {/* //<TableCell align="center">{subscriber.state}</TableCell> */}
             </TableRow>
           ))}
         </TableBody>

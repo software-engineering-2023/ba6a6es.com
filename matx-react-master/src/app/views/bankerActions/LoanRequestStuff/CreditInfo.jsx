@@ -1,4 +1,4 @@
-import { LockOpen, Person } from '@mui/icons-material';
+import { Check, Cancel } from '@mui/icons-material';
 import {
   Avatar,
   Button,
@@ -23,6 +23,7 @@ const StyedSmall = styled(Small)({
   padding: '2px 4px',
   borderRadius: '4px',
   background: 'rgba(9, 182, 109, 0.15)',
+  fontSize: '12px',
 });
 
 const StyledButton = styled(Button)(({ theme }) => ({
@@ -31,27 +32,18 @@ const StyledButton = styled(Button)(({ theme }) => ({
   ':hover': { background: 'transparent' },
 }));
 
-const CustomerInfo = () => {
+const CreditInfo = () => {
   return (
     <Card sx={{ pt: 3 }} elevation={3}>
       <ContentBox mb={3} alignContent="center">
-        <Avatar sx={{ width: 84, height: 84 }} src="/assets/images/faces/10.jpg" />
-        <H4 sx={{ mt: '16px', mb: '8px' }}>Ahmed Mohamed</H4>
-        <Small color="text.secondary">Computer Scientist</Small>
+        {/* <H4 sx={{ mt: '16px', mb: '8px' }}>Ben Peterson</H4> */}
+        <Small color="text.primary">Income Details</Small>
       </ContentBox>
 
       <Divider />
 
       <Table>
         <TableBody>
-          {/* <TableRow>
-            <TableCell sx={{ pl: 2 }}>Email</TableCell>
-            <TableCell>
-              <div>ui-lib@example.com</div>
-              <StyedSmall>Email Verified</StyedSmall>
-            </TableCell>
-          </TableRow> */}
-
           {customerInfo.map((item, ind) => (
             <TableRow key={ind}>
               <TableCell sx={{ pl: 2 }}>{item.title}</TableCell>
@@ -60,26 +52,15 @@ const CustomerInfo = () => {
           ))}
         </TableBody>
       </Table>
-
-      <FlexBetween p={2}>
-        <StyledButton disableRipple startIcon={<LockOpen fontSize="small" />}>
-          Reset & Send Password
-        </StyledButton>
-
-        <StyledButton disableRipple startIcon={<Person fontSize="small" />}>
-          Login as Customer
-        </StyledButton>
-      </FlexBetween>
     </Card>
   );
 };
 
 const customerInfo = [
-  { title: 'Phone', value: '01236565798' },
-  { title: 'Country', value: 'Egypt' },
-  { title: 'City', value: 'Cairo' },
-  { title: 'Address 1', value: 'AlRehab, Group99' },
-  { title: 'Address 2', value: 'Almokattam,St.9' },
+  { title: 'Job', value: 'Software Engineer' },
+  { title: 'Yearly Income', value: 'EGP 100000' },
+  { title: 'Credit Score', value: '620' },
+  { title: 'Credit Category', value: 'fair' },
 ];
 
-export default CustomerInfo;
+export default CreditInfo;

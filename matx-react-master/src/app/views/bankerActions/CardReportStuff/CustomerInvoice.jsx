@@ -103,30 +103,4 @@ const CustomerInvoice = () => {
   );
 };
 
-const invoiceList = [
-  {
-    _id: '5ece2cef3e562cbd61996dfds',
-    date: new Date(),
-    description: 'Bit Bass Headphone',
-    method: 'PayPal',
-    total: 15.25,
-    status: 'paid',
-  },
-  {
-    _id: '5ece2cef3efdsfsdfcbd61996',
-    date: new Date(),
-    description: 'Comlion Watch',
-    method: 'Visa Card',
-    total: 75.25,
-    status: 'unpaid',
-  },
-  {
-    _id: '5ece2cef3e56dsfdsfds61996',
-    date: new Date(),
-    description: 'Beats Headphone',
-    method: 'Master Card',
-    total: 45.25,
-    status: 'paid',
-  },
-];
 export default CustomerInvoice;
